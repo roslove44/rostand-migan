@@ -2,10 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-.input-control {
-    @apply block w-full rounded-lg bg-gray-100 p-2;
+.nav-btn-first {
+    @apply inline-flex items-center py-2 px-4 bg-gray-200 text-gray-700 rounded-lg gap-x-1 transition-all;
 }
 
-.input-control:focus {
-    @apply outline-none ring-0 border-2 border-blue-500;
+.nav-btn-first:hover {
+    @apply bg-gray-300 text-gray-600;
+}
+
+.nav-btn-second {
+    @apply inline-flex items-center py-2 px-4 text-gray-700 rounded-lg gap-x-1 transition-all;
+}
+
+.nav-btn-second:hover {
+    @apply bg-gray-200 text-gray-600;
 }
