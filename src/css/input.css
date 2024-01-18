@@ -2,18 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-.nav-btn-first {
-    @apply inline-flex items-center py-2 px-4 bg-gray-200 text-gray-700 rounded-lg gap-x-1 transition-all;
-}
 
-.nav-btn-first:hover {
-    @apply bg-gray-300 text-gray-600;
-}
+@layer utilities {
+    .nav-btn-first {
+            @apply inline-flex items-center py-2 px-4 bg-gray-200 text-gray-700 rounded-lg gap-x-1 transition-all;
+    }
 
-.nav-btn-second {
-    @apply inline-flex items-center py-2 px-4 text-gray-700 rounded-lg gap-x-1 transition-all;
-}
+    .nav-btn-first:hover {
+        @apply bg-gray-300 text-gray-600;
+    }
 
-.nav-btn-second:hover {
-    @apply bg-gray-200 text-gray-600;
+    .nav-btn-second {
+        @apply inline-flex items-center py-2 px-4 text-gray-700 rounded-lg gap-x-1 transition-all;
+    }
+
+    .nav-btn-second:hover {
+        @apply bg-gray-200 text-gray-600;
+    }
+
+    .toggle-btn {
+        @apply [&>div::before]:translate-y-0 [&>div::before]:rotate-45 [&>div::after]:translate-y-0 [&>div::after]:-rotate-45 [&>div]:bg-transparent [&>div]:rotate-[720deg]
+    }
 }

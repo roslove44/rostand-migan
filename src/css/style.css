@@ -4,16 +4,6 @@
     font-family: 'Signika', sans-serif;
 }
 
-@keyframes menuOpenAnimation {
-    from {
-        transform: translateX(-100%);
-    }
-
-    to {
-        transform: translateX(0);
-    }
-}
-
 @keyframes menuCloseAnimation {
     from {
         transform: translateX(0);
@@ -28,10 +18,6 @@
     /* Ajoutez d'autres styles nécessaires à votre menu */
     transform: translateX(0);
     transition: transform 0.3s ease-in-out;
-}
-
-.menu-open-animation {
-    animation: menuOpenAnimation 0.3s ease-in-out;
 }
 
 .menu-close-animation {

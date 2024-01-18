@@ -58,28 +58,17 @@
                         </button>
                     </div>
 
-                    <div class="flex sm:hidden transition-all" id="mobile-menu-btn">
-                        <svg viewBox="0 0 27 27" width="27" height="27" class="cursor-pointer"
-                            xmlns="http://www.w3.org/2000/svg" id="menuOpenBtn">
-                            <line x1="4.5" y1="7.5" x2="22.5" y2="7.5" stroke-width="2" stroke-linecap="round"
-                                stroke="currentColor"></line>
-                            <line x1="4.5" y1="13.5" x2="22.5" y2="13.5" stroke-width="2" stroke-linecap="round"
-                                stroke="currentColor"></line>
-                            <line x1="4.5" y1="19.5" x2="22.5" y2="19.5" stroke-width="2" stroke-linecap="round"
-                                stroke="currentColor"></line>
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" height="27" width="27" viewBox="0 0 384 512"
-                            id="menuCloseBtn" class="hidden">
-                            <path
-                                d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
-                        </svg>
-                    </div>
+                    <button class="relative sm:hidden cursor-pointer w-6 h-8 text-2xl" id="hamburger-btn">
+                        <div
+                            class="absolute top-4 -mt-0.5 h-1 w-6 rounded bg-black transition-all duration-500 before:absolute before:h-1 before:w-6 before:-translate-x-3 before:-translate-y-2 before:rounded before:bg-black before:transition-all before:duration-500 before:content-[''] after:absolute after:h-1 after:w-6 after:-translate-x-3 after:translate-y-2 after:rounded after:bg-black after:transition-all after:duration-500 after:content-['']">
+                        </div>
+                    </button>
                 </div>
             </nav>
         </header>
     </div>
-    <div class="hidden fixed top-10 right-0 z-30 left-0 mt-3 bg-white" style="border-radius: 0px 0px 200px 0px;"
-        id="mobileMenu">
+    <div class="hidden fixed top-10 right-0 z-30 left-0 mt-3 bg-white animate-open-menu"
+        style="border-radius: 0px 0px 200px 0px;" id="mobileMenu">
         <header class="flex-col justify-center gap-8  text-gray-800 min-h-screen">
             <nav class="p-2 md:px-4 max-w-7xl w-full flex flex-col justify-start gap-4">
 
