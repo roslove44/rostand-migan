@@ -13,9 +13,29 @@ module.exports = {
           "80%": { transform: "scaleY(1.2)" },
           "100%": { transform: "scaleY(1)" },
         },
+        "say-hi": {
+          "0%": { transform: "translateZ(0) scale(1)" },
+          "15%": {
+            transform: "translate3d(-25%, 0,0) rotate(-5deg) scale(1.1)",
+          },
+          "30%": {
+            transform: "translate3d(20%, 0,0) rotate(3deg) scale(1.2)",
+          },
+          "45%": {
+            transform: "translate3d(-15%, 0,0) rotate(-3deg) scale(1.3)",
+          },
+          "60%": {
+            transform: "translate3d(10%, 0,0) rotate(2deg) scale(1.2)",
+          },
+          "75%": {
+            transform: "translate3d(-5%, 0,0) rotate(-1deg) scale(1.1)",
+          },
+          "100%": { transform: "translateZ(0) scale(1)" },
+        },
       },
       animation: {
         "open-menu": "open-menu 0.5s ease-in-out forwards",
+        "say-hi": "say-hi 2.5s infinite",
       },
     },
   },
