@@ -16,11 +16,17 @@
 }
 
 #mobileMenu {
-    /* Ajoutez d'autres styles nécessaires à votre menu */
     transform: translateX(0);
     transition: transform 0.3s ease-in-out;
 }
 
 .menu-close-animation {
     animation: menuCloseAnimation 0.3s ease-in-out;
+}
+
+#hero-img {
+    mask-image: url(../img/mask/mask-2.png);
+    mask-size: contain;
+    mask-position: center center;
+    mask-repeat: no-repeat;
 }
