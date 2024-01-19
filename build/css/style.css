@@ -24,9 +24,19 @@
     animation: menuCloseAnimation 0.3s ease-in-out;
 }
 
+#hero {
+    background-image: linear-gradient(to right bottom, rgba(5, 8, 16, .6), rgba(5, 8, 16, .6)),url(../img/cubes-blancs-fond-3d.jpg);
+    background-position: top;
+    background-size: cover;
+}
+
 #hero-img {
     mask-image: url(../img/mask/mask-2.png);
     mask-size: contain;
     mask-position: center center;
     mask-repeat: no-repeat;
+}
+
+.text-wrap {
+    text-wrap: pretty;
 }
