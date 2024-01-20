@@ -35,6 +35,19 @@ const initApp = () => {
 
     dropdownBtn.addEventListener("click", toggleStackList);
     document.addEventListener("click", handleClickOutside);
+
+    function randomOpacity() {
+      const elements = document.querySelectorAll(
+        ".a-one, .a-two, .a-three, .a-four, .a-five, .a-six, .a-seven, .a-eight, .a-nine"
+      );
+
+      elements.forEach((element) => {
+        const randomOpacityValue = Math.random();
+        element.style.opacity = randomOpacityValue;
+      });
+    }
+
+    setInterval(randomOpacity, 500);
   });
 };
 

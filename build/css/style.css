@@ -25,7 +25,8 @@
 }
 
 #hero {
-    background-image: linear-gradient(to right bottom, rgba(5, 8, 16, .6), rgba(5, 8, 16, .6)),url(../img/cubes-blancs-fond-3d.jpg);
+    /* background-image: linear-gradient(to right, rgba(15, 14, 14, 0.836), rgba(245, 245, 245, .8)),url(../img/hero-bg.svg); */
+    background-image: linear-gradient(to right, rgba(15, 14, 14, 0.836), rgba(15, 14, 14, 0.685)),url(../img/hero-bg.svg);
     background-position: top;
     background-size: cover;
 }
