@@ -32,3 +32,16 @@
         @apply [&>div::before]:translate-y-0 [&>div::before]:rotate-45 [&>div::after]:translate-y-0 [&>div::after]:-rotate-45 [&>div]:bg-transparent [&>div]:rotate-[720deg]
     }
 }
+
+@layer components {
+    .stacks {
+        @apply p-3 w-[90%] mx-auto flex flex-wrap items-center justify-between rounded-lg md:w-[80%] lg:w-[50%] bg-slate-400
+    }
+    .stacks .stack {
+        @apply  m-[1%] flex items-center flex-grow-0 flex-shrink-[1] basis-[30%] justify-evenly h-14 md:h-16 shadow-lg rounded-lg bg-slate-300 md:basis-[18%] relative overflow-hidden;
+    }
+
+    .stacks .stack::after {
+        @apply absolute bottom-0 right-0 left-1 block h-1 bg-black rounded-sm;
+    }
+} 
