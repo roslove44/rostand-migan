@@ -3,45 +3,63 @@
 @tailwind utilities;
 
 
-@layer utilities {
-    .nav-btn-first {
-        @apply transition-all select-none h-10 flex justify-center items-center rounded-xl text-sm font-medium bg-gray-200 text-gray-800 py-3 px-3 gap-1;
-    }
-
-    .nav-btn-first:disabled {
-        @apply opacity-35 pointer-events-none
-    }
-
-    .nav-btn-first:hover {
-        @apply bg-gray-300;
-    }
-
-    .nav-btn-second {
-        @apply transition-all select-none h-10 flex items-center justify-center rounded-xl text-sm font-medium gap-1 bg-transparent text-gray-800 py-3 px-3;
-    }
-
-    .nav-btn-second:disabled {
-        @apply opacity-35 pointer-events-none
-    }
-
-    .nav-btn-second:hover {
-        @apply bg-gray-200 text-gray-600;
-    }
-
+@layer utilities  {
     .toggle-btn {
-        @apply [&>div::before]:translate-y-0 [&>div::before]:rotate-45 [&>div::after]:translate-y-0 [&>div::after]:-rotate-45 [&>div]:bg-transparent [&>div]:rotate-[720deg]
+            @apply [&>div::before]:translate-y-0 [&>div::before]:rotate-45 [&>div::after]:translate-y-0 [&>div::after]:-rotate-45 [&>div]:bg-transparent [&>div]:rotate-[720deg]
     }
 }
 
 @layer components {
+    .nav-btn-first {
+            @apply transition-all select-none h-10 flex justify-center items-center rounded-xl text-sm font-medium bg-gray-200 text-gray-800 py-3 px-3 gap-1;
+    }    
+    .nav-btn-first:disabled {
+        @apply opacity-35 pointer-events-none
+    }
+    .nav-btn-first:hover {
+        @apply bg-gray-300;
+    }
+    .nav-btn-second {
+        @apply transition-all select-none h-10 flex items-center justify-center rounded-xl text-sm font-medium gap-1 bg-transparent text-gray-800 py-3 px-3;
+    }
+    .nav-btn-second:disabled {
+        @apply opacity-35 pointer-events-none
+    }
+    .nav-btn-second:hover {
+        @apply bg-gray-200 text-gray-600;
+    }
+
     .stacks {
-        @apply p-3 w-[90%] mx-auto flex flex-wrap items-center justify-between rounded-lg md:w-[80%] lg:w-[50%] bg-slate-400
+        @apply p-3 w-[90%] mx-auto flex flex-wrap items-center justify-between rounded-lg md:w-[80%] lg:w-[50%] bg-slate-100
     }
     .stacks .stack {
         @apply  m-[1%] flex items-center flex-grow-0 flex-shrink-[1] basis-[30%] justify-evenly h-14 md:h-16 shadow-lg rounded-lg bg-slate-300 md:basis-[18%] relative overflow-hidden;
     }
-
     .stacks .stack::after {
-        @apply absolute bottom-0 right-0 left-1 block h-1 bg-black rounded-sm;
+        @apply absolute bottom-0 right-0 left-1 block h-1 bg-blue-300 rounded-sm;
+    }
+    .stacks .stack .stack-icon svg {
+        @apply w-5 h-5 md:h-7 md:w-7;
+    }
+    .stacks .stack .stack-title p {
+        @apply text-xs md:text-sm ;
+    }
+
+    section {
+        @apply py-20;
+    }
+    section .section-title {
+        @apply mb-9;
+    }
+    section .section-title h2 {
+        @apply relative text-2xl uppercase font-extrabold text-center mb-6 tracking-widest;
+    }
+    .section-title h2::after {
+        @apply absolute top-[calc(100%+1rem)] left-1/2 -translate-x-1/2 h-1 w-10 rounded-sm bg-blue-600;
+        content: "";
+    }
+
+    .rostand-migan p {
+        @apply  text-wrap mb-1 p-1;
     }
 } 
