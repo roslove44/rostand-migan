@@ -60,6 +60,34 @@
     }
 
     .rostand-migan p {
-        @apply  text-wrap mb-1 p-1;
+        @apply  text-wrap mb-1 p-1 text-slate-500;
+    }
+
+    .social-bubble {
+        @apply absolute bottom-[calc(100%+5px)] text-xs whitespace-nowrap bg-slate-700 p-1 rounded-md text-slate-100 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100;
+    }
+    .social-bubble:after {
+        @apply bg-slate-700;
+        content: "";
+        position: absolute;
+        top: calc(100% - 4px);
+        left: calc(50% - 4px);
+        width: 8px;
+        height: 8px;
+        transform: rotate(45deg);
+    }
+
+    .services-column {
+        @apply w-[540px] lg:w-[460px]
+    }
+    .service-item {
+        @apply bg-white px-10 py-5 mt-20 
+    }
+    .service-description {
+        @apply w-[240px]
+    }
+
+    .intro {
+        @apply px-10 py-5 bg-slate-100 mt-0;
     }
 } 
