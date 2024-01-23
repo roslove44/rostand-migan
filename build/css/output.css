@@ -781,38 +781,113 @@ section .section-title h2 {
   transform: rotate(45deg);
 }
 
+@media (min-width: 640px) {
+  .services {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .services {
+    flex-direction: row;
+    gap: 0px;
+  }
+}
+
 .services-column {
-  width: 540px;
+  width: auto;
+}
+
+@media (min-width: 640px) {
+  .services-column {
+    margin-left: auto;
+    margin-right: auto;
+    width: 540px;
+  }
 }
 
 @media (min-width: 1024px) {
   .services-column {
+    margin-left: 0px;
+    margin-right: 2rem;
     width: 460px;
   }
 }
 
+@media (min-width: 1280px) {
+  .services-column {
+    width: 540px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .services-column {
+    width: 584px;
+  }
+}
+
 .service-item {
-  margin-top: 5rem;
+  position: relative;
+  margin-top: 2rem;
+  overflow: hidden;
+  border-radius: 1rem;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
-.service-description {
-  width: 240px;
+@media (min-width: 1024px) {
+  .service-item {
+    margin-top: 3rem;
+  }
 }
 
-.intro {
-  margin-top: 0px;
-  --tw-bg-opacity: 1;
-  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
-  padding-left: 2.5rem;
+.service-item {
+  box-shadow: 0 50px 60px #0000001a;
+}
+
+.services .intro {
+  border-radius: 0px;
+  background-color: transparent;
+  padding-left: 1.25rem;
   padding-right: 2.5rem;
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.intro-description {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  opacity: 0.9;
+}
+
+.intro-description p {
+  margin-top: 0.5rem;
+}
+
+.service-item .service-title {
+  margin-bottom: 1rem;
+  width: 200px;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.service-item .service-description {
+  width: 280px;
+}
+
+.service-item .service-description p {
+  margin-bottom: 0px;
+  opacity: 0.8;
 }
 
 .pointer-events-none {
@@ -865,11 +940,6 @@ section .section-title h2 {
   margin-bottom: 2rem;
 }
 
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .-mt-0 {
   margin-top: -0px;
 }
@@ -882,10 +952,6 @@ section .section-title h2 {
   margin-bottom: 1rem;
 }
 
-.mr-10 {
-  margin-right: 2.5rem;
-}
-
 .mt-3 {
   margin-top: 0.75rem;
 }
@@ -896,6 +962,10 @@ section .section-title h2 {
 
 .mt-\[60px\] {
   margin-top: 60px;
+}
+
+.mt-0 {
+  margin-top: 0px;
 }
 
 .inline-block {
@@ -1131,11 +1201,6 @@ section .section-title h2 {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
-.bg-gray-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
-}
-
 .bg-gray-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
@@ -1144,6 +1209,11 @@ section .section-title h2 {
 .bg-gray-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+}
+
+.bg-slate-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
 }
 
 .bg-slate-900 {
@@ -1219,6 +1289,10 @@ section .section-title h2 {
 
 .pt-4 {
   padding-top: 1rem;
+}
+
+.pt-0 {
+  padding-top: 0px;
 }
 
 .text-left {
@@ -1319,6 +1393,12 @@ section .section-title h2 {
 
 .opacity-50 {
   opacity: 0.5;
+}
+
+.shadow {
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .shadow-lg {
@@ -1601,10 +1681,6 @@ section .section-title h2 {
     margin-right: 6rem;
   }
 
-  .md\:mr-10 {
-    margin-right: 2.5rem;
-  }
-
   .md\:flex {
     display: flex;
   }
@@ -1619,10 +1695,6 @@ section .section-title h2 {
 
   .md\:w-\[55\%\] {
     width: 55%;
-  }
-
-  .md\:flex-row {
-    flex-direction: row;
   }
 
   .md\:justify-start {
@@ -1662,10 +1734,6 @@ section .section-title h2 {
 }
 
 @media (min-width: 1024px) {
-  .lg\:mr-10 {
-    margin-right: 2.5rem;
-  }
-
   .lg\:w-1\/2 {
     width: 50%;
   }
