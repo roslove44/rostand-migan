@@ -49,6 +49,34 @@ const initApp = () => {
 
     setInterval(randomOpacity, 500);
   });
+
+  function test() {
+    // Fonction à exécuter lorsque l'élément entre dans la fenêtre d'affichage
+    function handleIntersection(entries, observer) {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Ajoutez "is-visible" et "is-loaded" lorsque l'élément est visible
+          setTimeout(() => {
+            entry.target.classList.add("is-visible");
+            entry.target.querySelector("img").classList.add("is-loaded");
+          }, 800);
+        } else {
+          // Retirez "is-visible" et "is-loaded" si vous le souhaitez lorsque l'élément n'est plus visible
+          entry.target.classList.remove("is-visible");
+          entry.target.querySelector("img").classList.remove("is-loaded");
+        }
+      });
+    }
+
+    // Création de l'instance de l'Intersection Observer
+    let observer = new IntersectionObserver(handleIntersection);
+
+    // Ciblage des éléments à observer
+    document.querySelectorAll(".illustration").forEach((illustration) => {
+      observer.observe(illustration);
+    });
+  }
+  test();
 };
 
 document.addEventListener("DOMContentLoaded", initApp);

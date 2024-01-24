@@ -811,7 +811,7 @@ section .section-title h2 {
 @media (min-width: 1024px) {
   .services-column {
     margin-left: 0px;
-    margin-right: 2rem;
+    margin-right: 4rem;
     width: 460px;
   }
 }
@@ -831,7 +831,6 @@ section .section-title h2 {
 .service-item {
   position: relative;
   margin-top: 2rem;
-  overflow: hidden;
   border-radius: 1rem;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -845,7 +844,7 @@ section .section-title h2 {
 
 @media (min-width: 1024px) {
   .service-item {
-    margin-top: 3rem;
+    margin-top: 4rem;
   }
 }
 
@@ -882,8 +881,25 @@ section .section-title h2 {
   line-height: 2rem;
 }
 
+@media (min-width: 768px) {
+  .service-item .service-title {
+    width: 250px;
+  }
+}
+
+.service-item .service-action {
+  position: relative;
+}
+
 .service-item .service-description {
+  margin-bottom: 1.25rem;
   width: 280px;
+}
+
+@media (min-width: 768px) {
+  .service-item .service-description {
+    width: 300px;
+  }
 }
 
 .service-item .service-description p {
@@ -895,7 +911,7 @@ section .section-title h2 {
   position: absolute;
   overflow: hidden;
   width: 300px;
-  height: 380px;
+  height: 100%;
   top: 0;
   right: 0;
   opacity: 0.7;
@@ -905,7 +921,7 @@ section .section-title h2 {
   position: absolute;
   right: 0;
   top: 0;
-  width: 380px;
+  width: 300px;
   height: 1px;
   transform-origin: top right;
 }
@@ -916,7 +932,7 @@ section .section-title h2 {
   left: 0;
   width: 100%;
   height: 100%;
-  box-shadow: 150px -150px 150px #fff inset;
+  box-shadow: 100px -100px 100px #fff inset;
   overflow: hidden;
 }
 
@@ -981,8 +997,78 @@ section .section-title h2 {
   background-color: rgb(79 70 229 / var(--tw-bg-opacity));
 }
 
+.service-item .illustration {
+  position: absolute;
+  top: -50px;
+  right: -60px;
+  margin-top: -40px;
+  opacity: 0;
+}
+
+@media (min-width: 768px) {
+  .service-item .illustration {
+    margin-right: -30px;
+    margin-top: -30px;
+  }
+}
+
+.service-item .illustration {
+  transform: translate(40px) translateY(-25px);
+  will-change: opacity, transform;
+  transition-property: opacity, transform;
+  transition-duration: .5s, .5s;
+  transition-timing-function: cubic-bezier(0, 0, .25, 1);
+}
+
+.service-item .illustration.is-visible {
+  position: absolute;
+  top: -60px;
+  right: -80px;
+  margin-top: -40px;
+  margin-right: -35px;
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .service-item .illustration.is-visible {
+    margin-right: -10px;
+    margin-top: -15px;
+  }
+}
+
+.service-item .illustration.is-visible {
+  transform: translate(0) translateY(0);
+}
+
+.service-item .illustration img {
+  --tw-scale-x: 50%;
+  --tw-scale-y: 50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  opacity: 0;
+}
+
+@media (min-width: 1024px) {
+  .service-item .illustration img {
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+}
+
+.service-item .illustration img {
+  transition: opacity ease-in .3s;
+}
+
+.service-item .illustration img.is-loaded {
+  opacity: 1;
+}
+
 .pointer-events-none {
   pointer-events: none;
+}
+
+.visible {
+  visibility: visible;
 }
 
 .fixed {
