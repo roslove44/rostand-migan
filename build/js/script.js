@@ -50,7 +50,7 @@ const initApp = () => {
     setInterval(randomOpacity, 500);
   });
 
-  function test() {
+  function serviceIllustrationAnimation() {
     // Fonction à exécuter lorsque l'élément entre dans la fenêtre d'affichage
     function handleIntersection(entries, observer) {
       entries.forEach((entry) => {
@@ -58,12 +58,10 @@ const initApp = () => {
           // Ajoutez "is-visible" et "is-loaded" lorsque l'élément est visible
           setTimeout(() => {
             entry.target.classList.add("is-visible");
-            entry.target.querySelector("img").classList.add("is-loaded");
           }, 800);
         } else {
           // Retirez "is-visible" et "is-loaded" si vous le souhaitez lorsque l'élément n'est plus visible
           entry.target.classList.remove("is-visible");
-          entry.target.querySelector("img").classList.remove("is-loaded");
         }
       });
     }
@@ -76,7 +74,28 @@ const initApp = () => {
       observer.observe(illustration);
     });
   }
-  test();
+  serviceIllustrationAnimation();
+
+  function imageAnimation() {
+    function handleIntersection(entries, observer) {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add("is-loaded");
+          }, 600);
+        } else {
+          entry.target.classList.remove("is-loaded");
+        }
+      });
+    }
+    let imageObserver = new IntersectionObserver(handleIntersection);
+
+    document.querySelectorAll("img, svg, i, .svg, .stack").forEach((image) => {
+      imageObserver.observe(image);
+    });
+  }
+
+  imageAnimation();
 };
 
 document.addEventListener("DOMContentLoaded", initApp);

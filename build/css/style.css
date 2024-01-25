@@ -31,7 +31,6 @@ body {
 
 #hero-img {
     mask-image: url(../img/mask/mask-3.png);
-    width: 100%;
     mask-size: contain;
     mask-position: center center;
     mask-repeat: no-repeat;

@@ -7,6 +7,13 @@
     .toggle-btn {
             @apply [&>div::before]:translate-y-0 [&>div::before]:rotate-45 [&>div::after]:translate-y-0 [&>div::after]:-rotate-45 [&>div]:bg-transparent [&>div]:rotate-[720deg]
     }
+    img, svg, i, .svg svg, .stack svg {
+        @apply opacity-0;
+        transition: opacity ease-in .3s;
+    }
+    img.is-loaded, svg.is-loaded, i.is-loaded, .svg.is-loaded svg, .stack.is-loaded svg {
+        @apply opacity-100;
+    }
 }
 
 @layer components {
@@ -59,29 +66,11 @@
         content: "";
     }
 
-    .rostand-migan p {
-        @apply  text-wrap mb-1 p-1 text-slate-500;
-    }
-
-    .social-bubble {
-        @apply absolute bottom-[calc(100%+5px)] text-xs whitespace-nowrap bg-slate-700 p-1 rounded-md text-slate-100 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100;
-    }
-    .social-bubble:after {
-        @apply bg-slate-700;
-        content: "";
-        position: absolute;
-        top: calc(100% - 4px);
-        left: calc(50% - 4px);
-        width: 8px;
-        height: 8px;
-        transform: rotate(45deg);
-    }
-
     .services {
         @apply sm:flex sm:flex-col sm:justify-center lg:flex-row lg:gap-0
     }
     .services-column {
-        @apply w-auto sm:w-[540px] sm:mx-auto lg:w-[460px] xl:w-[540px] 2xl:w-[584px] lg:ml-0 lg:mr-16
+        @apply w-auto sm:w-[540px] sm:mx-auto lg:w-[490px] xl:w-[540px] 2xl:w-[584px] lg:ml-0 lg:mr-16
     }
     .service-item {
         @apply text-sm mt-8 py-8 px-7 rounded-2xl bg-white lg:mt-16 relative;
@@ -192,10 +181,47 @@
         @apply -top-[30px];
     }
     .service-item .illustration img {
-        @apply scale-[50%] lg:scale-100 opacity-0;
+        @apply scale-[50%] lg:scale-[70%] xl:scale-100 opacity-0;
         transition: opacity ease-in .3s;
     }
     .service-item .illustration img.is-loaded {
         @apply opacity-100;
+    }
+    
+    .rostand {
+        @apply relative overflow-hidden text-white;
+    }
+    .rostand .gradient {
+        @apply rounded-br-[200px];
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        max-height: 888px;
+        background: radial-gradient(farthest-side at 60% 80%, #733236, transparent);
+    }
+    .rostand-migan {
+        @apply text-white;
+    }
+    .rostand-migan p {
+        @apply text-wrap mb-1 p-1 text-[#adaab2];
+    }
+    .rostand-migan p b {
+        @apply text-white;
+    }
+    .social-bubble {
+        @apply absolute bottom-[calc(100%+5px)] text-xs whitespace-nowrap bg-slate-700 p-1 rounded-md text-slate-100 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100;
+    }
+    .social-bubble:after {
+        @apply bg-slate-700;
+        content: "";
+        position: absolute;
+        top: calc(100% - 4px);
+        left: calc(50% - 4px);
+        width: 8px;
+        height: 8px;
+        transform: rotate(45deg);
     }
 } 
