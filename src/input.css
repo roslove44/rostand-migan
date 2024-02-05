@@ -245,16 +245,16 @@
         @apply mb-10 2xl:mb-20;
     }
     .call-to-action .action-container .actions .action article h1 {
-        @apply text-2xl lg:text-3xl 2xl:text-4xl 2xl:mt-8 font-black text-[#150c21] lg:w-[95%];
+        @apply text-2xl lg:text-3xl 2xl:text-4xl 2xl:mt-8 font-black text-indigo-600 lg:w-[95%];
     }
     .call-to-action .action-container .actions .action article p {
         @apply my-5 lg:text-xl xl:text-2xl 2xl:my-8 lg:my-8 opacity-70;
     }
 
     #get-in-touch .contact {
-       @apply w-1/2 h-20 mx-auto -mt-28 bg-[#150c21] text-white flex items-center rounded-full justify-center text-center;
+       @apply w-5/6 sm:w-2/3 md:w-1/2 h-20 mx-auto -mt-28 bg-indigo-600 text-white flex items-center rounded-full justify-center text-center shadow-2xl;
     }
     #get-in-touch .contact h2 {
-        @apply font-bold text-3xl w-full transition-all duration-500;
+        @apply font-bold sm:text-lg md:text-xl lg:text-2xl xl:text-3xl w-full transition-all duration-500;
     }
 } 
