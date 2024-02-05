@@ -245,20 +245,16 @@
         @apply mb-10 2xl:mb-20;
     }
     .call-to-action .action-container .actions .action article h1 {
-        @apply text-2xl lg:text-3xl 2xl:text-4xl 2xl:mt-8 font-black text-orange-500 lg:w-[95%];
+        @apply text-2xl lg:text-3xl 2xl:text-4xl 2xl:mt-8 font-black text-[#150c21] lg:w-[95%];
     }
     .call-to-action .action-container .actions .action article p {
         @apply my-5 lg:text-xl xl:text-2xl 2xl:my-8 lg:my-8 opacity-70;
     }
 
     #get-in-touch .contact {
-       @apply w-2/3 h-32 mx-auto -mt-28 bg-orange-500 text-white flex items-center rounded-full justify-center text-center;
+       @apply w-1/2 h-20 mx-auto -mt-28 bg-[#150c21] text-white flex items-center rounded-full justify-center text-center;
     }
     #get-in-touch .contact h2 {
-        @apply font-bold text-4xl w-full transition-all duration-300;
-    }
-    #get-in-touch .contact .response {
-        @apply text-4xl w-1/2 font-bold transition-all duration-300;
-        font-family: 'Sora', sans-serif;
+        @apply font-bold text-3xl w-full transition-all duration-500;
     }
 } 
