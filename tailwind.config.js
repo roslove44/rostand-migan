@@ -32,11 +32,6 @@ module.exports = {
           },
           "100%": { transform: "translateZ(0) scale(1)" },
         },
-        contact: {
-          "0%": { transform: "scale(0)" },
-          "55%": { transform: "scale(0.75)" },
-          "100%": { transform: "scale(1)" },
-        },
       },
       animation: {
         "open-menu": "open-menu 0.5s ease-in-out forwards",
