@@ -18,13 +18,13 @@
 
 @layer components {
     .nav-btn-first {
-            @apply transition-all select-none h-10 flex justify-center items-center rounded-xl text-sm font-medium bg-gray-200 text-gray-800 py-3 px-3 gap-1;
+            @apply transition-all select-none h-10 flex justify-center items-center rounded-xl text-sm font-medium bg-slate-200 text-slate-800 py-3 px-3 gap-1;
     }    
     .nav-btn-first:disabled {
         @apply opacity-35 pointer-events-none
     }
     .nav-btn-first:hover {
-        @apply bg-gray-300;
+        @apply bg-slate-300;
     }
     .nav-btn-second {
         @apply transition-all select-none h-10 flex items-center justify-center rounded-xl text-sm font-medium gap-1 bg-transparent text-gray-800 py-3 px-3;
@@ -62,7 +62,7 @@
         @apply mb-9;
     }
     section .section-title h2 {
-        @apply relative text-2xl uppercase font-extrabold text-center mb-6 tracking-widest;
+        @apply relative text-2xl capitalize font-extrabold text-center mb-6 tracking-widest;
     }
     .section-title h2::after {
         @apply absolute top-[calc(100%+1rem)] left-1/2 -translate-x-1/2 h-1 w-10 rounded-sm bg-blue-600;
@@ -192,7 +192,7 @@
     }
     
     .rostand {
-        @apply relative overflow-hidden text-white;
+        @apply relative overflow-hidden;
     }
     .rostand .gradient {
         @apply rounded-br-[200px];
@@ -203,17 +203,17 @@
         width: 100%;
         height: 100%;
         max-height: 888px;
-        background: radial-gradient(farthest-side at 60% 80%, #733236, transparent);
+        background: radial-gradient(farthest-side at 60% 80%, rgba(148, 163, 184, 0.1), transparent);
         /* background: radial-gradient(circle, transparent 0%, #733236 33%, transparent 63%); */
     }
     .rostand-migan {
         @apply text-white;
     }
     .rostand-migan p {
-        @apply text-wrap mb-1 p-1 text-[#adaab2];
+        @apply text-wrap mb-1 p-1 text-slate-400;
     }
     .rostand-migan p b {
-        @apply text-white;
+        @apply text-slate-200;
     }
     
     .social-bubble {
