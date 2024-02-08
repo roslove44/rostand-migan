@@ -32,20 +32,6 @@ h1, h2, h3, h4, h5, h6 {
     animation: menuCloseAnimation 0.3s ease-in-out;
 }
 
-#hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    /* background-image: linear-gradient(to right, rgba(15, 14, 14, 0.836), rgba(245, 245, 245, .8)),url(../img/hero-bg.svg); */
-    background-image: url(../img/codeur_1098-18084.webp);
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    filter: brightness(40%);
-}
 
 #hero-img {
     mask-image: url(../img/mask/mask-3.png);
