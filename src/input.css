@@ -31,6 +31,22 @@
         filter: blur(1px) brightness(30%);
     }
 
+    .menu-item {
+        @apply relative py-1;
+    }
+    .menu-item:hover {
+        @apply text-sky-600;
+    }
+    .menu-item.active {
+        @apply text-sky-600;
+    }
+    .menu-item span.sub-border {
+        @apply absolute content-[''] bottom-0 right-0 h-1 w-5 bg-sky-800 opacity-0 scale-0 duration-500;
+    }
+    .menu-item.active span.sub-border {
+        @apply absolute content-[''] bottom-0 right-0 h-1 w-5 bg-sky-800 opacity-95 scale-100 duration-500;
+    }
+
     .stacks {
         @apply p-3 w-[90%] mx-auto flex flex-wrap items-center justify-between rounded-lg md:w-[80%] lg:w-[60%] lg:-tracking-tighter bg-slate-800;
     }
