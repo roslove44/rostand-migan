@@ -31,25 +31,6 @@
         filter: blur(1px) brightness(30%);
     }
 
-    .nav-btn-first {
-            @apply transition-all select-none h-10 flex justify-center items-center rounded-xl text-sm font-medium bg-slate-200 text-slate-800 py-3 px-3 gap-1;
-    }    
-    .nav-btn-first:disabled {
-        @apply opacity-35 pointer-events-none
-    }
-    .nav-btn-first:hover {
-        @apply bg-slate-300;
-    }
-    .nav-btn-second {
-        @apply transition-all select-none h-10 flex items-center justify-center rounded-xl text-sm font-medium gap-1 bg-transparent text-gray-800 py-3 px-3;
-    }
-    .nav-btn-second:disabled {
-        @apply opacity-35 pointer-events-none
-    }
-    .nav-btn-second:hover {
-        @apply bg-gray-200 text-gray-600;
-    }
-
     .stacks {
         @apply p-3 w-[90%] mx-auto flex flex-wrap items-center justify-between rounded-lg md:w-[80%] lg:w-[60%] lg:-tracking-tighter bg-slate-800;
     }
