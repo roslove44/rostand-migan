@@ -72,10 +72,10 @@
     section .section-title {
         @apply mb-9;
     }
-    section .section-title h2 {
+    section .section-title h2,  section .section-title h1{
         @apply relative text-2xl capitalize font-extrabold text-center mb-6 tracking-widest;
     }
-    .section-title h2::after {
+    .section-title h2::after, .section-title h1::after {
         @apply absolute top-[calc(100%+1rem)] left-1/2 -translate-x-1/2 h-1 w-10 rounded-sm bg-sky-600;
         content: "";
     }
