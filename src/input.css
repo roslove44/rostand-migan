@@ -286,4 +286,35 @@
     #get-in-touch .contact h2 {
         @apply font-bold sm:text-lg md:text-xl lg:text-2xl xl:text-3xl w-full transition-all duration-500;
     }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:focus {
+        transition: background-color 0s 600000s, color 0s 600000s !important;
+    }
+    input:focus::placeholder, textarea:focus::placeholder {
+        color: transparent;
+    }
+
+    textarea::-webkit-scrollbar {
+        height: 8px;
+        width: 8px;
+    }
+
+    textarea::-webkit-scrollbar-track {
+        @apply bg-slate-50;
+        border-radius: 5px;
+    }
+
+    textarea::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        @apply bg-sky-400;
+    }
+
+    textarea::-webkit-scrollbar-thumb:hover {
+        @apply bg-sky-600;
+    }
+
+    textarea::-webkit-scrollbar-thumb:active {
+        @apply bg-sky-800;
+    }
 } 

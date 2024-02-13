@@ -1327,6 +1327,47 @@ section .section-title h2,  section .section-title h1 {
   }
 }
 
+input:-webkit-autofill,
+    input:-webkit-autofill:focus {
+  -webkit-transition: background-color 0s 600000s, color 0s 600000s !important;
+  transition: background-color 0s 600000s, color 0s 600000s !important;
+}
+
+input:focus::-moz-placeholder, textarea:focus::-moz-placeholder {
+  color: transparent;
+}
+
+input:focus::placeholder, textarea:focus::placeholder {
+  color: transparent;
+}
+
+textarea::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+textarea::-webkit-scrollbar-track {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 250 252 / var(--tw-bg-opacity));
+  border-radius: 5px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(56 189 248 / var(--tw-bg-opacity));
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(2 132 199 / var(--tw-bg-opacity));
+}
+
+textarea::-webkit-scrollbar-thumb:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(7 89 133 / var(--tw-bg-opacity));
+}
+
 .pointer-events-none {
   pointer-events: none;
 }
@@ -1621,6 +1662,10 @@ section .section-title h2,  section .section-title h1 {
   justify-content: center;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
 .justify-items-start {
   justify-items: start;
 }
@@ -1712,9 +1757,17 @@ section .section-title h2,  section .section-title h1 {
   border-bottom-width: 1px;
 }
 
+.border-b-2 {
+  border-bottom-width: 2px;
+}
+
 .border-sky-600 {
   --tw-border-opacity: 1;
   border-color: rgb(2 132 199 / var(--tw-border-opacity));
+}
+
+.border-slate-500\/30 {
+  border-color: rgb(100 116 139 / 0.3);
 }
 
 .border-b-sky-600\/50 {
@@ -1751,6 +1804,10 @@ section .section-title h2,  section .section-title h1 {
   background-color: rgb(51 65 85 / var(--tw-bg-opacity));
 }
 
+.bg-slate-700\/50 {
+  background-color: rgb(51 65 85 / 0.5);
+}
+
 .bg-slate-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(30 41 59 / var(--tw-bg-opacity));
@@ -1782,8 +1839,16 @@ section .section-title h2,  section .section-title h1 {
   padding: 0.25rem;
 }
 
+.p-10 {
+  padding: 2.5rem;
+}
+
 .p-2 {
   padding: 0.5rem;
+}
+
+.p-4 {
+  padding: 1rem;
 }
 
 .px-1 {
@@ -1964,6 +2029,11 @@ section .section-title h2,  section .section-title h1 {
   color: rgb(251 146 60 / var(--tw-text-opacity));
 }
 
+.text-sky-100 {
+  --tw-text-opacity: 1;
+  color: rgb(224 242 254 / var(--tw-text-opacity));
+}
+
 .text-sky-300 {
   --tw-text-opacity: 1;
   color: rgb(125 211 252 / var(--tw-text-opacity));
@@ -2119,16 +2189,6 @@ img.is-loaded, svg.is-loaded, i.is-loaded, .svg.is-loaded svg, .stack.is-loaded 
   font-weight: 300;
 }
 
-.placeholder\:text-sky-200::-moz-placeholder {
-  --tw-text-opacity: 1;
-  color: rgb(186 230 253 / var(--tw-text-opacity));
-}
-
-.placeholder\:text-sky-200::placeholder {
-  --tw-text-opacity: 1;
-  color: rgb(186 230 253 / var(--tw-text-opacity));
-}
-
 .before\:absolute::before {
   content: var(--tw-content);
   position: absolute;
@@ -2278,8 +2338,17 @@ img.is-loaded, svg.is-loaded, i.is-loaded, .svg.is-loaded svg, .stack.is-loaded 
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.focus\:border-b:focus {
-  border-bottom-width: 1px;
+.focus\:border-b-sky-300:focus {
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(125 211 252 / var(--tw-border-opacity));
+}
+
+.focus\:placeholder\:hidden:focus::-moz-placeholder {
+  display: none;
+}
+
+.focus\:placeholder\:hidden:focus::placeholder {
+  display: none;
 }
 
 .group:hover .group-hover\:translate-x-0 {
@@ -2346,6 +2415,10 @@ img.is-loaded, svg.is-loaded, i.is-loaded, .svg.is-loaded svg, .stack.is-loaded 
     width: 50%;
   }
 
+  .sm\:w-\[45\%\] {
+    width: 45%;
+  }
+
   .sm\:flex-row {
     flex-direction: row;
   }
@@ -2383,8 +2456,8 @@ img.is-loaded, svg.is-loaded, i.is-loaded, .svg.is-loaded svg, .stack.is-loaded 
     margin-right: 6rem;
   }
 
-  .md\:min-h-\[calc\(30dvh-20px\)\] {
-    min-height: calc(30dvh - 20px);
+  .md\:min-h-\[calc\(10dvh-20px\)\] {
+    min-height: calc(10dvh - 20px);
   }
 
   .md\:min-h-\[calc\(40dvh-20px\)\] {
@@ -2441,8 +2514,8 @@ img.is-loaded, svg.is-loaded, i.is-loaded, .svg.is-loaded svg, .stack.is-loaded 
 }
 
 @media (min-width: 1024px) {
-  .lg\:min-h-\[calc\(40dvh-20px\)\] {
-    min-height: calc(40dvh - 20px);
+  .lg\:min-h-\[calc\(10dvh-20px\)\] {
+    min-height: calc(10dvh - 20px);
   }
 
   .lg\:min-h-\[calc\(50dvh-20px\)\] {
