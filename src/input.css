@@ -31,6 +31,20 @@
         filter: blur(1px) brightness(30%);
     }
 
+    #hero-contact::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-image: linear-gradient(to right, rgb(15 23 42 / 0.5), rgb(15 23 42 / 0.5)), url(../img/codeur_1098-18084.webp);
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: blur(1px) brightness(30%);
+    }
+
     .menu-item {
         @apply relative py-1;
     }
@@ -71,6 +85,9 @@
     }
     section .section-title {
         @apply mb-9;
+    }
+    section .section-title p {
+        @apply text-center;
     }
     section .section-title h2,  section .section-title h1{
         @apply relative text-2xl capitalize font-extrabold text-center mb-6 tracking-widest;
