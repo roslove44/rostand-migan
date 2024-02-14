@@ -1543,6 +1543,14 @@ textarea::-webkit-scrollbar-thumb:active {
   width: 100%;
 }
 
+.w-2\/5 {
+  width: 40%;
+}
+
+.w-3\/5 {
+  width: 60%;
+}
+
 .max-w-7xl {
   max-width: 80rem;
 }
