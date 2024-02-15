@@ -48,7 +48,7 @@
     }
 
     .stacks {
-        @apply p-3 w-[90%] mx-auto flex flex-wrap items-center justify-between rounded-lg md:w-[80%] lg:w-[60%] lg:-tracking-tighter bg-slate-800;
+        @apply p-3 w-[90%] mx-auto flex flex-wrap items-center justify-between rounded-lg md:w-[80%] lg:w-[60%] lg:-tracking-tighter bg-slate-900;
     }
     .stacks .stack {
         @apply  m-[1%] flex items-center flex-grow-0 flex-shrink-[1] basis-[30%] justify-evenly h-14 md:h-16 shadow-lg bg-slate-700/50 md:basis-[18%] relative overflow-hidden border border-slate-500/30 rounded-lg;
