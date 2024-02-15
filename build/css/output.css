@@ -1350,6 +1350,8 @@ textarea::-webkit-scrollbar-track {
   --tw-bg-opacity: 1;
   background-color: rgb(248 250 252 / var(--tw-bg-opacity));
   border-radius: 5px;
+  margin-top: 3px;
+  margin-bottom: 3px;
 }
 
 textarea::-webkit-scrollbar-thumb {
@@ -1366,6 +1368,18 @@ textarea::-webkit-scrollbar-thumb:hover {
 textarea::-webkit-scrollbar-thumb:active {
   --tw-bg-opacity: 1;
   background-color: rgb(7 89 133 / var(--tw-bg-opacity));
+}
+
+@media (min-width: 768px) {
+  .input-section {
+    grid-template-columns: 300px 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .input-section {
+    grid-template-columns: 400px 1fr;
+  }
 }
 
 .pointer-events-none {
@@ -1418,6 +1432,11 @@ textarea::-webkit-scrollbar-thumb:active {
 
 .z-30 {
   z-index: 30;
+}
+
+.mx-10 {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
 }
 
 .mx-5 {
@@ -1491,6 +1510,10 @@ textarea::-webkit-scrollbar-thumb:active {
   display: inline-flex;
 }
 
+.grid {
+  display: grid;
+}
+
 .hidden {
   display: none;
 }
@@ -1531,6 +1554,14 @@ textarea::-webkit-scrollbar-thumb:active {
   width: 91.666667%;
 }
 
+.w-2\/5 {
+  width: 40%;
+}
+
+.w-3\/5 {
+  width: 60%;
+}
+
 .w-5 {
   width: 1.25rem;
 }
@@ -1541,14 +1572,6 @@ textarea::-webkit-scrollbar-thumb:active {
 
 .w-full {
   width: 100%;
-}
-
-.w-2\/5 {
-  width: 40%;
-}
-
-.w-3\/5 {
-  width: 60%;
 }
 
 .max-w-7xl {
@@ -1666,6 +1689,10 @@ textarea::-webkit-scrollbar-thumb:active {
   justify-content: center;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
 .justify-items-start {
   justify-items: start;
 }
@@ -1723,6 +1750,10 @@ textarea::-webkit-scrollbar-thumb:active {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
 }
 
 .text-wrap {
@@ -1847,6 +1878,10 @@ textarea::-webkit-scrollbar-thumb:active {
   padding: 1rem;
 }
 
+.p-8 {
+  padding: 2rem;
+}
+
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
@@ -1895,6 +1930,16 @@ textarea::-webkit-scrollbar-thumb:active {
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .pb-0 {
@@ -2454,8 +2499,8 @@ img.is-loaded, svg.is-loaded, i.is-loaded, .svg.is-loaded svg, .stack.is-loaded 
     margin-right: 6rem;
   }
 
-  .md\:h-24 {
-    height: 6rem;
+  .md\:h-full {
+    height: 100%;
   }
 
   .md\:min-h-\[calc\(25dvh\+20px\)\] {
@@ -2528,12 +2573,13 @@ img.is-loaded, svg.is-loaded, i.is-loaded, .svg.is-loaded svg, .stack.is-loaded 
 }
 
 @media (min-width: 1024px) {
-  .lg\:ml-10 {
-    margin-left: 2.5rem;
+  .lg\:mx-5 {
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
   }
 
-  .lg\:mt-0 {
-    margin-top: 0px;
+  .lg\:h-full {
+    height: 100%;
   }
 
   .lg\:min-h-\[calc\(50dvh-20px\)\] {
@@ -2541,10 +2587,6 @@ img.is-loaded, svg.is-loaded, i.is-loaded, .svg.is-loaded svg, .stack.is-loaded 
   }
 
   .lg\:w-1\/2 {
-    width: 50%;
-  }
-
-  .lg\:w-\[50\%\] {
     width: 50%;
   }
 
@@ -2556,8 +2598,16 @@ img.is-loaded, svg.is-loaded, i.is-loaded, .svg.is-loaded svg, .stack.is-loaded 
     flex-direction: row-reverse;
   }
 
+  .lg\:gap-8 {
+    gap: 2rem;
+  }
+
   .lg\:self-start {
     align-self: flex-start;
+  }
+
+  .lg\:overflow-y-scroll {
+    overflow-y: scroll;
   }
 
   .lg\:text-2xl {
@@ -2582,8 +2632,9 @@ img.is-loaded, svg.is-loaded, i.is-loaded, .svg.is-loaded svg, .stack.is-loaded 
 }
 
 @media (min-width: 1280px) {
-  .xl\:h-16 {
-    height: 4rem;
+  .xl\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .xl\:max-w-\[1500px\] {

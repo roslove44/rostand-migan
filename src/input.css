@@ -303,6 +303,8 @@
     textarea::-webkit-scrollbar-track {
         @apply bg-slate-50;
         border-radius: 5px;
+        margin-top: 3px;
+        margin-bottom: 3px;
     }
 
     textarea::-webkit-scrollbar-thumb {
@@ -316,5 +318,16 @@
 
     textarea::-webkit-scrollbar-thumb:active {
         @apply bg-sky-800;
+    }
+
+    @media (min-width: 768px) {
+        .input-section {
+                grid-template-columns: 300px 1fr;
+            }
+    }
+    @media (min-width: 1024px) {
+        .input-section {
+            grid-template-columns: 400px 1fr;
+        }
     }
 } 

@@ -228,7 +228,7 @@
 
     <section id="contact" class="py-5">
         <div
-            class="flex flex-col w-11/12 md:w-3/4 xl:max-w-[1500px] mx-auto px-4 py-2 md:p-8 items-center bg-slate-800 text-sky-100 rounded-lg shadow-lg">
+            class="flex flex-col xl:max-w-[1500px] mx-10 lg:mx-5 xl:mx-auto p-8 items-center bg-slate-800 text-sky-100 rounded-lg shadow-lg">
             <div class="section-title mb-5">
                 <h2>Envoyez moi un message !</h2>
                 <p class="mt-5">
@@ -238,34 +238,27 @@
             </div>
             <form action="" class="w-full mx-auto">
 
-                <div class="flex flex-col lg:flex-row justify-center">
-                    <div
-                        class="flex flex-col lg:w-[50%] bg-slate-700/50 p-4 border border-slate-500/30 rounded-lg shadow-lg">
-                        <label for="name" class="mb-2 title-font text-sky-300 tracking-wider">Nom</label>
-                        <input type="text" name="name" id="name" placeholder="Votre nom et prénom"
-                            class="h-8 bg-transparent pb-2 border-b-2 outline-none focus:border-b-sky-300 placeholder:font-light focus:placeholder:hidden">
+                <div class="w-full grid gap-5 lg:gap-8 input-section">
+                    <div class="flex flex-col justify-between">
+                        <div class="flex flex-col bg-slate-700/50 p-4 border border-slate-500/30 rounded-lg shadow-lg">
+                            <label for="name" class="mb-2 title-font text-sky-300 tracking-wider">Nom</label>
+                            <input type="text" name="name" id="name" placeholder="Votre nom et prénom"
+                                class="h-8 bg-transparent pb-2 border-b-2 outline-none focus:border-b-sky-300 placeholder:font-light focus:placeholder:hidden">
+                        </div>
+                        <div
+                            class="flex flex-col mt-4 bg-slate-700/50 p-4 border border-slate-500/30 rounded-lg shadow-lg">
+                            <label for="name" class="mb-2 text-sky-300 tracking-wider">Email</label>
+                            <input type="email" name="email" id="email" placeholder="Entrez votre adresse mail"
+                                class="h-8 bg-transparent pb-2 border-b-2 outline-none focus:border-b-sky-300">
+                        </div>
                     </div>
-                    <div
-                        class="flex flex-col lg:w-[50%] mt-4 lg:mt-0 lg:ml-10 bg-slate-700/50 p-4 border border-slate-500/30 rounded-lg shadow-lg">
-                        <label for="name" class="mb-2 text-sky-300 tracking-wider">Email</label>
-                        <input type="email" name="email" id="email" placeholder="Entrez votre adresse mail"
-                            class="h-8 bg-transparent pb-2 border-b-2 outline-none focus:border-b-sky-300">
+                    <div class="flex flex-col bg-slate-700/50 p-4 border border-slate-500/30 rounded-lg shadow-lg">
+                        <label for="message" class="mb-2 text-sky-300 tracking-wider">Votre Message</label>
+                        <textarea name="message" id="message"
+                            placeholder="Merci de donner un maximum de détail sur le projet afin que je puisse évaluer correctement la charge de travail que représente votre projet. Cela permettra aussi d'avoir un premier chiffrage au plus prêt du devis final."
+                            class="h-44 md:h-full lg:h-full resize-none overflow-auto bg-transparent pb-5 border-b-2 outline-none focus:border-b-sky-300"></textarea>
                     </div>
                 </div>
-                <div
-                    class="flex flex-col mx-auto mt-4 bg-slate-700/50 p-4 border border-slate-500/30 rounded-lg shadow-lg">
-                    <label for="subject" class="mb-2 text-sky-300 tracking-wider">Objet</label>
-                    <input type="text" name="subject" id="subject" placeholder="Entrez l'objet de votre demande"
-                        class="h-8 bg-transparent pb-2 border-b-2 outline-none focus:border-b-sky-300">
-                </div>
-                <div
-                    class="flex flex-col mx-auto mt-4 bg-slate-700/50 p-4 border border-slate-500/30 rounded-lg shadow-lg">
-                    <label for="message" class="mb-2 text-sky-300 tracking-wider">Votre Message</label>
-                    <textarea name="message" id="message"
-                        placeholder="Merci de donner un maximum de détail sur le projet afin que je puisse évaluer correctement la charge de travail que représente votre projet. Cela permettra aussi d'avoir un premier chiffrage au plus prêt du devis final."
-                        class="h-44 md:h-24 xl:h-16 resize-none overflow-auto bg-transparent pb-5 border-b-2 outline-none focus:border-b-sky-300"></textarea>
-                </div>
-
 
                 <div class="flex mt-4 justify-center">
                     <button type="submit"
@@ -289,11 +282,11 @@
                 <h2>FAQ</h2>
                 <p>Je réponds aux questions récurrentes.</p>
             </div>
-            <div class="section-content w-3/5">
-                <details>
-                    <summary>Question 1</summary>
-                    <p>Réponse à la question 1.</p>
-                </details>
+            <div class="section-content w-3/5 flex flex-col">
+                <div class="question"></div>
+                <div class="question"></div>
+                <div class="question"></div>
+                <div class="question"></div>
             </div>
         </div>
     </section>
