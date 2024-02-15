@@ -11,7 +11,7 @@
     <script src="./js/script.js" defer></script>
 </head>
 
-<body class="bg-slate-100">
+<body class="bg-slate-900">
     <menu>
         <!-- Start Desktop Nav -->
         <div class="fixed top-0 right-0 z-30 left-0">
@@ -209,8 +209,8 @@
         <!-- End Mobile Nav -->
     </menu>
 
-    <section
-        class="bg-slate-900 relative mt-10 md:min-h-[calc(25dvh+20px)] flex justify-center items-center px-8 py-20 md:px-10 md:pb-8 sm:mt-0">
+    <section id="hero-contact"
+        class="relative mt-10 md:min-h-[calc(25dvh+20px)] flex justify-center items-center px-8 py-20 md:px-10 md:pb-8 sm:mt-0">
         <!-- <div class="text-slate-50 flex flex-col gap-4 relative">
             <h1 class="text-center text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold">
                 Contact
@@ -228,13 +228,23 @@
 
     <section id="contact" class="py-5 relative">
         <div
-            class="-mt-28 flex flex-col lg:max-w-[900px] xl:max-w-[1200px] mx-10 lg:mx-auto p-8 items-center bg-slate-800 text-sky-100 rounded-lg shadow-lg">
+            class="-mt-28 flex flex-col lg:max-w-[900px] xl:max-w-[1200px] mx-5 md:mx-10 lg:mx-auto p-3 md:p-8 items-center bg-slate-800 text-sky-100 rounded-lg shadow-lg">
             <div class="section-title mb-5">
                 <h2>Envoyez moi un message !</h2>
                 <p class="mt-5">
                     Votre projet mérite une conversation dédiée.
                     Réservez un créneau pour en discuter ensemble.
                 </p>
+                <!-- Alert Widget -->
+                <div class="bg-teal-700/50 p-4 border border-slate-500/30 rounded-lg shadow-lg text-center mt-5"
+                    style="display: none;">
+                    Votre Message a bien été reçu.
+                </div>
+                <div class="bg-orange-700/50 p-4 border border-slate-500/30 rounded-lg shadow-lg text-center mt-5"
+                    style="display: none;">Erreur !
+                </div>
+                <!-- End Alert Widget -->
+
             </div>
             <form action="" class="w-full mx-auto">
 
@@ -262,12 +272,9 @@
 
                 <div class="flex mt-4 justify-center lg:justify-start">
                     <button type="submit"
-                        class="relative inline-flex justify-center items-center gap-2 py-2 px-4 uppercase rounded-lg bg-slate-700/50 border border-slate-500/30 hover:text-white  duration-300 transition-all group overflow-hidden">
-                        <div class="text-xs lg:text-sm 2xl:text-lg font-bold leading-none z-10">
+                        class="relative inline-flex justify-center items-center gap-2 py-3 px-4 capitalize rounded-lg bg-sky-600 text-white hover:bg-sky-500  duration-300 transition-all">
+                        <div class="text-sm font-bold leading-none z-10">
                             Envoyez <span>&nbsp; &#8594;</span>
-                        </div>
-                        <div
-                            class="absolute inset-0  bg-sky-600 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out">
                         </div>
                     </button>
                 </div>
@@ -275,18 +282,46 @@
         </div>
     </section>
 
-    <section id="faq">
+    <section id="faq" class="pt-5">
         <div
-            class="flex flex-col lg:flex-row lg:max-w-[900px] xl:max-w-[1200px] mx-10 lg:mx-auto px-4 py-2 md:p-8 items-center rounded-lg shadow-lg bg-slate-50/50">
-            <div class="section-title w-2/5">
+            class="flex flex-col lg:flex-row lg:max-w-[900px] xl:max-w-[1200px] mx-10 lg:mx-auto px-4 py-2 md:p-8 items-start rounded-lg text-slate-50">
+            <div class="section-title lg:w-2/5 mx-auto">
                 <h2>FAQ</h2>
                 <p>Je réponds aux questions récurrentes.</p>
             </div>
-            <div class="section-content w-3/5 flex flex-col">
-                <div class="question"></div>
-                <div class="question"></div>
-                <div class="question"></div>
-                <div class="question"></div>
+            <div class="lg:w-3/5 flex flex-col">
+                <div class="question">
+                    <h3>Quels sont vos disponibilités ?</h3>
+                    <p>
+                        N'hésitez pas à soumettre une demande de devis pour planifier en avance et réserver un créneau
+                        dédié au développement de votre projet.
+                    </p>
+                </div>
+                <div class="question">
+                    <h3>Quels sont vos tarifs ?</h3>
+                    <p>
+                        La tarification varie en fonction du projet et du temps nécessaire. En moyenne, mon tarif
+                        journalier est d'environ 400€.
+                    </p>
+                </div>
+                <div class="question">
+                    <h3>Comment réalisez-vous vos missions ?</h3>
+                    <p>
+                        Mes missions ? Tout se fait à distance, une touche de digital, une pincée de code, et le tour
+                        est joué.
+                    </p>
+                </div>
+                <div class="question">
+                    <h3>Assurez-vous également le design de vos projets ?</h3>
+                    <p>
+                        Concernant la conception graphique des applications, je recommande de fournir le design
+                        nécessaire pour la mission.
+                        <br>
+                        N'hésiter pas à collaborer avec
+                        <a href="" class="text-orange-400 hover:text-orange-300">ak58graph</a>
+                        pour le design de vos projets.
+                    </p>
+                </div>
             </div>
         </div>
     </section>

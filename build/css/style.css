@@ -40,6 +40,19 @@ h1, h2, h3, h4, h5, h6 {
     mask-repeat: no-repeat;
 }
 
+#hero-contact {
+    background: url(../img/contact-bg.jpg) no-repeat center/cover;
+}
+#hero-contact::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: -1px;
+    right: 0;
+    left: 0;
+    background-color:  rgb(15 23 42/0.97);
+}
+
 .text-wrap {
     text-wrap: pretty;
 }
