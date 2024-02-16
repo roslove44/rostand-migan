@@ -11,12 +11,12 @@
     <script src="./js/script.js" defer></script>
 </head>
 
-<body class="bg-slate-900">
+<body class="bg-slate-100">
     <menu>
         <!-- Start Desktop Nav -->
         <div class="fixed top-0 right-0 z-30 left-0">
             <header
-                class="flex justify-center gap-8 bg-slate-900 text-slate-50 drop-shadow-[0_4px_8px_rgba(0,0,0,0.05)] backdrop-blur transition-all"
+                class="flex justify-center gap-8 bg-white/95 text-slate-700 drop-shadow-[0_4px_8px_rgba(0,0,0,0.05)] backdrop-blur transition-all"
                 style="height:60px">
                 <nav class="p-2 md:px-4 max-w-7xl w-full flex items-center text-sm font-semibold">
                     <div class="flex items-center gap-2 flex-1">
@@ -209,33 +209,60 @@
         <!-- End Mobile Nav -->
     </menu>
 
-    <section id="hero-contact"
-        class="relative mt-10 md:min-h-[calc(25dvh+20px)] flex justify-center items-center px-8 py-20 md:px-10 md:pb-8 sm:mt-0">
+
+    <section id="portfolio" class="min-h-[calc(100dvh-70px)]">
+        <div class="p-2 md:px-4 w-full max-w-7xl mx-auto">
+            <h2 class="mt-3 text-2xl font-bold text-slate-700 uppercase">Portfolio</h2>
+            <div class="portfolio-category w-full flex justify-start gap-2 flex-wrap md:gap-4 mt-3">
+                <button
+                    class="rounded-full py-2 px-4 flex items-center gap-2 duration-300 border border-slate-800  text-slate-800 hover:bg-slate-800/25 active:bg-slate-800 active:text-slate-50 transition-all">
+                    <div class="text-sm font-medium leading-none">En lumière</div>
+                </button>
+                <button
+                    class="rounded-full py-2 px-4 flex items-center gap-2 duration-300 border border-sky-600  text-sky-800 hover:bg-sky-800/25 active:bg-sky-600 active:text-sky-50 transition-all">
+                    <div class="text-sm font-medium leading-none">Nouveautés</div>
+                </button>
+                <button
+                    class="rounded-full py-2 px-4 flex items-center gap-2 duration-300 border border-slate-800  text-slate-800 hover:bg-slate-800/25 active:bg-slate-800 active:text-slate-50 transition-all">
+                    <div class="text-sm font-medium leading-none">Tous</div>
+                </button>
+            </div>
+            <div
+                class="portfolio-projects w-full mt-3 grid gap-1 md:gap-2 justify-center md:grid-cols-2 lg:grid-cols-3">
+                <a href="" class="group h-[350px] bg-slate-200 rounded-2xl flex flex-col justify-end relative">
+                    <div
+                        class="absolute inset-0 rounded-2xl bg-slate-500 w-full h-[208px] overflow-hidden group-hover:h-full">
+                        <img class="w-full h-full object-cover" src="./img/contact-bg.jpg">
+                    </div>
+                    <div class="p-6 flex flex-col gap-2 text-gray-700 h-auto">
+                        <div class="flex gap-2 text-2xl items-center">
+                            <h4 class="text-2xl font-bold font-secondary line-clamp-1 text-gray-700">
+                                Compta Open
+                            </h4>
+                        </div>
+                        <p class="text-base font-medium text-gray-600 leading-[140%] text-left line-clamp-2">
+                            Plateforme collaborative pour comptables et acteurs d'entreprises.
+                        </p>
+                        <p class="text-xs font-medium text-sky-600 leading-[140%] text-left line-clamp-2">
+                            #react #php8 #symfony6
+                        </p>
+                    </div>
+
+                    <div class="absolute mx-auto bottom-[10%] left-1/2 -translate-x-1/2">
+                        <button
+                            class="rounded-full py-2 px-6 flex items-center gap-2 opacity-0 border border-sky-600 hover:bg-sky-500 hover:border-sky-500 bg-sky-600 text-sky-50 transition-all duration-500 group-hover:animate-portfolio-action">
+                            <div class="text-sm font-medium leading-none">Nouveautés</div>
+                        </button>
+                    </div>
+                </a>
+            </div>
+        </div>
+
     </section>
 
-    <section id="portfolio" class="text-slate-50">
-        <div class="section-title">
-            <h2>&#8249;/&#8250; Portfolio</h2>
-        </div>
-        <div class="portfolio-category w-full flex justify-center gap-2 flex-wrap md:gap-4">
-            <button
-                class="rounded-full py-2 px-4 flex items-center gap-2 duration-300 bg-gray-800 text-gray-100 hover:bg-gray-800/50 transition-all">
-                <div class="text-sm font-medium leading-none">En lumière</div>
-            </button>
-            <button
-                class="rounded-full py-2 px-4 flex items-center gap-2 duration-300 bg-gray-800 text-gray-100 hover:bg-gray-800/50 transition-all">
-                <div class="text-sm font-medium leading-none">Nouveautés</div>
-            </button>
-            <button
-                class="rounded-full py-2 px-4 flex items-center gap-2 duration-300 bg-gray-800 text-gray-100 hover:bg-gray-800/50 transition-all">
-                <div class="text-sm font-medium leading-none">Tout</div>
-            </button>
-        </div>
-    </section>
 
-
-    <footer
-        class="text-center bg-slate-800 text-slate-400 pt-1 pb-10 flex flex-col md:flex-row justify-center items-center gap-x-40">
+    <footer class=" text-center bg-slate-800 text-slate-400 pt-1 pb-10 flex flex-col md:flex-row justify-center
+                            items-center gap-x-40">
         <div class="flex justify-center gap-5 social-links mt-7 text-slate-300">
             <a href="" class="group relative inline-flex svg">
                 <i class="fa-regular fa-envelope"></i>
