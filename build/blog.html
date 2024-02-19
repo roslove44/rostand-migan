@@ -32,7 +32,7 @@
 
                         <div class="hidden sm:flex items-center justify-end flex-1 gap-2">
                             <div class="flex space-x-6 items-center">
-                                <a href="" class="group menu-item active">
+                                <a href="" class="group menu-item">
                                     <span>Réalisations</span>
                                     <span class="sub-border group-hover:opacity-95 group-hover:scale-100"></span>
                                 </a>
@@ -41,7 +41,7 @@
                                     <span class="sub-border group-hover:opacity-95 group-hover:scale-100"></span>
                                 </a>
 
-                                <a href="" class="group menu-item">Blog
+                                <a href="blog.html" class="group menu-item active">Blog
                                     <span class="sub-border group-hover:opacity-95 group-hover:scale-100"></span>
                                 </a>
 
@@ -210,53 +210,52 @@
     </menu>
 
 
-    <section id="portfolio" class="min-h-[calc(100dvh-70px)]">
-        <div class="p-2 md:px-4 w-full max-w-7xl mx-auto">
-            <h2 class="mt-3 text-2xl font-bold text-slate-700 uppercase">Portfolio</h2>
-            <div class="portfolio-category w-full flex justify-start gap-2 flex-wrap md:gap-4 mt-3">
-                <button
-                    class="rounded-full py-2 px-4 flex items-center gap-2 duration-300 border border-slate-800  text-slate-800 hover:bg-slate-800/25 active:bg-slate-800 active:text-slate-50 transition-all">
-                    <div class="text-sm font-medium leading-none">En lumière</div>
-                </button>
-                <button
-                    class="rounded-full py-2 px-4 flex items-center gap-2 duration-300 border border-sky-600  text-sky-800 hover:bg-sky-800/25 active:bg-sky-600 active:text-sky-50 transition-all">
-                    <div class="text-sm font-medium leading-none">Nouveautés</div>
-                </button>
-                <button
-                    class="rounded-full py-2 px-4 flex items-center gap-2 duration-300 border border-slate-800  text-slate-800 hover:bg-slate-800/25 active:bg-slate-800 active:text-slate-50 transition-all">
-                    <div class="text-sm font-medium leading-none">Tous</div>
-                </button>
-            </div>
-            <div
-                class="portfolio-projects w-full mt-3 grid gap-1 md:gap-2 justify-center sm:grid-cols-2 lg:grid-cols-3">
-                <a href="" class="group h-[350px] bg-slate-200 rounded-2xl flex flex-col justify-end relative">
-                    <div
-                        class="absolute inset-0 rounded-2xl bg-slate-500 w-full h-[208px] overflow-hidden group-hover:h-full transition-all duration-500">
-                        <img class="w-full h-full object-cover" src="./img/contact-bg.jpg">
-                    </div>
-                    <div class="p-6 flex flex-col gap-2 text-slate-700 h-auto">
-                        <div class="flex gap-2 text-2xl items-center">
-                            <h4 class="text-2xl font-bold font-secondary line-clamp-1 text-slate-700">
-                                Compta Open
-                            </h4>
-                        </div>
-                        <p class="text-base font-medium text-slate-600 leading-[140%] text-left line-clamp-2">
-                            Plateforme collaborative pour comptables et acteurs d'entreprises.
-                        </p>
-                        <p class="text-xs font-medium text-sky-600 leading-[140%] text-left line-clamp-2">
-                            #react #php8 #symfony6
-                        </p>
-                    </div>
+    <section id="blog" class="min-h-[calc(100dvh-70px)] mx-auto">
+        <div class="p-2 md:px-4 w-full md:w-9/12 xl:max-w-2xl mx-auto">
+            <div class="">
+                <div class="flex items-center gap-2">
+                    <img src="./img/rostand-id.jpg" alt="" class="h-20 w-20 object-cover rounded-full align-middle">
+                    <h2 class="mt-3 text-base font-bold text-slate-700">
+                        Rostand MIGAN
+                    </h2>
+                </div>
 
-                    <div class="absolute mx-auto bottom-[10%] left-1/2 -translate-x-1/2">
-                        <button
-                            class="rounded-full py-2 px-6 flex items-center gap-2 opacity-0 border border-sky-600 hover:bg-sky-500 hover:border-sky-500 bg-sky-600 text-sky-50 transition-all duration-500 group-hover:animate-portfolio-action">
-                            <div class="text-sm font-medium leading-none">
-                                Compta Open
-                            </div>
-                        </button>
+                <p class="mt-2">
+                    Science, Business, Technology.
+                </p>
+
+                <div class="flex gap-2 mt-2 justify-start">
+                    <button
+                        class="rounded-full py-2 px-4 flex items-center gap-2 duration-300 border border-slate-800 hover:bg-slate-700 bg-slate-800 text-slate-50 transition-all">
+                        <div class="text-sm font-medium leading-none">Follow</div>
+                    </button>
+                    <a href="contact.html"
+                        class="rounded-full py-2 px-4 flex items-center gap-2 duration-300 border border-sky-600  hover:bg-blue-800 bg-sky-600 text-sky-50 transition-all">
+                        <div class="text-sm font-medium leading-none">Contact</div>
+                    </a>
+                </div>
+            </div>
+            <hr class="mt-5 bg-sky-800">
+            <div class="grid grid-rows-1">
+                <article class="">
+                    <span class="w-full">Epinglé</span>
+                    <div class="flex">
+                        <div class="w-4/6">
+                            <h3>
+                                Comment devenir développeur web ?
+                            </h3>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, nisi. Lorem ipsum,
+                                dolor sit amet consectetur adipisicing elit. Blanditiis nulla sed iure omnis quidem
+                                dolores praesentium temporibus aliquid quisquam quia?
+                            </p>
+                        </div>
+
+                        <div class="w-2/6 ml-6">
+                            <img src="./img/contact-bg.jpg" alt="" class="object-cover align-middle">
+                        </div>
                     </div>
-                </a>
+                </article>
             </div>
         </div>
 
