@@ -11,7 +11,7 @@
     <script src="./js/script.js" defer></script>
 </head>
 
-<body class="bg-slate-100">
+<body class="bg-slate-50">
     <menu>
         <!-- Start Desktop Nav -->
         <div class="fixed top-0 right-0 z-30 left-0">
@@ -211,7 +211,7 @@
 
 
     <section id="blog" class="min-h-[calc(100dvh-70px)] mx-auto">
-        <div class="p-2 md:px-4 w-full md:w-9/12 xl:max-w-2xl mx-auto">
+        <div class="p-2 md:px-4 w-full md:w-9/12 xl:max-w-2xl mx-auto  border-r border-r-slate-200">
             <div class="">
                 <div class="flex items-center gap-2">
                     <img src="./img/rostand-id.jpg" alt="" class="h-20 w-20 object-cover rounded-full align-middle">
@@ -236,23 +236,68 @@
                 </div>
             </div>
             <hr class="mt-5 bg-sky-800">
-            <div class="grid grid-rows-1">
-                <article class="">
-                    <span class="w-full">Epinglé</span>
-                    <div class="flex">
-                        <div class="w-4/6">
-                            <h3>
+            <div class="flex flex-col gap-5 mt-12">
+                <article class="grid border-b border-b-slate-200">
+                    <div class="w-full text-sm font-mono mb-3 gap-3">Epinglé</div>
+                    <div class="grid grid-flow-col">
+                        <div class="">
+                            <h3 class="font-semibold">
                                 Comment devenir développeur web ?
                             </h3>
-                            <p>
+                            <p class="line-clamp-3">
                                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, nisi. Lorem ipsum,
                                 dolor sit amet consectetur adipisicing elit. Blanditiis nulla sed iure omnis quidem
                                 dolores praesentium temporibus aliquid quisquam quia?
                             </p>
+                            <div class="tags flex justify-between py-5">
+                                <div class="flex gap-2">
+                                    <button
+                                        class="rounded-full shadow-md py-1 px-2 flex items-center gap-2 duration-300 border border-slate-800 hover:bg-slate-800/95 bg-slate-800 text-slate-50 transition-all">
+                                        <div class="text-xs font-medium leading-none">Php</div>
+                                    </button>
+                                    <button
+                                        class="rounded-full shadow-md py-1 px-2 flex items-center gap-2 duration-300 border border-slate-800 hover:bg-slate-800/95 bg-slate-800 text-slate-50 transition-all">
+                                        <div class="text-xs font-medium leading-none">JavaScript</div>
+                                    </button>
+                                </div>
+                                <div class="flex justify-end">
+                                    <div class="svg">
+                                        <i class="fa-solid fa-heart-circle-plus"></i>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-
-                        <div class="w-2/6 ml-6">
-                            <img src="./img/contact-bg.jpg" alt="" class="object-cover align-middle">
+                    </div>
+                </article>
+                <article class="grid border-b border-b-slate-200">
+                    <div class="w-full text-sm font-mono mb-3 gap-3">Epinglé</div>
+                    <div class="grid grid-flow-col">
+                        <div class="">
+                            <h3 class="font-semibold">
+                                Comment devenir développeur web ?
+                            </h3>
+                            <p class="line-clamp-3">
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, nisi. Lorem ipsum,
+                                dolor sit amet consectetur adipisicing elit. Blanditiis nulla sed iure omnis quidem
+                                dolores praesentium temporibus aliquid quisquam quia?
+                            </p>
+                            <div class="tags flex justify-between py-5">
+                                <div class="flex gap-2">
+                                    <button
+                                        class="rounded-full shadow-md py-1 px-2 flex items-center gap-2 duration-300 border border-slate-800 hover:bg-slate-800/95 bg-slate-800 text-slate-50 transition-all">
+                                        <div class="text-xs font-medium leading-none">Php</div>
+                                    </button>
+                                    <button
+                                        class="rounded-full shadow-md py-1 px-2 flex items-center gap-2 duration-300 border border-slate-800 hover:bg-slate-800/95 bg-slate-800 text-slate-50 transition-all">
+                                        <div class="text-xs font-medium leading-none">JavaScript</div>
+                                    </button>
+                                </div>
+                                <div class="flex justify-end">
+                                    <div class="svg">
+                                        <i class="fa-solid fa-heart-circle-plus"></i>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </article>
