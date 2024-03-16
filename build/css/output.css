@@ -1631,6 +1631,22 @@ textarea::-webkit-scrollbar-thumb:active {
   margin-left: 2rem;
 }
 
+.mt-9 {
+  margin-top: 2.25rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
 .line-clamp-1 {
   overflow: hidden;
   display: -webkit-box;
@@ -1716,6 +1732,14 @@ textarea::-webkit-scrollbar-thumb:active {
   height: 100%;
 }
 
+.h-12 {
+  height: 3rem;
+}
+
+.h-14 {
+  height: 3.5rem;
+}
+
 .max-h-\[112px\] {
   max-height: 112px;
 }
@@ -1762,6 +1786,14 @@ textarea::-webkit-scrollbar-thumb:active {
 
 .w-9\/12 {
   width: 75%;
+}
+
+.w-12 {
+  width: 3rem;
+}
+
+.w-14 {
+  width: 3.5rem;
 }
 
 .min-w-\[355px\] {
@@ -2044,6 +2076,11 @@ textarea::-webkit-scrollbar-thumb:active {
   border-right-width: 1px;
 }
 
+.border-y {
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+}
+
 .border-b {
   border-bottom-width: 1px;
 }
@@ -2082,6 +2119,21 @@ textarea::-webkit-scrollbar-thumb:active {
 
 .border-slate-400\/90 {
   border-color: rgb(148 163 184 / 0.9);
+}
+
+.border-sky-800 {
+  --tw-border-opacity: 1;
+  border-color: rgb(7 89 133 / var(--tw-border-opacity));
+}
+
+.border-sky-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(14 165 233 / var(--tw-border-opacity));
+}
+
+.border-slate-200 {
+  --tw-border-opacity: 1;
+  border-color: rgb(226 232 240 / var(--tw-border-opacity));
 }
 
 .border-x-slate-200 {
@@ -2305,6 +2357,11 @@ textarea::-webkit-scrollbar-thumb:active {
   padding-right: 1.25rem;
 }
 
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .pb-0 {
   padding-bottom: 0px;
 }
@@ -2427,6 +2484,10 @@ textarea::-webkit-scrollbar-thumb:active {
   font-weight: 600;
 }
 
+.font-light {
+  font-weight: 300;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
@@ -2441,6 +2502,26 @@ textarea::-webkit-scrollbar-thumb:active {
 
 .leading-none {
   line-height: 1;
+}
+
+.leading-4 {
+  line-height: 1rem;
+}
+
+.leading-6 {
+  line-height: 1.5rem;
+}
+
+.leading-7 {
+  line-height: 1.75rem;
+}
+
+.leading-5 {
+  line-height: 1.25rem;
+}
+
+.leading-8 {
+  line-height: 2rem;
 }
 
 .tracking-tight {
@@ -2837,6 +2918,11 @@ img.is-loaded, svg.is-loaded, i.is-loaded, .svg.is-loaded svg, .stack.is-loaded 
 .hover\:bg-slate-100:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-slate-300:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
 }
 
 .hover\:text-gray-900:hover {
