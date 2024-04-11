@@ -59,7 +59,7 @@
   }
 
   .stacks {
-    @apply p-3 w-[90%] mx-auto flex flex-wrap items-center justify-between rounded-lg md:w-[80%] lg:w-[60%] lg:-tracking-tighter bg-slate-900;
+    @apply p-3 w-[90%] mx-auto flex flex-wrap items-center justify-between rounded-lg md:w-[80%] xl:w-[70%] lg:-tracking-tighter bg-slate-900;
   }
   .stacks .stack {
     @apply m-[1%] flex items-center flex-grow-0 flex-shrink-[1] basis-[30%] justify-evenly h-14 md:h-16 shadow-lg bg-slate-700/50 md:basis-[18%] relative overflow-hidden border border-slate-500/30 rounded-lg;
@@ -88,12 +88,7 @@
   }
   section .section-title h2,
   section .section-title h1 {
-    @apply relative text-2xl capitalize font-extrabold text-center mb-6 tracking-widest;
-  }
-  .section-title h2::after,
-  .section-title h1::after {
-    @apply absolute top-[calc(100%+8px)] left-1/2 -translate-x-1/2 h-1 w-10 rounded-sm bg-sky-600;
-    content: "";
+    @apply relative text-3xl sm:text-4xl uppercase font-extrabold text-center mb-6 tracking-widest;
   }
 
   .services {
