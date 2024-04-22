@@ -24,25 +24,6 @@ h6 {
   font-family: "Sora", sans-serif;
 }
 
-@keyframes menuCloseAnimation {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-100%);
-  }
-}
-
-#mobileMenu {
-  transform: translateX(0);
-  transition: transform 0.3s ease-in-out;
-}
-
-.menu-close-animation {
-  animation: menuCloseAnimation 0.3s ease-in-out;
-}
-
 #hero-contact {
   background: url(../img/contact-bg.jpg) no-repeat center/cover;
 }

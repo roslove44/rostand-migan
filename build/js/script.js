@@ -3,7 +3,10 @@ const initApp = () => {
   const hamburgerBtn = document.querySelector("#hamburger-btn");
 
   const toggleMenu = () => {
-    mobileMenu.classList.toggle("hidden");
+    mobileMenu.classList.toggle("invisible");
+    mobileMenu.classList.toggle("animate-open-menu");
+    mobileMenu.classList.toggle("scale-0");
+    mobileMenu.classList.toggle("opacity-0");
     hamburgerBtn.classList.toggle("toggle-btn");
   };
 

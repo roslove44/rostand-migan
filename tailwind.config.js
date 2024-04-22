@@ -7,11 +7,17 @@ module.exports = {
         widescreen: { raw: "(min-aspect-ratio: 3/2)" },
         tallscreen: { raw: "(min-aspect-ratio: 13/20)" },
       },
+      colors: {
+        rostBlue: "#4831d4",
+      },
       keyframes: {
         "open-menu": {
-          "0%": { transform: "scaleY(0)" },
-          "80%": { transform: "scaleY(1.2)" },
-          "100%": { transform: "scaleY(1)" },
+          "0%": { transform: "scale(0)", opacity: 0.0 },
+          "20%": { transform: "scale(0.2)", opacity: 0.2 },
+          "40%": { transform: "scale(0.4)", opacity: 0.4 },
+          "60%": { transform: "scale(0.6)", opacity: 0.6 },
+          "80%": { transform: "scale(0.8)", opacity: 0.8 },
+          "100%": { transform: "scale(1)", opacity: 1 },
         },
         "portfolio-action": {
           "0%": { transform: "scaleX(0)", opacity: 0.0 },
@@ -23,7 +29,7 @@ module.exports = {
         },
       },
       animation: {
-        "open-menu": "open-menu 0.5s ease-in-out forwards",
+        "open-menu": "open-menu 0.2s ease-in-out forwards",
         "portfolio-action": "portfolio-action 0.3s ease-in-out forwards",
       },
     },

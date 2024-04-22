@@ -4,7 +4,7 @@
 
 @layer utilities {
   .toggle-btn {
-    @apply [&>div::before]:translate-y-0 [&>div::before]:rotate-45 [&>div::after]:translate-y-0 [&>div::after]:-rotate-45 [&>div]:bg-transparent [&>div]:rotate-[720deg];
+    @apply [&>#line::before]:translate-y-0 [&>#line::before]:rotate-45 [&>#line::after]:w-8 [&>#line::after]:translate-y-0 [&>#line::after]:-rotate-45 [&>#line]:bg-transparent;
   }
   img,
   svg,
@@ -48,14 +48,21 @@
   }
   .menu-item:hover,
   .menu-item.active {
-    @apply text-sky-600;
+    @apply text-slate-400;
   }
-
   .menu-item span.sub-border {
-    @apply absolute content-[''] bottom-0 right-0 h-1 w-5 bg-sky-800 opacity-0 scale-0 duration-500;
+    @apply absolute content-[''] bottom-0 right-0 h-1 w-5 bg-slate-400 opacity-0 scale-0 transition-all duration-500;
   }
   .menu-item.active span.sub-border {
-    @apply absolute content-[''] bottom-0 right-0 h-1 w-5 bg-sky-800 opacity-95 scale-100 duration-500;
+    @apply opacity-95 scale-100;
+  }
+
+  #logo:hover,
+  #logo.active {
+    @apply text-rostBlue;
+  }
+  #logo span.sub-border {
+    @apply bg-rostBlue;
   }
 
   .stacks {
@@ -272,17 +279,17 @@
     @apply mb-10 2xl:mb-20;
   }
   .call-to-action .action-container .actions .action article h1 {
-    @apply text-2xl lg:text-3xl 2xl:text-4xl 2xl:mt-8 font-black text-sky-600 lg:w-[95%];
+    @apply text-2xl lg:text-3xl 2xl:text-4xl 2xl:mt-8 font-black text-rostBlue lg:w-[95%];
   }
   .call-to-action .action-container .actions .action article p {
     @apply my-5 lg:text-xl xl:text-2xl 2xl:my-8 lg:my-8 opacity-70;
   }
 
   #get-in-touch .contact {
-    @apply w-5/6 sm:w-2/3 md:w-1/2 h-20 mx-auto -mt-28 bg-sky-600 text-white flex items-center rounded-full justify-center text-center shadow-2xl;
+    @apply w-5/6 sm:w-2/3 md:w-1/2 h-16 mx-auto -mt-28 bg-rostBlue text-white flex items-center rounded-full justify-center text-center shadow-2xl;
   }
   #get-in-touch .contact h2 {
-    @apply font-bold sm:text-lg md:text-xl lg:text-2xl xl:text-3xl w-full transition-all duration-500;
+    @apply font-bold sm:text-sm md:text-base lg:text-lg xl:text-xl w-full transition-all duration-500;
   }
 
   input:-webkit-autofill,
