@@ -11,7 +11,7 @@
     <script src="./js/script.js" defer></script>
 </head>
 
-<body class="bg-slate-100">
+<body class="bg-slate-50">
     <menu>
         <!-- Start Desktop Nav -->
         <div class="fixed top-0 right-0 z-30 left-0">
@@ -128,127 +128,134 @@
         <!-- End Desktop Nav -->
     </menu>
 
-    <section id="portfolio" class="min-h-[calc(100dvh-70px)]">
+    <section id="portfolio-detail" class="min-h-[calc(100dvh-70px)] pb-0">
         <div class="p-2 md:px-4 w-full max-w-7xl mx-auto mt-10">
-            <h2 class="mt-3 text-2xl font-bold text-slate-700 uppercase text-center">Portfolio</h2>
-            <p class="italic text-center my-3">Découvrez une sélection de mes projets professionnels.</p>
-            <div class="portfolio-category w-full flex justify-center gap-2 flex-wrap md:gap-4">
-                <button
-                    class="rounded-full py-2 px-4 flex items-center gap-2 duration-300 border active border-slate-800  text-slate-800 hover:bg-slate-800/25 active:bg-slate-800 active:text-slate-50 transition-all">
-                    <div class="text-sm font-medium leading-none">En lumière</div>
-                </button>
-                <button
-                    class="rounded-full py-2 px-4 flex items-center gap-2 duration-300 border border-sky-600  text-sky-800 hover:bg-sky-800/25 active:bg-sky-600 active:text-sky-50 transition-all">
-                    <div class="text-sm font-medium leading-none">Nouveautés</div>
-                </button>
-                <button
-                    class="rounded-full py-2 px-4 flex items-center gap-2 duration-300 border border-slate-800  text-slate-800 hover:bg-slate-800/25 active:bg-slate-800 active:text-slate-50 transition-all">
-                    <div class="text-sm font-medium leading-none">Tous</div>
-                </button>
+            <h1 class="mt-3 text-2xl font-bold text-slate-700 lowercase text-center">Compta Open</h1>
+            <div class="flex items-center justify-center gap-2 mt-5 border-y border-slate-200 py-4">
+                <a href="" target="_blank"
+                    class="rounded-full shadow-md py-1 px-2 flex items-center gap-2 duration-300  hover:bg-teal-200 bg-teal-100 text-slate-700 transition-all">
+                    <div class="svg text-sky-600" href="">
+                        <i class="fa-solid fa-up-right-from-square"></i>
+                    </div>
+                    <div class="text-xs font-medium leading-none">comptaopen.com</div>
+                </a>
             </div>
-            <div
-                class="portfolio-projects w-full mt-3 grid gap-3 md:gap-2 justify-center sm:grid-cols-2 lg:grid-cols-3">
-
-                <a href="portfolio-details.html"
-                    class="group h-[380px] lg:h-[360px] max-w-[371px] bg-slate-200 rounded-2xl flex flex-col justify-end relative">
-                    <div
-                        class="absolute inset-0 rounded-2xl bg-slate-500 w-full h-[208px] overflow-hidden group-hover:h-full transition-all duration-500">
-                        <img class="w-full h-full object-cover" src="./img/contact-bg.jpg">
-                    </div>
-                    <div class="p-6 flex flex-col gap-2 text-slate-700 h-auto">
-                        <div class="flex gap-2 text-2xl items-center">
-                            <h4 class="text-2xl font-bold font-secondary line-clamp-1 text-slate-700">
-                                Compta Open
-                            </h4>
-                        </div>
-                        <p class="text-base font-medium text-slate-600 leading-[140%] text-left line-clamp-2">
-                            Plateforme collaborative pour comptables et acteurs d'entreprises.
-                        </p>
-                        <p class="text-xs font-medium text-sky-600 leading-[140%] text-left line-clamp-1">
-                            #react #php8 #symfony6
-                        </p>
-                        <span class="lg:hidden text-xs font-bold text-sky-600 leading-[140%] text-left">&#8594;
-                            Détails</span>
-                    </div>
-
-                    <div class="absolute mx-auto bottom-[10%] left-1/2 -translate-x-1/2">
-                        <button
-                            class="rounded-full py-2 px-6 flex items-center gap-2 opacity-0 border border-sky-600 hover:bg-sky-500 hover:border-sky-500 bg-sky-600 text-sky-50 transition-all duration-500 group-hover:animate-portfolio-action">
-                            <div class="text-sm font-medium leading-none">
-                                Compta Open
-                            </div>
-                        </button>
-                    </div>
-                </a>
-
-                <a href="portfolio-details.html"
-                    class="group h-[380px] lg:h-[360px] max-w-[371px] bg-slate-200 rounded-2xl flex flex-col justify-end relative">
-                    <div
-                        class="absolute inset-0 rounded-2xl bg-slate-500 w-full h-[208px] overflow-hidden group-hover:h-full transition-all duration-500">
-                        <img class="w-full h-full object-cover" src="./img/contact-bg.jpg">
-                    </div>
-                    <div class="p-6 flex flex-col gap-2 text-slate-700 h-auto">
-                        <div class="flex gap-2 text-2xl items-center">
-                            <h4 class="text-2xl font-bold font-secondary line-clamp-1 text-slate-700">
-                                Compta Open
-                            </h4>
-                        </div>
-                        <p class="text-base font-medium text-slate-600 leading-[140%] text-left line-clamp-2">
-                            Plateforme collaborative pour comptables et acteurs d'entreprises.
-                        </p>
-                        <p class="text-xs font-medium text-sky-600 leading-[140%] text-left line-clamp-1">
-                            #react #php8 #symfony6
-                        </p>
-                        <span class="lg:hidden text-xs font-bold text-sky-600 leading-[140%] text-left">&#8594;
-                            Détails</span>
-                    </div>
-
-                    <div class="absolute mx-auto bottom-[10%] left-1/2 -translate-x-1/2">
-                        <button
-                            class="rounded-full py-2 px-6 flex items-center gap-2 opacity-0 border border-sky-600 hover:bg-sky-500 hover:border-sky-500 bg-sky-600 text-sky-50 transition-all duration-500 group-hover:animate-portfolio-action">
-                            <div class="text-sm font-medium leading-none">
-                                Compta Open
-                            </div>
-                        </button>
-                    </div>
-                </a>
-
-                <a href="portfolio-details.html"
-                    class="group h-[380px] lg:h-[360px] max-w-[371px] bg-slate-200 rounded-2xl flex flex-col justify-end relative">
-                    <div
-                        class="absolute inset-0 rounded-2xl bg-slate-500 w-full h-[208px] overflow-hidden group-hover:h-full transition-all duration-500">
-                        <img class="w-full h-full object-cover" src="./img/contact-bg.jpg">
-                    </div>
-                    <div class="p-6 flex flex-col gap-2 text-slate-700 h-auto">
-                        <div class="flex gap-2 text-2xl items-center">
-                            <h4 class="text-2xl font-bold font-secondary line-clamp-1 text-slate-700">
-                                Compta Open
-                            </h4>
-                        </div>
-                        <p class="text-base font-medium text-slate-600 leading-[140%] text-left line-clamp-2">
-                            Plateforme collaborative pour comptables et acteurs d'entreprises.
-                        </p>
-                        <p class="text-xs font-medium text-sky-600 leading-[140%] text-left line-clamp-1">
-                            #react #php8 #symfony6
-                        </p>
-                        <span class="lg:hidden text-xs font-bold text-sky-600 leading-[140%] text-left">&#8594;
-                            Détails</span>
-                    </div>
-
-                    <div class="absolute mx-auto bottom-[10%] left-1/2 -translate-x-1/2">
-                        <button
-                            class="rounded-full py-2 px-6 flex items-center gap-2 opacity-0 border border-sky-600 hover:bg-sky-500 hover:border-sky-500 bg-sky-600 text-sky-50 transition-all duration-500 group-hover:animate-portfolio-action">
-                            <div class="text-sm font-medium leading-none">
-                                Compta Open
-                            </div>
-                        </button>
-                    </div>
-                </a>
-
+            <div class="flex justify-center">
+                <div class="relative flex items-center justify-center w-full md:h-[450px] md:w-fit mt-14 sm:mt-8">
+                    <img class="object-contain md:h-full w-full" src="./img/portfolio/portfolio-detail.png">
+                    <img class="h-[250px] md:h-[300px] absolute right-0 bottom-5 object-cover"
+                        src="./img/portfolio/pd-mobile.png">
+                </div>
             </div>
         </div>
 
+        <div class="mx-auto lg:flex justify-center mt-8">
+            <div class="px-5 pt-2 pb-10 sm:px-4 w-full sm:w-9/12 xl:max-w-5xl mx-auto">
+                <div class="w-full flex flex-col">
+
+                    <article>
+                        <h2 class="font-light text-base mb-8">
+                            <i><b>comptaOpen</b> est une plateforme collaborative</i>
+                        </h2>
+                        <p class="mt-2 leading-8">
+                            It's been about a year and a half since I released my portfolio in the style of a 3D
+                            interactive
+                            ramen shop. Lots has
+                            happened since then — I've shifted gears from management consulting to full-time software
+                            engineering, started
+                            freelancing, and even kicked off teaching a course (but more on that later).
+                        </p>
+                        <p class="mt-4 leading-8">
+                            I know I promised way back to spill the beans on how I built this my portfolio. Well, better
+                            late than never, right? So,
+                            grab your favourite bowl of ramen, and let's dive into the nitty-gritty of how I made this
+                            happen. Lots has
+                            happened since then — I've shifted gears from management consulting to full-time software
+                            engineering, started
+                            freelancing, and even kicked off teaching a course (but more on that later).
+                        </p>
+                        <p class="mt-4 leading-8">
+                            I know I promised way back to spill the beans on how I built this my portfolio. Well, better
+                            late than never, right? So,
+                            grab your favourite bowl of ramen, and let's dive into the nitty-gritty of how I made this
+                            happen.
+                        </p>
+                        <p class="mt-4 leading-8">
+                            I know I promised way back to spill the beans on how I built this my portfolio. Well, better
+                            late than never, right? So,
+                            grab your favourite bowl of ramen, and let's dive into the nitty-gritty of how I made this
+                            happen. Lots has
+                            happened since then — I've shifted gears from management consulting to full-time software
+                            engineering, started
+                            freelancing, and even kicked off teaching a course (but more on that later).
+                        </p>
+                    </article>
+
+                    <div class="endArticle mt-5 border-y border-slate-200 py-5">
+                        <div class="flex gap-3">
+                            <div class="flex items-start">
+                                <button
+                                    class="rounded-full shadow-md py-1 px-2 flex items-center gap-2 duration-300  hover:bg-slate-200 bg-slate-100">
+                                    <div class="svg text-rostBlue" href="">
+                                        <i class="fa-solid fa-code"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="flex flex-col align-top">
+                                <h2 class="text-base text-rostBlue">
+                                    <a href="" class="font-bold">Technologies</a>
+                                </h2>
+                                <i class="text-xs justify-start">Utilisées pour le projet</i>
+
+                                <div class="tags flex justify-between mt-2">
+                                    <div class="flex gap-2">
+                                        <button
+                                            class=" rounded-full shadow-md py-2 px-3 flex items-center gap-2 duration-300  hover:bg-slate-100 bg-slate-50 text-slate-700 transition-all">
+                                            <div class="text-xs font-medium leading-none">Php</div>
+                                        </button>
+                                        <button
+                                            class=" rounded-full shadow-md py-2 px-3 flex items-center gap-2 duration-300  hover:bg-slate-100 bg-slate-50 text-slate-700 transition-all">
+                                            <div class="text-xs font-medium leading-none">JavaScript</div>
+                                        </button>
+                                        <button
+                                            class=" rounded-full shadow-md py-2 px-3 flex items-center gap-2 duration-300  hover:bg-slate-100 bg-slate-50 text-slate-700 transition-all">
+                                            <div class="text-xs font-medium leading-none">Web</div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <section class="call-to-action w-full max-w-7xl mx-auto pt-0">
+        <div class="sm:px-4 w-full sm:w-9/12 xl:max-w-5xl mx-auto">
+            <h1 class="mt-3 text-4xl leading-normal font-bold text-rostBlue text-center">Travaillons ensemble !</h1>
+
+            <p class="text-center">
+                Si vous appréciez ce que je fais et que vous souhaitez une expérience similaire pour votre entreprise,
+                je suis prêt à
+                vous aider à atteindre cet objectif. Prêts à collaborer pour concrétiser votre vision ?
+            </p>
+
+            <div class="flex justify-center mt-5">
+                <a href="contact.html"
+                    class="relative inline-flex justify-center items-center gap-2 py-3 xl:py-4 px-4 uppercase rounded-sm border border-rostBlue text-rostBlue hover:text-white  duration-300 transition-all group overflow-hidden">
+                    <div class="text-xs lg:text-sm 2xl:text-lg font-bold leading-none z-10">
+                        Contact <span>&nbsp; &#8594;</span>
+                    </div>
+                    <div
+                        class="absolute inset-0  bg-rostBlue transform -translate-x-[110%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
 
 
     <footer class=" text-center bg-slate-800 text-slate-400 pt-1 pb-10 flex flex-col md:flex-row justify-center
