@@ -1,6 +1,7 @@
 const initApp = () => {
   const mobileMenu = document.querySelector("#mobileMenu");
   const hamburgerBtn = document.querySelector("#hamburger-btn");
+  let articles = document.querySelectorAll("article.sendToPost");
 
   const toggleMenu = () => {
     mobileMenu.classList.toggle("invisible");
@@ -9,49 +10,22 @@ const initApp = () => {
     mobileMenu.classList.toggle("opacity-0");
     hamburgerBtn.classList.toggle("toggle-btn");
   };
-
   hamburgerBtn.addEventListener("click", toggleMenu);
   mobileMenu.addEventListener("click", toggleMenu);
 
-  const dropdowns = document.querySelectorAll(".dropdown");
-  dropdowns.forEach((dropdown) => {
-    let dropdownBtn = dropdown.querySelector("button");
-    let dropdownMenu = dropdown.querySelector(".dropdown-menu");
-    const toggleStackList = (event) => {
-      event.preventDefault();
-      dropdownMenu.classList.toggle("sm:opacity-0");
-      dropdownMenu.classList.toggle("sm:pointer-events-none");
-    };
-
-    const handleClickOutside = (event) => {
-      if (
-        dropdownMenu.contains(event.target) ||
-        dropdownBtn.contains(event.target)
-      ) {
-        return;
-      }
-      if (!dropdownMenu.classList.contains("sm:opacity-0")) {
-        dropdownMenu.classList.add("sm:opacity-0");
-        dropdownMenu.classList.toggle("sm:pointer-events-none");
-      }
-    };
-
-    dropdownBtn.addEventListener("click", toggleStackList);
-    document.addEventListener("click", handleClickOutside);
-
-    function randomOpacity() {
-      const elements = document.querySelectorAll(
-        ".a-one, .a-two, .a-three, .a-four, .a-five, .a-six, .a-seven, .a-eight, .a-nine"
-      );
-
-      elements.forEach((element) => {
-        const randomOpacityValue = Math.random();
-        element.style.opacity = randomOpacityValue;
+  function sendToPost(articles) {
+    if (articles) {
+      articles.forEach((article) => {
+        let link = article.querySelector("a.articleLink");
+        article.addEventListener("click", function () {
+          if (link && link.href) {
+            window.location.href = link.href;
+          }
+        });
       });
     }
-
-    setInterval(randomOpacity, 500);
-  });
+  }
+  sendToPost(articles);
 
   function serviceIllustrationAnimation() {
     // Fonction à exécuter lorsque l'élément entre dans la fenêtre d'affichage
@@ -97,7 +71,6 @@ const initApp = () => {
       imageObserver.observe(image);
     });
   }
-
   imageAnimation();
 };
 

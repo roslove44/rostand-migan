@@ -11,7 +11,7 @@
     <script src="./js/script.js" defer></script>
 </head>
 
-<body class="">
+<body class="bg-slate-50">
     <menu>
         <!-- Start Desktop Nav -->
         <div class="fixed top-0 right-0 z-30 left-0">
@@ -29,42 +29,21 @@
                             </a>
                         </div>
 
-                        <div class="hidden  items-center justify-end flex-1 gap-2">
-                            <div class="flex space-x-6 items-center">
-                                <a href="portfolio.html" class="group menu-item">
-                                    <span>Réalisations</span>
-                                    <span class="sub-border group-hover:opacity-95 group-hover:scale-100"></span>
-                                </a>
-
-                                <a href="" class="group menu-item">Compétences
-                                    <span class="sub-border group-hover:opacity-95 group-hover:scale-100"></span>
-                                </a>
-
-                                <a href="blog.html" class="group menu-item">Blog
-                                    <span class="sub-border group-hover:opacity-95 group-hover:scale-100"></span>
-                                </a>
-
-                                <a href="contact.html" class="group menu-item">Contact
-                                    <span class="sub-border group-hover:opacity-95 group-hover:scale-100"></span>
-                                </a>
-                            </div>
-                        </div>
-
                         <!-- Start Mobile Nav -->
                         <button class="relative cursor-pointer w-8 h-8 inline-flex justify-center" id="hamburger-btn">
 
-                            <div class="inline-flex justify-end absolute top-4 -mt-0.5 h-1 w-6 rounded bg-black transition-all duration-400 
-                                before:absolute before:h-1 before:w-8 before:-translate-y-2 before:rounded before:bg-black 
+                            <div class="inline-flex justify-end absolute top-4 -mt-0.5 h-1 w-6 rounded bg-rostBlue transition-all duration-400 
+                                before:absolute before:h-1 before:w-8 before:-translate-y-2 before:rounded before:bg-rostBlue 
                                 before:transition-all before:duration-400 before:content-[''] 
-                                after:absolute after:h-1 after:w-3 after:translate-y-2 after:rounded after:bg-black 
+                                after:absolute after:h-1 after:w-3 after:translate-y-2 after:rounded after:bg-rostBlue 
                                 after:transition-all after:duration-400 after:content-['']" id="line">
                             </div>
 
                             <div id="mobileMenu"
-                                class="invisible absolute top-10 right-0 z-30 mt-[6px] bg-slate-900 text-slate-50 transition-all duration-200 origin-top-right">
+                                class="invisible absolute top-10 -right-2 sm:right-0 z-30 mt-[6px] bg-slate-900 text-slate-50 transition-all duration-200 origin-top-right">
                                 <nav
-                                    class="w-80 p-10 text-base flex flex-col justify-start gap-4 title-font font-medium tracking-normal leading-loose">
-                                    <ul class="flex flex-col items-center justify-start gap-2" id="">
+                                    class="w-screen h-dvh sm:h-auto sm:w-80 p-10 text-base flex flex-col justify-start gap-4 title-font font-medium tracking-normal leading-loose">
+                                    <ul class="flex flex-col items-center justify-start gap-3" id="">
                                         <li class="w-full flex">
                                             <a href="portfolio.html" class="group menu-item">
                                                 <span>Mes Réalisations</span>
@@ -88,7 +67,7 @@
                                         </li>
                                     </ul>
 
-                                    <div class="flex flex-col gap-2 mt-3">
+                                    <div class="flex flex-col gap-3 mt-6 sm:mt-3">
                                         <a class="w-full inline-flex items-center text-start uppercase font-medium tracking-widest text-slate-500"
                                             href="contact.html">
                                             <span>Contact</span>
@@ -115,7 +94,7 @@
                                         </ul>
                                     </div>
 
-                                    <div class="flex justify-center gap-5 social-links mt-4">
+                                    <div class="flex justify-center gap-5 social-links mt-10 sm:mt-4">
                                         <a href="" class="group relative inline-flex svg">
                                             <i class="fa-regular fa-envelope"></i>
                                             <span class="social-bubble">&nbsp;Mail&nbsp;</span>
@@ -149,10 +128,9 @@
         <!-- End Desktop Nav -->
     </menu>
 
-
     <section id="hero"
-        class="relative mt-10 md:min-h-[calc(50dvh-20px)] lg:min-h-[calc(70dvh-20px)] flex justify-start md:justify-center items-center px-8 py-20 md:text-start md:px-10 sm:mt-0">
-        <div class="text-slate-50 flex flex-col gap-4 relative text-center md:text-left">
+        class="relative mt-10 mb-10 md:min-h-[calc(50dvh-20px)] lg:min-h-[calc(70dvh-20px)] flex justify-start md:justify-center items-center px-8 py-20 md:text-start md:px-10 sm:mt-0">
+        <div class="text-slate-50 flex flex-col gap-4 relative text-center md:text-left max-w-7xl">
 
             <div>
                 <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-extrabold">Rostand
@@ -172,103 +150,6 @@
                 travers la création d'expériences engageantes, accessibles et centrées sur l'utilisateur.
             </p>
 
-        </div>
-    </section>
-
-
-    <section id="stacks" class="">
-        <div class="section-title">
-            <h2>
-                Stacks
-            </h2>
-        </div>
-
-        <div class="stacks">
-            <div class="stack after:w-full">
-                <div class="stack-icon">
-                    <i class="fa-brands fa-symfony"></i>
-                </div>
-                <div class="stack-title">
-                    <p>Symfony</p>
-                </div>
-            </div>
-            <div class="stack after:w-full">
-                <div class="stack-icon">
-                    <i class="fa-brands fa-php"></i>
-                </div>
-                <div class="stack-title">
-                    <p>PHP</p>
-                </div>
-            </div>
-            <div class="stack after:w-[80%]">
-                <div class="stack-icon">
-                    <i class="fa-brands fa-react"></i>
-                </div>
-                <div class="stack-title">
-                    <p>React JS</p>
-                </div>
-            </div>
-            <div class="stack after:w-[80%]">
-                <div class="stack-icon">
-                    <i class="fa-brands fa-js"></i>
-                </div>
-                <div class="stack-title">
-                    <p>JavaScript</p>
-                </div>
-            </div>
-            <div class="stack after:w-[80%]">
-                <div class="stack-icon">
-                    <i class="fa-solid fa-database"></i>
-                </div>
-                <div class="stack-title">
-                    <p>SQl</p>
-                </div>
-            </div>
-
-            <div class="stack after:w-full">
-                <div class="stack-icon">
-                    <i class="fa-brands fa-sass"></i>
-                </div>
-                <div class="stack-title">
-                    <p>Sass</p>
-                </div>
-            </div>
-            <div class="stack after:w-[80%]">
-                <div class="stack-icon">
-                    <i class="fa-brands fa-python"></i>
-                </div>
-                <div class="stack-title">
-                    <p>Python</p>
-                </div>
-            </div>
-            <div class="stack after:w-[80%]">
-                <div class="stack-icon">
-                    <svg width="256px" height="256px" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"
-                        stroke="#fff">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M10.633 32.181c-.009 1.587 1.154 2.533 3.01 2.103v-4.205c-1.879-.572-3.003.586-3.01 2.102zM13.7 24h2.556v12.102c-2.45.4-4.798.655-6.477-.284-2.162-1.21-2.336-5.05-.625-6.761.868-.868 2.614-1.478 4.489-1.08v-3.806c-.005-.081-.01-.162.056-.171zM20.405 26.67h-2.557V24h2.557v2.67zM51.085 34.397c2.787 1.083 3.096-4.989.284-4.431-1.746.346-1.69 3.885-.284 4.431zm.114-6.534c2.128-.227 3.734.712 4.375 2.16 1.093 2.469-.06 5.302-1.819 6.135-.91.432-1.865.473-2.727.398-2.664-.232-4.344-2.947-3.409-5.965.147-.473.311-.762.398-.91.58-.984 1.557-1.644 3.182-1.818zM23.927 33.431c-.707 1.189 1.07 1.474 2.216 1.137v-1.761c-.88.122-1.883.065-2.216.624zm4.489 2.784c-2.112.122-5.322.841-6.477-.568-.679-.828-.606-2.407 0-3.181.783-1.001 2.492-1.22 4.034-1.364.14-.345.045-.906-.114-1.136-1.41-.36-2.812.197-3.807.625v-1.989c1.503-.69 4.982-1.417 6.023.17.547.834.34 2.288.34 3.58v3.863zM37.393 36.33h-2.557v-3.296c0-1.085.175-2.461-.398-2.898-.449-.342-1.514-.17-2.159 0v6.193h-2.557v-7.897c2.614-.68 7.332-1.407 7.67 1.875.168 1.618-.123 4.045 0 6.022zM41.2 33.602c.43.696 1.594.957 2.556.511a81.771 81.771 0 0 1-.057-4.09c-2.21-.584-3.526 1.918-2.5 3.579zm6.42-5.398c-.228.682-.561 1.258-.853 1.875-.263.06-.492-.104-.625 0-.058 2.77.59 6.524-.511 8.523-.663 1.203-1.884 1.975-3.75 2.102a7.634 7.634 0 0 1-3.409-.511v-2.387c1.166.681 4.113 1.236 4.943-.17.244-.414.229-.842.34-1.477-.533.028-1.052.275-1.704.284-2.679.035-4.337-2.098-3.693-5.057.25-1.144.92-2.066 1.819-2.613 1.865-1.138 4.734-1.051 7.442-.569z"
-                                fill="#ffff"></path>
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M20.405 28.023c-.003 1.882-.003 3.235-.003 5.522-.108 2.248-.083 4.038-.906 5.113-.163.212-.507.522-.796.739-.242.182-.703.552-.965.568-.265.016-.943-.367-1.25-.511-.404-.19-.777-.442-1.194-.568.973-.603 1.896-1.055 2.273-2.273.328-1.06.284-2.595.284-4.09 0-1.478.007-3.196.007-4.5h2.55z"
-                                fill="#ffff"></path>
-                        </g>
-                    </svg>
-                </div>
-                <div class="stack-title">
-                    <p>Django</p>
-                </div>
-            </div>
-            <div class="stack after:w-full">
-                <div class="stack-icon">
-                    <i class="fa-brands fa-wordpress"></i>
-                </div>
-                <div class="stack-title">
-                    <p>WordPress</p>
-                </div>
-            </div>
         </div>
     </section>
 
