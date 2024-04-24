@@ -21,6 +21,10 @@
   .stack.is-loaded svg {
     @apply opacity-100;
   }
+
+  .external-link {
+    @apply text-rostBlue hover:bg-slate-200 font-medium transition-colors duration-300;
+  }
 }
 
 @layer components {
@@ -311,20 +315,9 @@
     @apply mb-6;
   }
   .question h3 {
-    @apply mb-2 tracking-wider text-lg md:text-xl;
+    @apply mb-2 tracking-wider text-lg md:text-xl text-rostBlue font-medium;
   }
   .question p {
-    @apply text-sm md:text-base tracking-wider text-slate-400;
-  }
-
-  @media (min-width: 768px) {
-    .input-section {
-      grid-template-columns: 300px 1fr;
-    }
-  }
-  @media (min-width: 1024px) {
-    .input-section {
-      grid-template-columns: 400px 1fr;
-    }
+    @apply text-sm md:text-base tracking-wider text-bodyColor;
   }
 }

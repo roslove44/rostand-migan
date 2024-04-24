@@ -11,7 +11,7 @@
     <script src="./js/script.js" defer></script>
 </head>
 
-<body class="bg-slate-900">
+<body class="bg-slate-50 text-bodyColor">
     <menu>
         <!-- Start Desktop Nav -->
         <div class="fixed top-0 right-0 z-30 left-0">
@@ -128,70 +128,90 @@
         <!-- End Desktop Nav -->
     </menu>
 
-    <section id="hero-contact"
-        class="relative mt-10 md:min-h-[calc(25dvh+20px)] flex justify-center items-center px-8 py-20 md:px-10 md:pb-8 sm:mt-0">
+    <section class="py-0 mt-[70px] relative h-[80px] drop-shadow-[0_4px_8px_rgba(0,0,0,0.05)] flex items-center">
+        <div class="h-[1px] w-full bg-slate-200">
+        </div>
+        <img src="./img/rostand-id.jpg" alt=""
+            class="absolute rounded-full h-[80px] top-0 right-1/2 left-1/2 -translate-x-1/2">
     </section>
 
-    <section id="contact" class="py-5 relative">
+
+    <section id="contact" class="py-5 relative border-b border-slate-200">
         <div
-            class="-mt-28 flex flex-col lg:max-w-[900px] xl:max-w-[1200px] mx-5 md:mx-10 lg:mx-auto p-3 md:p-8 items-center bg-slate-800 text-sky-100 rounded-lg shadow-lg">
-            <div class="section-title mb-5">
-                <h2>Envoyez moi un message !</h2>
-                <p class="mt-5">
-                    Votre projet mérite une conversation dédiée.
-                    Réservez un créneau pour en discuter ensemble.
-                </p>
-                <!-- Alert Widget -->
-                <div class="bg-teal-700/50 p-4 border border-slate-500/30 rounded-lg shadow-lg text-center mt-5">
-                    Votre Message a bien été reçu.
-                </div>
-                <div class="bg-orange-700/50 p-4 border border-slate-500/30 rounded-lg shadow-lg text-center mt-5">
-                    Erreur !
-                </div>
-                <!-- End Alert Widget -->
+            class="flex flex-col lg:max-w-[900px] xl:max-w-[1200px] mx-5 md:mx-10 lg:mx-auto p-3 md:p-8 items-center rounded-lg">
+            <h1 class="my-2 text-2xl font-bold lowercase text-center">contact</h1>
+            <p class="mt-2 text-center">
+                Prêt à discuter de votre projet ou en savoir plus sur mon travail ? Remplissez le formulaire ci-dessous
+                et je vous
+                répondrai avec plaisir !
+            </p>
+            <p class="mt-2 text-center">
+                Ou réservez <a href="" class="external-link" target="_blank">ici, un créneau</a> pour en discuter
+                ensemble.
+            </p>
 
+            <!-- Alert Widget -->
+            <div class="my-5 hidden">
+                <div class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 text-center"
+                    role="alert">
+                    <span class="font-medium">Votre message a bien été reçu!</span> Je vous réponds sous peu.
+                </div>
+                <div class="p-4 mb-4 text-sm text-yellow-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 text-center"
+                    role="alert">
+                    <span class="font-medium">Une erreur est survenue!</span> Veuillez <span
+                        class="font-medium">ressayer</span> plus tard.
+                </div>
             </div>
-            <form action="" class="w-full mx-auto">
+            <!-- End Alert Widget -->
 
-                <div class="w-full grid gap-5 lg:gap-8 input-section">
-                    <div class="flex flex-col justify-between">
-                        <div class="flex flex-col bg-slate-700/50 p-4 border border-slate-500/30 rounded-lg shadow-lg">
+            <form action="" class="w-full mx-auto my-5">
+                <div class="flex flex-col gap-4">
+
+                    <div class="flex flex-col md:flex-row justify-between gap-4">
+                        <div
+                            class="flex flex-1 flex-col bg-slate-700 p-4 border border-slate-500/30 rounded-lg shadow-lg">
                             <label for="name" class="mb-2 title-font text-sky-300 tracking-wider">Nom</label>
                             <input type="text" name="name" id="name" placeholder="Votre nom et prénom"
-                                class="h-8 bg-transparent pb-2 border-b-2 outline-none focus:border-b-sky-300 placeholder:font-light focus:placeholder:hidden">
+                                class="h-8 bg-transparent pb-2 border-b-2 outline-none focus:border-b-sky-300 text-white/90 placeholder:font-light focus:placeholder:hidden">
                         </div>
                         <div
-                            class="flex flex-col mt-4 bg-slate-700/50 p-4 border border-slate-500/30 rounded-lg shadow-lg">
+                            class="flex flex-1  flex-col bg-slate-700 p-4 border border-slate-500/30 rounded-lg shadow-lg">
                             <label for="name" class="mb-2 text-sky-300 tracking-wider">Email</label>
                             <input type="email" name="email" id="email" placeholder="Entrez votre adresse mail"
-                                class="h-8 bg-transparent pb-2 border-b-2 outline-none focus:border-b-sky-300">
+                                class="h-8 bg-transparent pb-2 border-b-2 outline-none focus:border-b-sky-300 text-white/90">
                         </div>
                     </div>
-                    <div class="flex flex-col bg-slate-700/50 p-4 border border-slate-500/30 rounded-lg shadow-lg">
+
+                    <div class="flex flex-col bg-slate-700 p-4 border border-slate-500/30 rounded-lg shadow-lg">
                         <label for="message" class="mb-2 text-sky-300 tracking-wider">Votre Message</label>
                         <textarea name="message" id="message"
                             placeholder="Merci de donner un maximum de détail sur le projet afin que je puisse évaluer correctement la charge de travail que représente votre projet. Cela permettra aussi d'avoir un premier chiffrage au plus prêt du devis final."
-                            class="h-44 md:h-full lg:h-full resize-none overflow-auto bg-transparent pb-5 border-b-2 outline-none focus:border-b-sky-300"></textarea>
+                            class="h-32 md:h-full lg:h-full resize-none overflow-auto bg-transparent pb-5 border-b-2 outline-none focus:border-b-sky-300 text-white/90"></textarea>
                     </div>
-                </div>
 
-                <div class="flex mt-4 justify-center lg:justify-start">
-                    <button type="submit"
-                        class="relative inline-flex justify-center items-center gap-2 py-3 px-4 capitalize rounded-lg bg-sky-600 text-white hover:bg-sky-500  duration-300 transition-all">
-                        <div class="text-sm font-bold leading-none z-10">
-                            Envoyez <span>&nbsp; &#8594;</span>
-                        </div>
-                    </button>
+                    <div class="flex justify-center mt-5">
+                        <button
+                            class="relative w-1/2 inline-flex justify-center items-center gap-2 py-3 xl:py-4 px-4 uppercase rounded-sm border border-slate-700 text-rostBlue hover:text-white  duration-300 transition-all group overflow-hidden">
+                            <div class="text-xs lg:text-sm 2xl:text-lg font-bold leading-none z-10">
+                                Envoyer <span>&nbsp; &#8594;</span>
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-slate-700 transform -translate-x-[110%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out">
+                            </div>
+                        </button>
+                    </div>
+
                 </div>
             </form>
+
         </div>
     </section>
 
     <section id="faq" class="pt-5">
         <div
-            class="flex flex-col lg:flex-row lg:max-w-[900px] xl:max-w-[1200px] mx-10 lg:mx-auto px-4 py-2 md:p-8 items-start rounded-lg text-slate-50">
+            class="flex flex-col lg:flex-row lg:max-w-[900px] xl:max-w-[1200px] mx-10 lg:mx-auto px-4 py-2 md:p-8 items-start rounded-lg">
             <div class="section-title lg:w-2/5 mx-auto">
-                <h2>FAQ</h2>
+                <h2 class="text-rostBlue">FAQ</h2>
                 <p>Je réponds aux questions récurrentes.</p>
             </div>
             <div class="lg:w-3/5 flex flex-col">
@@ -223,7 +243,7 @@
                         nécessaire pour la mission.
                         <br>
                         N'hésiter pas à collaborer avec
-                        <a href="" class="text-orange-400 hover:text-orange-300">ak58graph</a>
+                        <a href="" class="external-link">ak58graph</a>
                         pour le design de vos projets.
                     </p>
                 </div>

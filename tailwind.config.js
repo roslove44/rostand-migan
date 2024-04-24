@@ -9,6 +9,7 @@ module.exports = {
       },
       colors: {
         rostBlue: "#4831d4",
+        bodyColor: "#474747",
       },
       keyframes: {
         "open-menu": {
