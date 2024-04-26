@@ -608,6 +608,22 @@ video {
   top: 1rem;
 }
 
+.bottom-0 {
+  bottom: 0px;
+}
+
+.bottom-1\/2 {
+  bottom: 50%;
+}
+
+.bottom-20 {
+  bottom: 5rem;
+}
+
+.top-1\/2 {
+  top: 50%;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -629,6 +645,11 @@ video {
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .my-2 {
@@ -657,10 +678,6 @@ video {
 
 .-mt-0\.5 {
   margin-top: -0.125rem;
-}
-
-.mb-10 {
-  margin-bottom: 2.5rem;
 }
 
 .mb-2 {
@@ -837,6 +854,23 @@ video {
   height: 100%;
 }
 
+.h-10 {
+  height: 2.5rem;
+}
+
+.h-fit {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.h-1\/2 {
+  height: 50%;
+}
+
+.h-52 {
+  height: 13rem;
+}
+
 .max-h-\[80px\] {
   max-height: 80px;
 }
@@ -847,6 +881,10 @@ video {
 
 .w-1\/2 {
   width: 50%;
+}
+
+.w-10\/12 {
+  width: 83.333333%;
 }
 
 .w-12 {
@@ -875,6 +913,23 @@ video {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-fit {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.w-40 {
+  width: 10rem;
+}
+
+.w-1\/3 {
+  width: 33.333333%;
+}
+
+.w-2\/5 {
+  width: 40%;
 }
 
 .min-w-\[352px\] {
@@ -917,6 +972,11 @@ video {
 
 .-translate-x-full {
   --tw-translate-x: -100%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.-translate-y-1\/2 {
+  --tw-translate-y: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1252,6 +1312,11 @@ video {
   padding-right: 0.25rem;
 }
 
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -1275,11 +1340,6 @@ video {
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-}
-
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 
 .py-0 {
@@ -1336,6 +1396,10 @@ video {
 
 .pb-5 {
   padding-bottom: 1.25rem;
+}
+
+.pl-1 {
+  padding-left: 0.25rem;
 }
 
 .pt-0 {
@@ -1636,6 +1700,14 @@ video {
   transition-duration: 150ms;
 }
 
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .duration-150 {
   transition-duration: 150ms;
 }
@@ -1660,7 +1732,7 @@ video {
 
 body {
   --tw-bg-opacity: 1;
-  background-color: rgb(248 250 252 / var(--tw-bg-opacity));
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(71 71 71 / var(--tw-text-opacity));
 }
@@ -1826,6 +1898,11 @@ i.is-loaded,
   opacity: 0.95;
 }
 
+#logo {
+  --tw-text-opacity: 1;
+  color: rgb(72 49 212 / var(--tw-text-opacity));
+}
+
 #logo:hover,
 #logo.active {
   --tw-text-opacity: 1;
@@ -1837,7 +1914,22 @@ i.is-loaded,
   background-color: rgb(72 49 212 / var(--tw-bg-opacity));
 }
 
-/* Menu */
+/* End Menu */
+
+/* Header */
+
+#hero {
+  padding: 75px 0;
+  background-color: #121833;
+  color: #fff;
+  background-image: url(../img/header-grad.png), url(../img/header-grid.png),
+    radial-gradient(35vw 25vw at center 100%, #00e4bc77 0, transparent 100%);
+  background-size: cover, 1480px, 2280px;
+  background-repeat: no-repeat, repeat, no-repeat;
+  background-position: top left, center 0, bottom center;
+}
+
+/* Header */
 
 /* Services */
 
@@ -2266,7 +2358,7 @@ i.is-loaded,
   }
 }
 
-.call-to-action .action-container .actions .action article h1 {
+.call-to-action .action-container .actions .action article .action__title {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 900;
@@ -2275,7 +2367,7 @@ i.is-loaded,
 }
 
 @media (min-width: 1024px) {
-  .call-to-action .action-container .actions .action article h1 {
+  .call-to-action .action-container .actions .action article .action__title {
     width: 95%;
     font-size: 1.875rem;
     line-height: 2.25rem;
@@ -2283,7 +2375,7 @@ i.is-loaded,
 }
 
 @media (min-width: 1536px) {
-  .call-to-action .action-container .actions .action article h1 {
+  .call-to-action .action-container .actions .action article .action__title {
     margin-top: 2rem;
     font-size: 2.25rem;
     line-height: 2.5rem;
@@ -2810,10 +2902,6 @@ h4.post__content-title {
     margin-right: 2.5rem;
   }
 
-  .sm\:mt-0 {
-    margin-top: 0px;
-  }
-
   .sm\:mt-3 {
     margin-top: 0.75rem;
   }
@@ -2935,10 +3023,6 @@ h4.post__content-title {
     justify-content: flex-start;
   }
 
-  .md\:justify-center {
-    justify-content: center;
-  }
-
   .md\:gap-2 {
     gap: 0.5rem;
   }
@@ -2951,11 +3035,6 @@ h4.post__content-title {
     padding: 2rem;
   }
 
-  .md\:px-10 {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-  }
-
   .md\:px-4 {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -2963,10 +3042,6 @@ h4.post__content-title {
 
   .md\:text-left {
     text-align: left;
-  }
-
-  .md\:text-start {
-    text-align: start;
   }
 
   .md\:text-3xl {

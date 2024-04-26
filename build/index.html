@@ -15,8 +15,7 @@
     <menu>
         <!-- Start Desktop Nav -->
         <div class="fixed top-0 right-0 z-30 left-0">
-            <header
-                class="flex justify-center gap-8 bg-white/95 drop-shadow-[0_4px_8px_rgba(0,0,0,0.05)] transition-all h-[60px]">
+            <header class="flex justify-center gap-8 bg-slate-50 transition-all h-[60px]">
                 <nav class="p-2 md:px-4 max-w-7xl w-full flex items-center text-sm font-semibold">
                     <div class="flex items-center gap-2 flex-1">
 
@@ -128,28 +127,37 @@
         <!-- End Desktop Nav -->
     </menu>
 
-    <section id="hero"
-        class="relative mt-10 mb-10 md:min-h-[calc(50dvh-20px)] lg:min-h-[calc(70dvh-20px)] flex justify-start md:justify-center items-center px-8 py-20 md:text-start md:px-10 sm:mt-0">
-        <div class="text-slate-50 flex flex-col gap-4 relative text-center md:text-left max-w-7xl">
+    <section id="hero" class="my-10 md:min-h-[calc(50dvh-20px)] flex flex-col items-center justify-center px-10 py-20">
+        <div class="flex items-center justify-center w-10/12 h-full max-w-7xl mx-auto">
+            <div class="flex flex-col items-center justify-center text-center gap-4">
+                <div>
+                    <span class="text-xs pl-1 italic">Bienvenue, je suis</span>
+                    <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-extrabold">
+                        Rostand MIGAN
+                    </h1>
+                </div>
 
-            <div>
-                <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-extrabold">Rostand
-                    MIGAN</h1>
+                <div>
+                    <h2
+                        class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl text-wrap font-bold text-orange-400">
+                        Développeur Web <br>
+                        <span class="typed" data-typed-items="PHP,Full Stack,Symfony,JavaScript, React, Python">
+                            Full Stack.
+                        </span>
+                    </h2>
+                    <h3
+                        class="hidden text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl text-wrap font-bold text-orange-400">
+                        Full Stack.
+                    </h3>
+                </div>
+
+
+
+                <p class="text-wrap md:w-2/3">
+                    J'aide les startups à lancer et développer leurs produits en résolvant les besoins à
+                    travers la création d'expériences engageantes, accessibles et centrées sur l'utilisateur.
+                </p>
             </div>
-
-            <h2
-                class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl text-wrap font-bold text-orange-400">
-                Développeur Web <br>
-                <span class="typed" data-typed-items="PHP,Full Stack,Symfony,JavaScript, React, Python">
-                    Full Stack.
-                </span>
-            </h2>
-
-            <p class="text-wrap md:w-2/3">
-                J'aide les startups à lancer et développer leurs produits en résolvant les besoins à
-                travers la création d'expériences engageantes, accessibles et centrées sur l'utilisateur.
-            </p>
-
         </div>
     </section>
 
@@ -191,9 +199,9 @@
                         <img src="./img/services/front-end.webp" alt="" height="409" width="359">
                     </div>
                     <div class="service-title">
-                        <h2 class="">
+                        <h3 class="">
                             Développement Front-End
-                        </h2>
+                        </h3>
                     </div>
                     <div class="service-description">
                         <p>
@@ -220,9 +228,9 @@
                         <img src="./img/services/back-end.webp" alt="" height="409" width="359">
                     </div>
                     <div class="service-title">
-                        <h2 class="">
+                        <h3 class="">
                             Développement Back-End
-                        </h2>
+                        </h3>
                     </div>
                     <div class="service-description">
                         <p>
@@ -250,9 +258,9 @@
                         <img src="./img/services/cms.png" alt="" height="350" width="350">
                     </div>
                     <div class="service-title">
-                        <h2 class="">
+                        <h3 class="">
                             Solutions, clé en main
-                        </h2>
+                        </h3>
                     </div>
                     <div class="service-description">
                         <p>
@@ -278,9 +286,9 @@
                         <img src="./img/services/automatisation.png" alt="" height="409" width="359">
                     </div>
                     <div class="service-title">
-                        <h2 class="">
+                        <h3 class="">
                             Automatisation des Tâches
-                        </h2>
+                        </h3>
                     </div>
                     <div class="service-description">
                         <p>
@@ -306,9 +314,9 @@
                         <img src="./img/services/mobile.png" alt="" height="409" width="359">
                     </div>
                     <div class="service-title">
-                        <h2 class="">
+                        <h3 class="">
                             Création de Sites et Applications Web Sur Mesure
-                        </h2>
+                        </h3>
                     </div>
                     <div class="service-description">
                         <p>
@@ -338,7 +346,7 @@
             <div class="w-full px-1 lg:w-1/2 rostand-migan self-start pt-4 md:px-4 text-slate-200">
                 <h2
                     class="text-center md:text-left text-xl tracking-tight font-extrabold sm:text-2xl lg:text-3xl mb-4 capitalize">
-                    <span class="text-sky-300">à la rencontre</span> de Rostand
+                    <span class="text-orange-400">à la rencontre</span> de Rostand
                 </h2>
                 <p>
                     Développeur Web Freelance, je construis des sites et applications
@@ -403,11 +411,11 @@
             <div class="actions">
                 <div class="action border-b border-b-rostBlue/50  sm:border-r sm:border-r-blue-600/50 sm:border-b-0">
                     <article>
-                        <h1>
+                        <h3 class="action__title">
                             Je construis des<br class="hidden sm:block">
                             sites et applications<br class="hidden sm:block">
                             web
-                        </h1>
+                        </h3>
                         <p>
                             Projets <br class="hidden sm:block">
                             open source, web apps <br class="hidden sm:block">
@@ -428,12 +436,11 @@
 
                 <div class="action">
                     <article>
-                        <h1>
+                        <h3 class="action__title">
                             J'écris de temps <br class="hidden sm:block">
                             en temps sur des <br class="hidden sm:block">
                             sujets
-                        </h1>
-                        </h1>
+                        </h3>
                         <p>
                             Mes projets <br class="hidden sm:block">
                             mes idées, le développement <br class="hidden sm:block">

@@ -4,7 +4,7 @@
 
 /* Globals */
 body {
-  @apply text-bodyColor bg-slate-50;
+  @apply text-bodyColor bg-slate-100;
 }
 section {
   @apply py-20;
@@ -72,6 +72,10 @@ i.is-loaded,
 .menu-item.active span.sub-border {
   @apply opacity-95 scale-100;
 }
+
+#logo {
+  @apply text-rostBlue;
+}
 #logo:hover,
 #logo.active {
   @apply text-rostBlue;
@@ -79,7 +83,20 @@ i.is-loaded,
 #logo span.sub-border {
   @apply bg-rostBlue;
 }
-/* Menu */
+/* End Menu */
+
+/* Header */
+#hero {
+  padding: 75px 0;
+  background-color: #121833;
+  color: #fff;
+  background-image: url(../img/header-grad.png), url(../img/header-grid.png),
+    radial-gradient(35vw 25vw at center 100%, #00e4bc77 0, transparent 100%);
+  background-size: cover, 1480px, 2280px;
+  background-repeat: no-repeat, repeat, no-repeat;
+  background-position: top left, center 0, bottom center;
+}
+/* Header */
 
 /* Services */
 .services {
@@ -251,7 +268,7 @@ i.is-loaded,
 .call-to-action .action-container .actions .action article {
   @apply mb-10 2xl:mb-20;
 }
-.call-to-action .action-container .actions .action article h1 {
+.call-to-action .action-container .actions .action article .action__title {
   @apply text-2xl lg:text-3xl 2xl:text-4xl 2xl:mt-8 font-black text-rostBlue lg:w-[95%];
 }
 .call-to-action .action-container .actions .action article p {
