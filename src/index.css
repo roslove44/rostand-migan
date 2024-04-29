@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,6 +8,18 @@
 /* Globals */
 body {
   @apply text-bodyColor bg-slate-100;
+  font-family: "Inter", sans-serif;
+}
+.title-font {
+  font-family: "Sora", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Sora", sans-serif;
 }
 section {
   @apply py-20;
@@ -34,6 +49,13 @@ section .section-title h1 {
   width: 8px;
   height: 8px;
   transform: rotate(45deg);
+}
+.social-links svg {
+  height: 20px;
+  width: 40px;
+}
+.text-wrap {
+  text-wrap: pretty;
 }
 /* Globals */
 
@@ -309,15 +331,26 @@ textarea::-webkit-scrollbar-track {
 
 textarea::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  @apply bg-sky-400;
+  @apply bg-rostBlue/80;
 }
 
 textarea::-webkit-scrollbar-thumb:hover {
-  @apply bg-sky-600;
+  @apply bg-rostBlue/90;
 }
 
 textarea::-webkit-scrollbar-thumb:active {
-  @apply bg-sky-800;
+  @apply bg-rostBlue;
+}
+
+input.form-control {
+  @apply h-8 bg-transparent pb-2 border-b-2 outline-none focus:border-b-rostBlue/80 text-rostBlue font-light placeholder:font-light focus:placeholder:opacity-0 transition-all duration-300;
+}
+textarea.form-control {
+  @apply h-32 md:h-full lg:h-full resize-none overflow-auto bg-transparent pb-5 border-b-2 outline-none focus:border-b-rostBlue/80 text-rostBlue font-light;
+}
+
+.form-label {
+  @apply mb-2 title-font text-rostBlue tracking-wider;
 }
 /* End Form */
 

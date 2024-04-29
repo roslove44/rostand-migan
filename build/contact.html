@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rostand MIGAN | Contact</title>
     <link rel="stylesheet" href="css/output.css">
-    <link rel="stylesheet" href="css/styles.css">
     <script src="https://kit.fontawesome.com/c89713f5ff.js" crossorigin="anonymous"></script>
     <script src="./js/script.js" defer></script>
 </head>
@@ -146,7 +145,8 @@
                 répondrai avec plaisir !
             </p>
             <p class="mt-2 text-center">
-                Ou réservez <a href="" class="external-link" target="_blank">ici, un créneau</a> pour en discuter
+                Ou réservez <a href="https://calendly.com/rostand_dev/session-decouverte" class="external-link"
+                    target="_blank">un créneau, ici</a> pour en discuter
                 ensemble.
             </p>
 
@@ -168,42 +168,39 @@
                 <div class="flex flex-col gap-4">
 
                     <div class="flex flex-col md:flex-row justify-between gap-4">
-                        <div
-                            class="flex flex-1 flex-col bg-slate-700 p-4 border border-slate-500/30 rounded-lg shadow-lg">
-                            <label for="name" class="mb-2 title-font text-sky-300 tracking-wider">Nom</label>
+                        <div class="flex flex-1 flex-col p-4">
+                            <label for="name" class="form-label">Nom</label>
                             <input type="text" name="name" id="name" placeholder="Votre nom et prénom"
-                                class="h-8 bg-transparent pb-2 border-b-2 outline-none focus:border-b-sky-300 text-white/90 placeholder:font-light focus:placeholder:hidden">
+                                class="form-control">
                         </div>
-                        <div
-                            class="flex flex-1  flex-col bg-slate-700 p-4 border border-slate-500/30 rounded-lg shadow-lg">
-                            <label for="name" class="mb-2 text-sky-300 tracking-wider">Email</label>
+                        <div class="flex flex-1  flex-col p-4">
+                            <label for="name" class="form-label">Email</label>
                             <input type="email" name="email" id="email" placeholder="Entrez votre adresse mail"
-                                class="h-8 bg-transparent pb-2 border-b-2 outline-none focus:border-b-sky-300 text-white/90">
+                                class="form-control">
                         </div>
                     </div>
 
-                    <div class="flex flex-col bg-slate-700 p-4 border border-slate-500/30 rounded-lg shadow-lg">
-                        <label for="message" class="mb-2 text-sky-300 tracking-wider">Votre Message</label>
+                    <div class="flex flex-col bg-transparent p-4">
+                        <label for="message" class="form-label">Votre Message</label>
                         <textarea name="message" id="message"
                             placeholder="Merci de donner un maximum de détail sur le projet afin que je puisse évaluer correctement la charge de travail que représente votre projet. Cela permettra aussi d'avoir un premier chiffrage au plus prêt du devis final."
-                            class="h-32 md:h-full lg:h-full resize-none overflow-auto bg-transparent pb-5 border-b-2 outline-none focus:border-b-sky-300 text-white/90"></textarea>
+                            class="form-control"></textarea>
                     </div>
 
                     <div class="flex justify-center mt-5">
                         <button
-                            class="relative w-1/2 inline-flex justify-center items-center gap-2 py-3 xl:py-4 px-4 uppercase rounded-sm border border-slate-700 text-rostBlue hover:text-white  duration-300 transition-all group overflow-hidden">
+                            class="relative w-1/2 inline-flex justify-center items-center gap-2 py-3 xl:py-4 px-4 uppercase rounded-sm border border-rostBlue text-rostBlue hover:text-white  duration-300 transition-all group overflow-hidden">
                             <div class="text-xs lg:text-sm 2xl:text-lg font-bold leading-none z-10">
                                 Envoyer <span>&nbsp; &#8594;</span>
                             </div>
                             <div
-                                class="absolute inset-0 bg-slate-700 transform -translate-x-[110%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out">
+                                class="absolute inset-0 bg-rostBlue transform -translate-x-[110%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out">
                             </div>
                         </button>
                     </div>
 
                 </div>
             </form>
-
         </div>
     </section>
 
