@@ -57,6 +57,24 @@ section .section-title h1 {
 .text-wrap {
   text-wrap: pretty;
 }
+.dark-gradient {
+  @apply bg-gradient-to-b from-slate-900 to-black;
+}
+:not(pre) > code[class*="language-"]::-moz-selection,
+:not(pre) > code[class*="language-"] ::-moz-selection,
+pre[class*="language-"]::-moz-selection,
+pre[class*="language-"] ::-moz-selection {
+  text-shadow: none;
+  background: rgba(117, 128, 184, 0.31);
+}
+
+:not(pre) > code[class*="language-"]::selection,
+:not(pre) > code[class*="language-"] ::selection,
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection {
+  text-shadow: none;
+  background: rgba(117, 128, 184, 0.31);
+}
 /* Globals */
 
 /* Gestion d'image */
@@ -391,3 +409,9 @@ h4.post__content-title {
   @apply mt-3 text-base xl:text-lg font-semibold text-wrap leading-5;
 }
 /* End {Blog Portfolio} : Details */
+
+/* Footer */
+footer {
+  @apply bg-gradient-to-t from-slate-900 to-black;
+}
+/* End Footer */
