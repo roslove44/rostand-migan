@@ -6,8 +6,11 @@
 @tailwind utilities;
 
 /* Globals */
+html {
+  @apply overflow-x-hidden w-full;
+}
 body {
-  @apply text-bodyColor bg-slate-100 overflow-x-hidden w-screen;
+  @apply text-bodyColor bg-bgColor overflow-x-hidden w-full;
   font-family: "Inter", sans-serif;
 }
 .title-font {
@@ -35,7 +38,16 @@ section .section-title h1 {
   @apply relative text-3xl sm:text-4xl uppercase font-extrabold text-center mb-6 tracking-widest;
 }
 .external-link {
-  @apply text-rostBlue hover:bg-slate-200 font-medium transition-colors duration-300;
+  @apply relative text-rostBlue hover:bg-slate-200 font-medium transition-colors duration-300;
+}
+.external-link.active {
+  @apply bg-slate-200 hover:bg-slate-300;
+}
+.external-link span.sub-border {
+  @apply absolute content-[''] -bottom-1 right-0 h-1 w-5 bg-rostBlue opacity-100 scale-100 transition-all duration-300;
+}
+.external-link.active:hover span.sub-border {
+  @apply h-[2px] w-5 bg-rostBlue opacity-80 scale-90;
 }
 .social-bubble {
   @apply absolute bottom-[calc(100%+5px)] text-xs whitespace-nowrap bg-slate-700 p-1 rounded-md text-slate-100 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100;

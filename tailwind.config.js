@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         rostBlue: "#4831d4",
         bodyColor: "#474747",
+        bgColor: "#f5f4fc",
       },
       keyframes: {
         "open-menu": {
