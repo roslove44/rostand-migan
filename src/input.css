@@ -427,3 +427,20 @@ footer {
   @apply bg-gradient-to-t from-slate-900 to-black;
 }
 /* End Footer */
+
+/* CV */
+#cv .companies {
+  @apply mt-8 space-y-4 w-full;
+}
+#cv .companies .company {
+  @apply space-y-4 text-base/loose md:text-lg/loose;
+}
+#cv .companies .company .header {
+  @apply w-full text-xl leading-snug font-bold lg:flex justify-between;
+}
+#cv .companies .company .description {
+  @apply md:w-4/5;
+}
+#cv .companies .company .tasks {
+  @apply md:w-4/5 list-inside list-disc space-y-2 md:space-y-1;
+}
