@@ -13,9 +13,8 @@
 <body>
     <menu>
         <!-- Start Desktop Nav -->
-        <div class="fixed top-0 right-0 z-30 left-0">
-            <header
-                class="flex justify-center gap-8 bg-white/95 drop-shadow-[0_4px_8px_rgba(0,0,0,0.05)] transition-all h-[60px]">
+        <div class="fixed top-0 right-0 z-30 left-0 w-screen">
+            <header class="flex justify-center gap-8 bg-slate-50 transition-all h-[60px]">
                 <nav class="p-2 md:px-4 max-w-7xl w-full flex items-center text-sm font-semibold">
                     <div class="flex items-center gap-2 flex-1">
 
@@ -38,8 +37,7 @@
                                     after:transition-all after:duration-400 after:content-['']" id="line">
                             </div>
 
-                            <div id="mobileMenu"
-                                class="invisible absolute top-10 -right-2 sm:right-0 z-30 mt-[6px] bg-slate-900 text-slate-50 transition-all duration-200 origin-top-right">
+                            <div id="menulist">
                                 <nav
                                     class="w-screen h-dvh sm:h-auto sm:w-80 p-10 text-base flex flex-col justify-start gap-4 title-font font-medium tracking-normal leading-loose">
                                     <ul class="flex flex-col items-center justify-start gap-3" id="">
@@ -59,7 +57,7 @@
                                         </li>
 
                                         <li class="w-full flex">
-                                            <a href="" class="group menu-item">Mon CV
+                                            <a href="cv.html" class="group menu-item">Mon CV
                                                 <span
                                                     class="sub-border group-hover:opacity-95 group-hover:scale-100"></span>
                                             </a>
@@ -67,10 +65,12 @@
                                     </ul>
 
                                     <div class="flex flex-col gap-3 mt-6 sm:mt-3">
-                                        <a class="w-full inline-flex items-center text-start uppercase font-medium tracking-widest text-slate-500"
+                                        <a class="w-full inline-flex items-center text-start uppercase font-medium tracking-widest text-slate-400"
                                             href="contact.html">
                                             <span>Contact</span>
-                                            <span>&#8594;</span>
+                                            <span class="ms-2 svg">
+                                                <i class="fa-regular fa-paper-plane"></i>
+                                            </span>
                                         </a>
 
                                         <ul class="flex flex-col items-center justify-start gap-2 text-sm" id="">
@@ -263,7 +263,8 @@
 
 
 
-    <footer class="text-center  pt-1 pb-10 flex flex-col md:flex-row justify-center items-center gap-x-40">
+    <footer
+        class="text-center  pt-1 pb-10 flex flex-col md:flex-row justify-center items-center gap-x-40 reverse-dark-gradient">
         <div class="flex justify-center gap-5 social-links mt-7 text-white">
             <a href="" class="group relative inline-flex svg">
                 <i class="fa-regular fa-envelope"></i>

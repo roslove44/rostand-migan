@@ -21,6 +21,14 @@ module.exports = {
           "80%": { transform: "scale(0.8)", opacity: 0.8 },
           "100%": { transform: "scale(1)", opacity: 1 },
         },
+        "close-menu": {
+          "0%": { transform: "scale(1)", opacity: 1 },
+          "20%": { transform: "scale(0.8)", opacity: 0.8 },
+          "40%": { transform: "scale(0.6)", opacity: 0.6 },
+          "60%": { transform: "scale(0.4)", opacity: 0.4 },
+          "80%": { transform: "scale(0.2)", opacity: 0.2 },
+          "100%": { transform: "scale(0)", opacity: 0.0 },
+        },
         "portfolio-action": {
           "0%": { transform: "scaleX(0)", opacity: 0.0 },
           "20%": { transform: "scaleX(0.2)", opacity: 0.8 },
@@ -32,6 +40,7 @@ module.exports = {
       },
       animation: {
         "open-menu": "open-menu 0.2s ease-in-out forwards",
+        "close-menu": "close-menu 0.2s ease-in-out forwards",
         "portfolio-action": "portfolio-action 0.3s ease-in-out forwards",
       },
     },

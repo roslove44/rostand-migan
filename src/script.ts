@@ -1,19 +1,19 @@
 const initApp = () => {
-  const mobileMenu:HTMLElement|null = document.querySelector("#mobileMenu");
+  const menulist:HTMLElement|null = document.querySelector("#menulist");
   const hamburgerBtn:HTMLButtonElement|null = document.querySelector("#hamburger-btn");
   let articles:NodeListOf<HTMLElement> = document.querySelectorAll("article.sendToPost");
   let illustrations:NodeListOf<HTMLElement> = document.querySelectorAll(".illustration");
-  let imageListForAnimation:NodeListOf<HTMLElement> = document.querySelectorAll("img, svg, i, .svg, .stack")
+  let imageListForAnimation:NodeListOf<HTMLElement> = document.querySelectorAll("img, svg, .svg, .stack")
 
   const toggleMenu = () => {
-    mobileMenu?.classList.toggle("invisible");
-    mobileMenu?.classList.toggle("animate-open-menu");
-    mobileMenu?.classList.toggle("scale-0");
-    mobileMenu?.classList.toggle("opacity-0");
+    menulist?.classList.toggle("is-visible");
+    if (hamburgerBtn?.classList.contains('toggle-btn')) {
+      menulist?.classList.add('animate-close-menu');
+    }
     hamburgerBtn?.classList.toggle("toggle-btn");
   };
   hamburgerBtn?.addEventListener("click", toggleMenu);
-  mobileMenu?.addEventListener("click", toggleMenu);
+  menulist?.addEventListener("click", toggleMenu);
 
   function sendToPost(articles:NodeListOf<HTMLElement>) {
     if (articles) {
@@ -59,7 +59,7 @@ const initApp = () => {
         if (entry.isIntersecting) {
           setTimeout(() => {
             entry.target.classList.add("is-loaded");
-          }, 600);
+          }, 400);
         } else {
           entry.target.classList.remove("is-loaded");
         }
@@ -76,6 +76,21 @@ const initApp = () => {
   sendToPost(articles);
   serviceIllustrationAnimation(illustrations);
   imageAnimation(imageListForAnimation);
+
+  const consoleMessage__ascii = `
+    _____               _                      _       _              
+  |  __ \\             | |                    | |     | |             
+  | |__) |  ___   ___ | |_   __ _  _ __    __| |   __| |  ___ __   __
+  |  _  /  / _ \\ / __|| __| / _\` || '_ \\  / _\` |  / _\` | / _ \\\\ \\ / /
+  | | \\ \\ | (_) |\\__ \\| |_ | (_| || | | || (_| | | (_| ||  __/ \\ V / 
+  |_|  \\_\\ \\___/ |___/ \\__| \\__,_||_| |_| \\__,_|  \\__,_| \\___|  \\_/`;
+  
+  const consoleMessage__partOne = "\n\nHey there 👋 \n";
+  const consoleMessage__partTwo = "Want to explore the source code ? 🕵️‍♂️ \n\n";
+  const consoleMessage__partThree = "Visit the github repository https://github.com/roslove44/rostand-migan \n\n\n"; 
+  const consoleMessage__partFour = "Also, you can contact me on https://twitter.com/migan_rostand or via hello@rostand.dev ✨."
+
+  console.log(consoleMessage__ascii, consoleMessage__partOne + consoleMessage__partTwo + consoleMessage__partThree + consoleMessage__partFour);
 
 }
 

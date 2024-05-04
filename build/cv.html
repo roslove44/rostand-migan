@@ -10,22 +10,23 @@
     <script src="./js/script.js" defer></script>
 </head>
 
-<body class="bg-white">
+<body class="xl:bg-white">
     <div class="w-full overflow-x-hidden">
-        <main id="cv" class="min-h-dvh w-dvw xl:w-10/12 mx-auto my-20 p-5 lg:p-10 bg-bgColor text-bodyColor/80">
+        <main id="cv"
+            class="min-h-dvh w-dvw xl:w-10/12 mx-auto my-10 lg:my-20 p-5 lg:p-10 bg-bgColor text-bodyColor/80">
             <header class="flex items-center justify-end gap-2 divide-x divide-white">
-                <div class="social-links flex justify-center items-center">
-                    <a href="" class="group relative inline-flex items-center svg">
-                        <i class="fa-brands fa-github"></i>
-                        <span class="social-bubble">Github</span>
-                    </a>
-                </div>
                 <a href="" class="downloadCV flex items-center justify-center gap-1 text-sm">
                     <span class="svg">
                         <i class="fa-solid fa-download"></i>
                     </span>
                     <span>Download</span>
                 </a>
+                <div class="social-links flex justify-center items-center">
+                    <a href="" class="group relative inline-flex items-center svg">
+                        <i class="fa-brands fa-github"></i>
+                        <span class="social-bubble">Github</span>
+                    </a>
+                </div>
             </header>
 
             <div class="cv-content flex flex-col md:flex-row items-start mt-6">
@@ -78,7 +79,7 @@
                                     <li>TypeScript</li>
                                     <li>Cypress</li>
                                     <li>Tailwind CSS</li>
-                                    <li>Saas</li>
+                                    <li>Sass</li>
                                 </ul>
                             </div>
                         </section>
@@ -141,7 +142,8 @@
                                     real-time collaboration and integration of
                                     tools for an ever-growing user base specializing in accounting, tax and finance.
                                     <br>
-                                    <small><i>Operational Focus: Benin, with a vision to expand globally.</i></small>
+                                    <small class="italic">Operational Focus: Benin, with a vision to expand
+                                        globally.</small>
                                 </p>
                                 <ul class="tasks">
                                     <li>
@@ -179,10 +181,89 @@
                                     </li>
                                 </ul>
                             </li>
+
+                            <li class="company">
+                                <div class="header">
+                                    <h3 class="text-rostBlue">
+                                        Dommsoft
+                                        <span class="text-bodyColor/75 font-normal relative before:content-['—']">
+                                            &nbsp; Full Stack Developer
+                                        </span>
+                                    </h3>
+                                    <span class="font-light text-base">May 2022 - March 2024</span>
+                                </div>
+                                <p class="description">
+                                    Developed and maintained full-stack web applications, enhancing functionality and
+                                    user experience through the
+                                    integration of cutting-edge technologies. Collaborated closely with
+                                    cross-disciplinary teams to deliver high-quality
+                                    software solutions, meeting both technical specifications and business goals.
+                                </p>
+                                <ul class="tasks">
+                                    <li>
+                                        Developed robust APIs to facilitate seamless integrations and enhance
+                                        application functionalities
+                                    </li>
+                                    <li>
+                                        Crafted custom WordPress sites tailored to client specifications, focusing on
+                                        optimal user engagement and performance
+                                    </li>
+                                    <li>
+                                        Engineered dynamic web applications using Symfony and React, ensuring scalable,
+                                        maintainable, and efficient solutions
+                                    </li>
+                                    <li>
+                                        Implemented responsive designs and mobile-first strategies to ensure optimal
+                                        viewing across various devices
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="company">
+                                <div class="header">
+                                    <h3 class="text-rostBlue">
+                                        Rost Digital Services
+                                        <span class="text-bodyColor/75 font-normal relative before:content-['—']">
+                                            &nbsp; Lead Developer
+                                        </span>
+                                    </h3>
+                                    <span class="font-light text-base">January 2022 - Present</span>
+                                </div>
+                                <p class="description">
+                                    I founded Rost Digital Services to manage my freelance activities, specializing in
+                                    the digital transformation of businesses. As lead developer, I have led the creation
+                                    of websites and applications that enhance digital integration for companies.
+                                    Additionally, I have collaborated with various enterprises such as
+                                    <span class="italic">Le Marché de La Com'</span> who outsource their project needs,
+                                    extending
+                                    my impact across multiple sectors.
+                                </p>
+                            </li>
                         </ul>
+                    </section>
+
+                    <section class="py-8">
+                        <h3 class="external-link active w-fit text-2xl">
+                            <span class="font-bold">Projects</span>
+                        </h3>
+                        <p class="md:w-4/5 text-lg mt-5">
+                            You can find a selection of my projects at
+                            <a href="" class="external-link active">rostand.dev/work</a>, and I am available to provide
+                            further details during a <a href="contact.html" class="external-link">scheduled
+                                demonstration call</a>.
+                        </p>
                     </section>
                 </article>
             </div>
+
+            <footer class="mt-10 h-24 flex items-center justify-start w-full">
+                <a class="font-bold text-2xl transition-all menu-item group" href="index.html" id="logo">
+                    <span class="shadow-2xl">
+                        &#8249;/&#8250; rostand
+                    </span>
+                    <span class=" sub-border group-hover:opacity-95 group-hover:scale-100"></span>
+                </a>
+            </footer>
         </main>
     </div>
 

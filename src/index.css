@@ -72,6 +72,9 @@ section .section-title h1 {
 .dark-gradient {
   @apply bg-gradient-to-b from-slate-900 to-black;
 }
+.reverse-dark-gradient {
+  @apply bg-gradient-to-t from-slate-900 to-black;
+}
 :not(pre) > code[class*="language-"]::-moz-selection,
 :not(pre) > code[class*="language-"] ::-moz-selection,
 pre[class*="language-"]::-moz-selection,
@@ -92,7 +95,6 @@ pre[class*="language-"] ::selection {
 /* Gestion d'image */
 img,
 svg,
-i,
 .svg svg,
 .stack svg {
   @apply opacity-0;
@@ -100,7 +102,6 @@ i,
 }
 img.is-loaded,
 svg.is-loaded,
-i.is-loaded,
 .svg.is-loaded svg,
 .stack.is-loaded svg {
   @apply opacity-100;
@@ -111,6 +112,15 @@ i.is-loaded,
 .toggle-btn {
   @apply [&>#line::before]:translate-y-0 [&>#line::before]:rotate-45 [&>#line::after]:w-8 [&>#line::after]:translate-y-0 [&>#line::after]:-rotate-45 [&>#line]:bg-transparent;
 }
+
+#menulist {
+  @apply scale-0 opacity-0 absolute top-10 -right-2 sm:right-0 z-30 mt-[6px] dark-gradient text-slate-50 origin-top-right ease-in-out;
+}
+
+#menulist.is-visible {
+  @apply animate-open-menu;
+}
+
 .menu-item {
   @apply relative py-1;
 }
@@ -422,15 +432,9 @@ h4.post__content-title {
 }
 /* End {Blog Portfolio} : Details */
 
-/* Footer */
-footer {
-  @apply bg-gradient-to-t from-slate-900 to-black;
-}
-/* End Footer */
-
 /* CV */
 #cv .companies {
-  @apply mt-8 space-y-4 w-full;
+  @apply mt-8 space-y-6 w-full;
 }
 #cv .companies .company {
   @apply space-y-4 text-base/loose md:text-lg/loose;
@@ -442,5 +446,5 @@ footer {
   @apply md:w-4/5;
 }
 #cv .companies .company .tasks {
-  @apply md:w-4/5 list-inside list-disc space-y-2 md:space-y-1;
+  @apply md:w-4/5 text-[0.99rem] list-inside list-disc space-y-2 md:space-y-1;
 }

@@ -37,8 +37,7 @@
                                 after:transition-all after:duration-400 after:content-['']" id="line">
                             </div>
 
-                            <div id="mobileMenu"
-                                class="invisible absolute top-10 -right-2 sm:right-0 z-30 mt-[6px] bg-slate-900 text-slate-50 transition-all duration-200 origin-top-right">
+                            <div id="menulist">
                                 <nav
                                     class="w-screen h-dvh sm:h-auto sm:w-80 p-10 text-base flex flex-col justify-start gap-4 title-font font-medium tracking-normal leading-loose">
                                     <ul class="flex flex-col items-center justify-start gap-3" id="">
@@ -66,10 +65,12 @@
                                     </ul>
 
                                     <div class="flex flex-col gap-3 mt-6 sm:mt-3">
-                                        <a class="w-full inline-flex items-center text-start uppercase font-medium tracking-widest text-slate-500"
+                                        <a class="w-full inline-flex items-center text-start uppercase font-medium tracking-widest text-slate-400"
                                             href="contact.html">
                                             <span>Contact</span>
-                                            <span>&#8594;</span>
+                                            <span class="ms-2 svg">
+                                                <i class="fa-regular fa-paper-plane"></i>
+                                            </span>
                                         </a>
 
                                         <ul class="flex flex-col items-center justify-start gap-2 text-sm" id="">
@@ -138,7 +139,7 @@
 
                 <div>
                     <h2
-                        class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl text-wrap font-bold text-orange-400">
+                        class="text-lg sm:text-xl md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl text-wrap font-bold text-orange-400">
                         Développeur Web <br>
                         <span class="typed" data-typed-items="PHP,Full Stack,Symfony,JavaScript, React, Python">
                             Full Stack.
@@ -150,11 +151,9 @@
                     </h3>
                 </div>
 
-
-
-                <p class="text-wrap md:w-2/3">
-                    J'aide les startups à lancer et développer leurs produits en résolvant les besoins à
-                    travers la création d'expériences engageantes, accessibles et centrées sur l'utilisateur.
+                <p class="text-base/relaxed text-wrap md:w-2/3">
+                    Développeur Full Stack, passionné par la Fintech, je me dédie à la création d'applications web
+                    dynamiques et performantes, propulsant ainsi la transformation digitale et l'innovation financière.
                 </p>
             </div>
         </div>
@@ -367,14 +366,10 @@
                     frontières du numérique.
                 </p>
                 <p>
-                    <b>Prêt à collaborer pour créer quelque chose d'exceptionnel ?</b>
+                    <b>Vous avez un projet en tête ? Parlons-en et créons quelque chose d'exceptionnel ensemble.</b>
                 </p>
 
                 <div class="flex justify-center md:justify-start gap-5 social-links mt-7">
-                    <a href="" class="group relative inline-flex svg">
-                        <i class="fa-brands fa-github"></i>
-                        <span class="social-bubble">Github</span>
-                    </a>
                     <a href="" class="group relative inline-flex svg">
                         <i class="fa-brands fa-linkedin"></i>
                         <span class="social-bubble">Linkedin</span>
@@ -385,15 +380,19 @@
                     </a>
                 </div>
 
-                <div class="w-full flex items-center justify-center md:justify-start mt-10">
+                <div class="w-full flex items-center gap-2 justify-center md:justify-start mt-10">
                     <a href="portfolio.html"
                         class="flex items-center justify-between py-2 px-4 font-semibold text-white text-sm border border-slate-800 bg-slate-900 hover:border-slate-600 hover:text-slate-100 overflow-hidden transition-all duration-150 ease-in-out rounded-full">
                         <span class="w-full text-left transition-all duration-200 ease-in-out">Mes réalisations</span>
-                        <span class="ms-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-                                <path fill="currentColor" d="M16.175 13H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8l-1.425-1.4z">
-                                </path>
-                            </svg>
+                        <span class="ms-2 svg">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </span>
+                    </a>
+                    <a href="contact.html"
+                        class="flex items-center justify-between py-2 px-4 font-semibold text-white text-sm border border-slate-800 bg-slate-900 hover:border-slate-600 hover:text-slate-100 overflow-hidden transition-all duration-150 ease-in-out rounded-full">
+                        <span class="w-full text-left transition-all duration-200 ease-in-out">Contact</span>
+                        <span class="ms-2 svg">
+                            <i class="fa-regular fa-paper-plane"></i>
                         </span>
                     </a>
                 </div>
@@ -472,7 +471,8 @@
         </a>
     </section>
 
-    <footer class="text-center  pt-1 pb-10 flex flex-col md:flex-row justify-center items-center gap-x-40">
+    <footer
+        class="text-center  pt-1 pb-10 flex flex-col md:flex-row justify-center items-center gap-x-40 reverse-dark-gradient">
         <div class="flex justify-center gap-5 social-links mt-7 text-white">
             <a href="" class="group relative inline-flex svg">
                 <i class="fa-regular fa-envelope"></i>
