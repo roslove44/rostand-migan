@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Rostand MIGAN | Développeur Web{% endblock %}</title>
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22></text></svg>">
@@ -11,11 +12,163 @@
 
     {% block javascripts %}
     {% block importmap %}{{ importmap('app') }}{% endblock %}
+    <script type="text/javascript" src="{{ asset('typescript/app.ts') }}"></script>
     {% endblock %}
 </head>
 
 <body>
+    <menu>
+        <!-- Start Desktop Nav -->
+        <div class="fixed top-0 right-0 z-30 left-0 w-screen">
+            <header class="flex justify-center gap-8 bg-slate-50 transition-all h-[60px]">
+                <nav class="p-2 md:px-4 max-w-7xl w-full flex items-center text-sm font-semibold">
+                    <div class="flex items-center gap-2 flex-1">
+
+                        <div class="flex items-center flex-1 justify-items-start">
+                            <a class="font-bold text-xl transition-all menu-item group" href="index.html" id="logo">
+                                <span class="">
+                                    &#8249;/&#8250; rostand
+                                </span>
+                                <span class="sub-border group-hover:opacity-95 group-hover:scale-100"></span>
+                            </a>
+                        </div>
+
+                        <!-- Start Mobile Nav -->
+                        <button class="relative cursor-pointer w-8 h-8 inline-flex justify-center" id="hamburger-btn">
+
+                            <div class="inline-flex justify-end absolute top-4 -mt-0.5 h-1 w-6 rounded bg-rostBlue transition-all duration-400 
+                                        before:absolute before:h-1 before:w-8 before:-translate-y-2 before:rounded before:bg-rostBlue 
+                                        before:transition-all before:duration-400 before:content-[''] 
+                                        after:absolute after:h-1 after:w-3 after:translate-y-2 after:rounded after:bg-rostBlue 
+                                        after:transition-all after:duration-400 after:content-['']" id="line">
+                            </div>
+
+                            <div id="menulist">
+                                <nav
+                                    class="w-screen h-dvh sm:h-auto sm:w-80 p-10 text-base flex flex-col justify-start gap-4 title-font font-medium tracking-normal leading-loose">
+                                    <ul class="flex flex-col items-center justify-start gap-3" id="">
+                                        <li class="w-full flex">
+                                            <a href="portfolio.html" class="group menu-item">
+                                                <span>Mes Réalisations</span>
+                                                <span
+                                                    class="sub-border group-hover:opacity-95 group-hover:scale-100"></span>
+                                            </a>
+                                        </li>
+
+                                        <li class="w-full flex">
+                                            <a href="blog.html" class="group menu-item">Mon Blog
+                                                <span
+                                                    class="sub-border group-hover:opacity-95 group-hover:scale-100"></span>
+                                            </a>
+                                        </li>
+
+                                        <li class="w-full flex">
+                                            <a href="cv.html" class="group menu-item">Mon CV
+                                                <span
+                                                    class="sub-border group-hover:opacity-95 group-hover:scale-100"></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                    <div class="flex flex-col gap-3 mt-6 sm:mt-3">
+                                        <a class="w-full inline-flex items-center text-start uppercase font-medium tracking-widest group menu-item hover:translate-x-2 transition-all duration-300 ease-linear"
+                                            href="contact.html">
+                                            <span>Contact</span>
+                                            <span class="ms-2 svg animate-bounce">
+                                                <i class="fa-regular fa-paper-plane"></i>
+                                            </span>
+                                        </a>
+
+                                        <ul class="flex flex-col items-center justify-start gap-2 text-sm" id="">
+                                            <li class="w-full flex">
+                                                <a href="mailto:contact@rostand-migan.com" class="group menu-item">
+                                                    <span>contact@rostand-migan.com</span>
+                                                    <span
+                                                        class="sub-border group-hover:opacity-95 group-hover:scale-100"></span>
+                                                </a>
+                                            </li>
+
+                                            <li class="w-full flex">
+                                                <a href="https://twitter.com/migan_rostand"
+                                                    class="group menu-item">twitter.com/migan_rostand
+                                                    <span
+                                                        class="sub-border group-hover:opacity-95 group-hover:scale-100">
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="flex justify-center gap-5 social-links mt-10 sm:mt-4">
+                                        <a href="" class="group relative inline-flex svg">
+                                            <i class="fa-regular fa-envelope"></i>
+                                            <span class="social-bubble">&nbsp;Mail&nbsp;</span>
+                                        </a>
+                                        <a href="" class="group relative inline-flex svg">
+                                            <i class="fa-brands fa-github"></i>
+                                            <span class="social-bubble">Github</span>
+                                        </a>
+                                        <a href="" class="group relative inline-flex svg">
+                                            <i class="fa-brands fa-linkedin"></i>
+                                            <span class="social-bubble">Linkedin</span>
+                                        </a>
+                                        <a href="" class="group relative inline-flex svg">
+                                            <i class="fa-brands fa-twitter"></i>
+                                            <span class="social-bubble">&nbsp;&nbsp;X&nbsp;&nbsp;</span>
+                                        </a>
+                                        <a href="" class="group relative inline-flex svg">
+                                            <i class="fa-brands fa-telegram"></i>
+                                            <span class="social-bubble">Telegram</span>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </div>
+                        </button>
+                        <!-- End Mobile Nav -->
+
+                    </div>
+                </nav>
+            </header>
+        </div>
+        <!-- End Desktop Nav -->
+    </menu>
+
+
+    <div class="page-wrapper"></div>
     {% block body %}{% endblock %}
+
+
+    <footer
+        class="text-center  pt-1 pb-10 flex flex-col md:flex-row justify-center items-center gap-x-40 reverse-dark-gradient">
+        <div class="flex justify-center gap-5 social-links mt-7 text-white">
+            <a href="" class="group relative inline-flex svg">
+                <i class="fa-regular fa-envelope"></i>
+                <span class="social-bubble">&nbsp;Mail&nbsp;</span>
+            </a>
+            <a href="" class="group relative inline-flex svg">
+                <i class="fa-brands fa-github"></i>
+                <span class="social-bubble">Github</span>
+            </a>
+            <a href="" class="group relative inline-flex svg">
+                <i class="fa-brands fa-linkedin"></i>
+                <span class="social-bubble">Linkedin</span>
+            </a>
+            <a href="" class="group relative inline-flex svg">
+                <i class="fa-brands fa-twitter"></i>
+                <span class="social-bubble">&nbsp;&nbsp;X&nbsp;&nbsp;</span>
+            </a>
+            <a href="" class="group relative inline-flex svg">
+                <i class="fa-brands fa-telegram"></i>
+                <span class="social-bubble">Telegram</span>
+            </a>
+        </div>
+        <div class="mt-5 text-center md:text-left text-sm max-w-md text-slate-300/60">
+            <p>
+                Construis avec <span class="text-rostBlue/45">&#9829;</span> à partir de zéro
+                et coder en Tailwind CSS par <a href="">Rostand</a>.
+            </p>
+        </div>
+    </footer>
 </body>
 
 </html>
