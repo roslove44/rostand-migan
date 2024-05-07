@@ -403,6 +403,9 @@ textarea.form-control {
 .form-label {
   @apply mb-2 title-font text-rostBlue tracking-wider;
 }
+.form-error ul li {
+  @apply mb-1 text-red-500 text-sm;
+}
 /* End Form */
 
 /* Faq */
