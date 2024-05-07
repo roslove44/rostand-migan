@@ -12,7 +12,6 @@
 
     {% block javascripts %}
     {% block importmap %}{{ importmap('app') }}{% endblock %}
-    <script type="text/javascript" src="{{ asset('typescript/app.ts') }}"></script>
     {% endblock %}
 </head>
 
@@ -25,7 +24,8 @@
                     <div class="flex items-center gap-2 flex-1">
 
                         <div class="flex items-center flex-1 justify-items-start">
-                            <a class="font-bold text-xl transition-all menu-item group" href="index.html" id="logo">
+                            <a class="font-bold text-xl transition-all menu-item group" href="{{path('app_main')}}"
+                                id="logo">
                                 <span class="">
                                     &#8249;/&#8250; rostand
                                 </span>
@@ -63,7 +63,8 @@
                                         </li>
 
                                         <li class="w-full flex">
-                                            <a href="cv.html" class="group menu-item">Mon CV
+                                            <a target="_blank" href="{{path('app_resume')}}" class="group menu-item">Mon
+                                                CV
                                                 <span
                                                     class="sub-border group-hover:opacity-95 group-hover:scale-100"></span>
                                             </a>
@@ -72,10 +73,12 @@
 
                                     <div class="flex flex-col gap-3 mt-6 sm:mt-3">
                                         <a class="w-full inline-flex items-center text-start uppercase font-medium tracking-widest group menu-item hover:translate-x-2 transition-all duration-300 ease-linear"
-                                            href="contact.html">
+                                            href="{{path('app_main_contact')}}">
                                             <span>Contact</span>
                                             <span class="ms-2 svg animate-bounce">
-                                                <i class="fa-regular fa-paper-plane"></i>
+                                                <svg>
+                                                    <use href="#plane" />
+                                                </svg>
                                             </span>
                                         </a>
 
@@ -101,23 +104,33 @@
 
                                     <div class="flex justify-center gap-5 social-links mt-10 sm:mt-4">
                                         <a href="" class="group relative inline-flex svg">
-                                            <i class="fa-regular fa-envelope"></i>
+                                            <svg>
+                                                <use href="#mail" />
+                                            </svg>
                                             <span class="social-bubble">&nbsp;Mail&nbsp;</span>
                                         </a>
                                         <a href="" class="group relative inline-flex svg">
-                                            <i class="fa-brands fa-github"></i>
+                                            <svg>
+                                                <use href="#github" />
+                                            </svg>
                                             <span class="social-bubble">Github</span>
                                         </a>
                                         <a href="" class="group relative inline-flex svg">
-                                            <i class="fa-brands fa-linkedin"></i>
+                                            <svg>
+                                                <use href="#linkedin" />
+                                            </svg>
                                             <span class="social-bubble">Linkedin</span>
                                         </a>
                                         <a href="" class="group relative inline-flex svg">
-                                            <i class="fa-brands fa-twitter"></i>
+                                            <svg>
+                                                <use href="#twitter" />
+                                            </svg>
                                             <span class="social-bubble">&nbsp;&nbsp;X&nbsp;&nbsp;</span>
                                         </a>
                                         <a href="" class="group relative inline-flex svg">
-                                            <i class="fa-brands fa-telegram"></i>
+                                            <svg>
+                                                <use href="#telegram" />
+                                            </svg>
                                             <span class="social-bubble">Telegram</span>
                                         </a>
                                     </div>
@@ -134,31 +147,42 @@
     </menu>
 
 
-    <div class="page-wrapper"></div>
-    {% block body %}{% endblock %}
+    <div class="page-wrapper">
+        {% block body %}{% endblock %}
+    </div>
 
 
     <footer
         class="text-center  pt-1 pb-10 flex flex-col md:flex-row justify-center items-center gap-x-40 reverse-dark-gradient">
         <div class="flex justify-center gap-5 social-links mt-7 text-white">
             <a href="" class="group relative inline-flex svg">
-                <i class="fa-regular fa-envelope"></i>
+                <svg>
+                    <use href="#mail" />
+                </svg>
                 <span class="social-bubble">&nbsp;Mail&nbsp;</span>
             </a>
             <a href="" class="group relative inline-flex svg">
-                <i class="fa-brands fa-github"></i>
+                <svg>
+                    <use href="#github" />
+                </svg>
                 <span class="social-bubble">Github</span>
             </a>
             <a href="" class="group relative inline-flex svg">
-                <i class="fa-brands fa-linkedin"></i>
+                <svg>
+                    <use href="#linkedin" />
+                </svg>
                 <span class="social-bubble">Linkedin</span>
             </a>
             <a href="" class="group relative inline-flex svg">
-                <i class="fa-brands fa-twitter"></i>
+                <svg>
+                    <use href="#twitter" />
+                </svg>
                 <span class="social-bubble">&nbsp;&nbsp;X&nbsp;&nbsp;</span>
             </a>
             <a href="" class="group relative inline-flex svg">
-                <i class="fa-brands fa-telegram"></i>
+                <svg>
+                    <use href="#telegram" />
+                </svg>
                 <span class="social-bubble">Telegram</span>
             </a>
         </div>
@@ -169,6 +193,8 @@
             </p>
         </div>
     </footer>
+
+    {% include "__partials/__icons.html.twig" %}
 </body>
 
 </html>

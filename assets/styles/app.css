@@ -13,9 +13,7 @@ body {
   @apply text-bodyColor bg-bgColor overflow-x-hidden w-full min-h-dvh;
   font-family: "Inter", sans-serif;
 }
-.page-wrapper {
-  @apply min-h-dvh;
-}
+
 .title-font {
   font-family: "Sora", sans-serif;
 }
@@ -65,7 +63,7 @@ section .section-title h1 {
   height: 8px;
   transform: rotate(45deg);
 }
-.social-links svg {
+svg {
   height: 20px;
   width: 40px;
 }
@@ -102,6 +100,10 @@ svg,
 .stack svg {
   @apply opacity-100;
   transition: opacity ease-in 0.3s;
+}
+
+svg {
+  @apply fill-current;
 }
 img.is-loaded,
 svg.is-loaded,
