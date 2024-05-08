@@ -8,8 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\Email;
-use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints as Assert;
 
 class ContactType extends AbstractType
 {
@@ -34,13 +33,14 @@ class ContactType extends AbstractType
                     'placeholder' => 'Entrez adresse votre email',
                 ],
                 'constraints' => [
-                    new NotBlank([
+                    new Assert\NotBlank([
                         'message' => 'Veuillez entrer une adresse email.',
                     ]),
-                    new Email([
+                    new Assert\Email([
                         'message' => 'L\'adresse email "{{ value }}" n\'est pas valide.',
                         'mode' => 'html5',
                     ]),
+                    new Assert\Regex('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$^', 'L\'adresse email doit contenir un point.')
                 ],
             ])
             ->add('prospect_message', TextareaType::class, [

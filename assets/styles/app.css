@@ -403,8 +403,12 @@ textarea.form-control {
 .form-label {
   @apply mb-2 title-font text-rostBlue tracking-wider;
 }
+
+.form-error ul {
+  @apply flex flex-col list-disc list-inside;
+}
 .form-error ul li {
-  @apply mb-1 text-red-500 text-sm;
+  @apply mb-1 text-red-800 text-sm font-medium bg-red-50 indent-1 p-1;
 }
 /* End Form */
 

@@ -28,7 +28,7 @@
         </p>
 
         <!-- Alert Widget -->
-        {% include "__partials/__flash.html.twig" %}
+        {% include "_partials/_flash.html.twig" %}
         <!-- End Alert Widget -->
 
         {{ form_start(contactForm, {'attr': {'class': 'w-full mx-auto my-5'}}) }}
@@ -54,7 +54,7 @@
                 <div class="flex flex-1  flex-col p-4">
                     {{ form_label(contactForm.prospect_mail) }}
                     {{ form_widget(contactForm.prospect_mail) }}
-                    <div class="form-error">
+                    <div class="form-error" role="alert">
                         {{ form_errors(contactForm.prospect_mail) }}
                     </div>
                 </div>
