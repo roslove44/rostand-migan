@@ -51,7 +51,7 @@ section .section-title h1 {
   @apply h-[2px] w-5 bg-rostBlue opacity-80 scale-90;
 }
 .social-bubble {
-  @apply absolute bottom-[calc(100%+5px)] text-xs whitespace-nowrap bg-slate-700 p-1 rounded-md text-slate-100 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100;
+  @apply absolute bottom-[calc(100%+5px)] right-1/2 translate-x-1/2 text-xs whitespace-nowrap bg-slate-700 p-1 rounded-md text-slate-100 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100;
 }
 .social-bubble:after {
   @apply bg-slate-700;
@@ -63,9 +63,15 @@ section .section-title h1 {
   height: 8px;
   transform: rotate(45deg);
 }
-svg {
+
+.social-links svg {
   height: 20px;
   width: 40px;
+}
+svg {
+  height: 1em;
+  width: 1em;
+  @apply inline-block align-middle;
 }
 .text-wrap {
   text-wrap: pretty;
@@ -408,7 +414,7 @@ textarea.form-control {
   @apply flex flex-col list-disc list-inside;
 }
 .form-error ul li {
-  @apply mb-1 text-red-800 text-sm font-medium bg-red-50 indent-1 p-1;
+  @apply mb-1 text-red-800 text-sm italic font-medium bg-red-50 indent-1 p-1;
 }
 /* End Form */
 

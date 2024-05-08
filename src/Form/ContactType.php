@@ -23,6 +23,12 @@ class ContactType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                     'placeholder' => 'Votre nom et prénom',
+                ],
+                'constraints' => [
+                    new Assert\NotBlank([
+                        'message' => 'Veuillez renseigner votre nom et prénom',
+                    ]),
+                    new Assert\Regex('^\w+\s+\w+^', 'Veuillez renseigner votre nom et prénom'),
                 ]
             ])
             ->add('prospect_mail', EmailType::class, [
@@ -34,13 +40,13 @@ class ContactType extends AbstractType
                 ],
                 'constraints' => [
                     new Assert\NotBlank([
-                        'message' => 'Veuillez entrer une adresse email.',
+                        'message' => 'Veuillez entrer une adresse email',
                     ]),
                     new Assert\Email([
-                        'message' => 'L\'adresse email "{{ value }}" n\'est pas valide.',
+                        'message' => 'L\'adresse email "{{ value }}" n\'est pas valide',
                         'mode' => 'html5',
                     ]),
-                    new Assert\Regex('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$^', 'L\'adresse email doit contenir un point.')
+                    new Assert\Regex('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$^', "Point (.) manquant")
                 ],
             ])
             ->add('prospect_message', TextareaType::class, [
@@ -49,7 +55,13 @@ class ContactType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                     'placeholder' => $messagePlaceholder,
-                ]
+                ],
+                'constraints' => [
+                    new Assert\NotBlank([
+                        'message' => 'Veuillez entrer un message',
+                    ]),
+                    new Assert\Regex('^\w+\s+\w+\s+\w+\s+\w+\s+\w+^', 'Votre message doit contenir au moins 5 mots'),
+                ],
             ]);
     }
 
