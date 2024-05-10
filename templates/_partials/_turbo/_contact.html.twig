@@ -27,3 +27,33 @@
     </template>
 </turbo-stream>
 {% endblock %}
+
+{% block failed_stream %}
+<turbo-stream action="append" target="flash">
+    <template>
+        <div class="p-4 mb-1 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 duration-300 transition-all"
+            data-controller="flash">
+            <div class="flex flex-row items-center justify-between">
+                <div class="">
+                    <span class="font-medium">
+                        <svg>
+                            <use href="#failed" />
+                        </svg>
+                    </span>
+                    <span>
+                        &nbsp; {{message}}
+                    </span>
+                </div>
+
+                <button class="justify-end font-black text-sm" data-action="click->flash#remove">&#x2716;</button>
+            </div>
+        </div>
+    </template>
+</turbo-stream>
+
+<turbo-stream action="replace" targets="form[name=contact]">
+    <template>
+        {% include '_partials/_form/contact.html.twig'%}
+    </template>
+</turbo-stream>
+{% endblock %}

@@ -11,7 +11,7 @@ export default class extends Controller {
         setTimeout(() => {
           this.element.remove();
         }, 500);
-      }, 10000);
+      }, 30000);
     }
   }
   remove() {
