@@ -46,7 +46,7 @@ export default class extends Controller {
   showAll(projects) {
     for (const project of projects) {
       project.classList.remove("isNotVisible");
-      //   project.classList.add("animate-portfolio-action");
+      project.classList.add("animate-portfolio-action");
       setTimeout(() => {
         project.style.display = "flex";
       }, 300);
