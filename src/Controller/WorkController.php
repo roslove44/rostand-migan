@@ -11,8 +11,12 @@ class WorkController extends AbstractController
     #[Route('/work', name: 'app_work')]
     public function index(): Response
     {
-        return $this->render('work/index.html.twig', [
-            'controller_name' => 'ProjectsController',
-        ]);
+        return $this->render('work/index.html.twig', []);
+    }
+
+    #[Route('/work/details', name: 'app_work_details')]
+    public function details(): Response
+    {
+        return $this->render('work/details.html.twig', []);
     }
 }
