@@ -1,36 +1,9 @@
 "use strict";
 const initApp = () => {
-  const menulist = document.querySelector("#menulist");
-  const hamburgerBtn = document.querySelector("#hamburger-btn");
-  let articles = document.querySelectorAll("article.sendToPost");
   let illustrations = document.querySelectorAll(".illustration");
   let imageListForAnimation = document.querySelectorAll(
     "img, svg, .svg, .stack"
   );
-  const toggleMenu = () => {
-    if (menulist && hamburgerBtn) {
-      menulist.classList.toggle("is-visible");
-
-      if (hamburgerBtn.classList.contains("toggle-btn")) {
-        menulist.classList.add("animate-close-menu");
-      }
-
-      hamburgerBtn.classList.toggle("toggle-btn");
-    }
-  };
-
-  if (hamburgerBtn) {
-    hamburgerBtn.addEventListener("click", toggleMenu);
-  }
-  if (menulist) {
-    menulist.addEventListener("click", toggleMenu);
-    menulist.querySelectorAll("*").forEach(function (element) {
-      element.addEventListener("click", () => {
-        menulist.classList.add("invisible");
-        hamburgerBtn.classList.remove("toggle-btn");
-      });
-    });
-  }
 
   function serviceIllustrationAnimation(illustrations) {
     // Fonction à exécuter lorsque l'élément entre dans la fenêtre d'affichage

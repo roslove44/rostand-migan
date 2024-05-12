@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <menu>
+    <menu data-controller="menu">
         <!-- Start Desktop Nav -->
         <div class="fixed top-0 right-0 z-30 left-0 w-screen">
             <header class="flex justify-center gap-8 bg-slate-50 transition-all h-[60px]">
@@ -35,7 +35,8 @@
                         </div>
 
                         <!-- Start Mobile Nav -->
-                        <button class="relative cursor-pointer w-8 h-8 inline-flex justify-center" id="hamburger-btn">
+                        <button class="relative cursor-pointer w-8 h-8 inline-flex justify-center" id="hamburger-btn"
+                            data-action="click->menu#toggleMenu" data-menu-target="hamburgerBtn">
 
                             <div class="inline-flex justify-end absolute top-4 -mt-0.5 h-1 w-6 rounded bg-rostBlue transition-all duration-400 
                                         before:absolute before:h-1 before:w-8 before:-translate-y-2 before:rounded before:bg-rostBlue 
@@ -44,7 +45,7 @@
                                         after:transition-all after:duration-400 after:content-['']" id="line">
                             </div>
 
-                            <div id="menulist">
+                            <div id="menulist" data-menu-target="menuList">
                                 <nav
                                     class="w-screen h-dvh sm:h-auto sm:w-80 p-10 text-base flex flex-col justify-start gap-4 title-font font-medium tracking-normal leading-loose">
                                     <ul class="flex flex-col items-center justify-start gap-3" id="">
