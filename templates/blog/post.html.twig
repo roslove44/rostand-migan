@@ -1,0 +1,169 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Portfolio | Rostand MIGAN{% endblock %}
+
+{% block body %}
+<section id="post" class="min-h-[calc(100dvh-70px)] mx-auto lg:flex justify-center">
+    <div class="px-5 pt-2 pb-10 sm:px-4 w-full sm:w-9/12 xl:max-w-3xl mx-auto">
+
+        <header>
+            <div class="flex items-center gap-2 mt-5">
+                <img src="{{asset('img/rostand-id.jpg')}}" alt=""
+                    class="h-12 w-12 object-contain rounded-full align-middle">
+                <div class="flex flex-col">
+                    <p class="mt-3 text-sm font-medium">
+                        <a href="">Rostand MIGAN</a> . Développeur Full Stack
+                    </p>
+                    <i class="text-xs">Article Publié le 15 Mars 2023</i>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-2 mt-5 border-y border-slate-200 py-4 text-xs">
+                <button title="Visionnages"
+                    class="rounded-full shadow-md py-1 px-2 flex items-center gap-2 duration-300  hover:bg-slate-100 bg-slate-50 transition-colors">
+                    <div class="svg text-rostBlue">
+                        <svg>
+                            <use href="#view"></use>
+                        </svg>
+                    </div>
+                    <div class="font-medium leading-none">77</div>
+                </button>
+                <button title="Partager"
+                    class=" rounded-full shadow-md py-1 px-2 flex items-center gap-2 duration-300  hover:bg-slate-100 bg-slate-50 transition-colors">
+                    <div class="svg text-rostBlue">
+                        <svg>
+                            <use href="#share"></use>
+                        </svg>
+                    </div>
+                    <div class="font-medium leading-none">Partager</div>
+                </button>
+                <button
+                    class=" rounded-full shadow-md py-1 px-2 flex items-center gap-2 duration-300  hover:bg-teal-200 bg-teal-100 transition-colors">
+                    <div class="svg text-rostBlue">
+                        <svg>
+                            <use href="#clipboard-check"></use>
+                        </svg>
+                    </div>
+                    <div class="font-medium leading-none">Lien copié dans le presse-papier</div>
+                </button>
+            </div>
+        </header>
+
+        <div class="w-full flex flex-col mt-8">
+            <article>
+
+                <div class="post__header">
+                    <h1 class="post__header-title">
+                        La Roadmap Complète pour devenir Développeur Web en 2024
+                    </h1>
+                    <p class="">
+                        It's been about a year and a half since I released my portfolio in the style of a 3D
+                        interactive
+                        ramen shop. Lots has
+                        happened since then — I've shifted gears from management consulting to full-time software
+                        engineering, started
+                        freelancing, and even kicked off teaching a course (but more on that later).
+                    </p>
+                </div>
+
+                <div class="flex justify-center my-8">
+                    <div class="relative flex items-center justify-center w-full md:h-[450px] md:w-fit">
+                        <img class="object-cover md:h-full w-full" src="{{asset('img/contact-bg.jpg')}}">
+                    </div>
+                </div>
+
+                <div class="post__content">
+                    <p>
+                        It's been about a year and a half since I released my portfolio in the style of a 3D
+                        interactive
+                        ramen shop. Lots has
+                        happened since then — I've shifted gears from management consulting to full-time software
+                        engineering, started
+                        freelancing, and even kicked off teaching a course (but more on that later).
+                    </p>
+
+
+                    <h2 class="post__content-title">
+                        Ne brûler pas les étapes
+                    </h2>
+                    <p>
+                        I know I promised way back to spill the beans on how I built this my portfolio. Well, better
+                        late than never, right? So,
+                        grab your favourite bowl of ramen, and let's dive into the nitty-gritty of how I made this
+                        happen. <a href="" class="external-link active">Waoh::!</a>
+                    </p>
+                </div>
+
+            </article>
+
+            <div class="endArticle">
+                <div class="tags flex justify-between py-5">
+                    <div class="flex gap-2">
+                        <button
+                            class=" rounded-full shadow-md py-2 px-3 flex items-center gap-2 duration-300  hover:bg-slate-200 bg-slate-50  transition-all">
+                            <div class="text-xs font-medium leading-none">Php</div>
+                        </button>
+                        <button
+                            class=" rounded-full shadow-md py-2 px-3 flex items-center gap-2 duration-300  hover:bg-slate-200 bg-slate-50  transition-all">
+                            <div class="text-xs font-medium leading-none">JavaScript</div>
+                        </button>
+                        <button
+                            class=" rounded-full shadow-md py-2 px-3 flex items-center gap-2 duration-300  hover:bg-slate-200 bg-slate-50  transition-all">
+                            <div class="text-xs font-medium leading-none">Web</div>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-2 mt-5 border-y border-slate-200 py-4 text-xs">
+                    <button title="Visionnages"
+                        class="rounded-full shadow-md py-1 px-2 flex items-center gap-2 duration-300  hover:bg-slate-100 bg-slate-50 transition-colors">
+                        <div class="svg text-rostBlue">
+                            <svg>
+                                <use href="#view"></use>
+                            </svg>
+                        </div>
+                        <div class="font-medium leading-none">77</div>
+                    </button>
+                    <button title="Partager"
+                        class=" rounded-full shadow-md py-1 px-2 flex items-center gap-2 duration-300  hover:bg-slate-100 bg-slate-50 transition-colors">
+                        <div class="svg text-rostBlue">
+                            <svg>
+                                <use href="#share"></use>
+                            </svg>
+                        </div>
+                        <div class="font-medium leading-none">Partager</div>
+                    </button>
+                    <button
+                        class=" rounded-full shadow-md py-1 px-2 flex items-center gap-2 duration-300  hover:bg-teal-200 bg-teal-100 transition-colors">
+                        <div class="svg text-rostBlue">
+                            <svg>
+                                <use href="#clipboard-check"></use>
+                            </svg>
+                        </div>
+                        <div class="font-medium leading-none">Lien copié dans le presse-papier</div>
+                    </button>
+                </div>
+
+                <div class="flex items-center gap-2 mt-5">
+                    <img src="{{asset('img/rostand-id.jpg')}}" alt=""
+                        class="h-14 w-14 object-cover rounded-full align-middle">
+                    <div class="flex flex-col align-middle">
+                        <h2 class="mt-3 text-base ">
+                            Écris par
+                            <a href="{{path('app_main')}}" class="font-bold">Rostand MIGAN</a>
+                        </h2>
+                        <i class="text-xs justify-start">Développeur Web Full Stack</i>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-2 mt-6">
+                    <a href="{{path('app_blog')}}"
+                        class="rounded-full shadow-md py-3 px-6 flex items-center gap-2 duration-300 hover:bg-slate-300 bg-slate-200  transition-all">
+                        <div class="text-sm font-medium leading-none">Voir d'autres articles</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

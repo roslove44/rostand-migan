@@ -20,12 +20,6 @@ class MainController extends AbstractController
         return $this->render('main/home.html.twig');
     }
 
-    #[Route('/test-email', name: 'app_main_mail')]
-    public function mail(): Response
-    {
-        return $this->render('email/contact.html.twig');
-    }
-
 
     #[Route('/contact', name: 'app_main_contact')]
     public function contact(Request $request, SendMailService $mailer, ParameterBagInterface $parameters, LoggerInterface $logger): Response
