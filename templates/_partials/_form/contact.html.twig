@@ -1,6 +1,6 @@
 {{ form_start(contactForm, {'attr': {'class': 'w-full mx-auto my-5'}}) }}
 
-<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-4" data-controller="contact">
     <div class="flex flex-col md:flex-row justify-between gap-4">
         <div class="flex flex-1 flex-col p-4">
             {{ form_label(contactForm.prospect_name) }}
@@ -29,8 +29,18 @@
     <div class="flex justify-center mt-5">
         <button
             class="relative w-1/2 inline-flex justify-center items-center gap-2 py-3 xl:py-4 px-4 uppercase rounded-sm border border-rostBlue text-rostBlue hover:text-white  duration-300 transition-all group overflow-hidden">
-            <div class="text-xs lg:text-sm 2xl:text-lg font-bold leading-none z-10">
-                Envoyer <span>&nbsp; &#8594;</span>
+            <div class="text-xs lg:text-sm 2xl:text-lg font-bold leading-none z-10" data-contact-target="submitBtn">
+                <span>
+                    Envoyer <span>&nbsp; &#8594;</span>
+                </span>
+                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-rostBlue group-hover:text-white"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-0 transition-all duration-300" cx="12" cy="12" r="10" stroke="currentColor"
+                        stroke-width="4"></circle>
+                    <path class="opacity-0 transition-all duration-300" fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                    </path>
+                </svg>
             </div>
             <div
                 class="absolute inset-0 bg-rostBlue transform -translate-x-[110%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out">
