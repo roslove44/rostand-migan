@@ -55,12 +55,16 @@ class ContactType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                     'placeholder' => $messagePlaceholder,
+                    'minlength' => 10,
                 ],
                 'constraints' => [
                     new Assert\NotBlank([
                         'message' => 'Veuillez entrer un message',
                     ]),
-                    new Assert\Regex('^\w+\s+\w+\s+\w+\s+\w+\s+\w+^', 'Votre message doit contenir au moins 5 mots'),
+                    new Assert\Length(
+                        min: 10,
+                        minMessage: "Veuillez allonger votre texte pour qu'il comporte au moins {{ limit }} caractères",
+                    ),
                 ],
             ]);
     }
