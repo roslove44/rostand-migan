@@ -32,19 +32,6 @@ const initApp = () => {
     });
   }
 
-  function sendToPost(articles) {
-    if (articles) {
-      articles.forEach((article) => {
-        let link = article.querySelector("a.articleLink");
-        article.addEventListener("click", function () {
-          if (link && link.href) {
-            window.location.href = link.href;
-          }
-        });
-      });
-    }
-  }
-
   function serviceIllustrationAnimation(illustrations) {
     // Fonction à exécuter lorsque l'élément entre dans la fenêtre d'affichage
     function handleIntersection(entries, observer) {
@@ -84,8 +71,8 @@ const initApp = () => {
       imageObserver.observe(image);
     });
   }
+
   // Run functions
-  sendToPost(articles);
   serviceIllustrationAnimation(illustrations);
   imageAnimation(imageListForAnimation);
 };
