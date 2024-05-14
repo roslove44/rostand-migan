@@ -6,34 +6,7 @@
         <div class="col-sm-12">
             <div class="home-tab">
                 <div class="d-sm-flex align-items-center justify-content-between border-bottom">
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active ps-0" id="home-tab" data-bs-toggle="tab" href="#overview"
-                                role="tab" aria-controls="overview" aria-selected="true">Overview</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#audiences" role="tab"
-                                aria-selected="false">Audiences</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#demographics" role="tab"
-                                aria-selected="false">Demographics</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link border-0" id="more-tab" data-bs-toggle="tab" href="#more" role="tab"
-                                aria-selected="false">More</a>
-                        </li>
-                    </ul>
-                    <div>
-                        <div class="btn-wrapper">
-                            <a href="#" class="btn btn-otline-dark align-items-center"><i class="icon-share"></i>
-                                Share</a>
-                            <a href="#" class="btn btn-otline-dark"><i class="icon-printer"></i>
-                                Print</a>
-                            <a href="#" class="btn btn-primary text-white me-0"><i class="icon-download"></i>
-                                Export</a>
-                        </div>
-                    </div>
+                    {% include "_partials/_admin/_navTabs.html.twig" %}
                 </div>
                 <div class="tab-content tab-content-basic">
                     <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview">
@@ -907,6 +880,79 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade show active" id="profil" role="tabpanel" aria-labelledby="profil">
+                        <div class="row">
+                            <div class="col d-flex flex-column">
+                                <div class="row flex-grow">
+                                    <div class="col-12 col-lg-4 col-lg-12 grid-margin stretch-card">
+                                        <div class="card card-rounded">
+                                            <div class="card-body">
+                                                <div class="d-sm-flex justify-content-between align-items-start">
+                                                    <div>
+                                                        <h4 class="card-title card-title-dash">
+                                                            Performance Line Chart</h4>
+                                                        <h5 class="card-subtitle card-subtitle-dash">
+                                                            Lorem Ipsum is simply dummy text of the
+                                                            printing</h5>
+                                                    </div>
+                                                    <div id="performanceLine-legend"></div>
+                                                </div>
+                                                <div class="chartjs-wrapper mt-4">
+                                                    <canvas id="performanceLine" width=""></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col d-flex flex-column">
+                                <div class="col-12 grid-margin stretch-card">
+                                    <div class="card card-rounded">
+                                        <div class="card-body">
+                                            <div class="d-sm-flex justify-content-between align-items-start">
+                                                <div>
+                                                    <h4 class="card-title card-title-dash">Pending
+                                                        Requests</h4>
+                                                    <p class="card-subtitle card-subtitle-dash">You
+                                                        have 50+ new requests</p>
+                                                </div>
+                                                <div>
+                                                    <button class="btn btn-primary btn-lg text-white mb-0 me-0"
+                                                        type="button"><i class="mdi mdi-account-plus"></i>
+                                                        Nouveau Type</button>
+                                                </div>
+                                            </div>
+                                            <div class="table-responsive  mt-1">
+                                                <table class="table select-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Type</th>
+                                                            <th>Info</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="d-flex ">
+                                                                    <div>
+                                                                        <h6>Brandon Washington</h6>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <p>Company name 1</p>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
                                             </div>
                                         </div>
                                     </div>

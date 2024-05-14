@@ -14,4 +14,10 @@ class MainController extends AbstractController
     {
         return $this->render('admin/dashboard/index.html.twig');
     }
+
+    #[Route('/dashboard/profil', name: 'admin_profil')]
+    public function profil(): Response
+    {
+        return $this->render('admin/dashboard/profil.html.twig');
+    }
 }
