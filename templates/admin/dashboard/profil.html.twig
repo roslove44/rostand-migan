@@ -12,32 +12,9 @@
                     <div class="tab-pane fade show active" id="profil" role="tabpanel" aria-labelledby="profil">
                         <div class="row">
                             <div class="col d-flex flex-column">
-                                <div class="row flex-grow">
-                                    <div class="col-12 col-lg-4 col-lg-12 grid-margin stretch-card">
-                                        <div class="card card-rounded">
-                                            <div class="card-body">
-                                                <div class="d-sm-flex justify-content-between align-items-start">
-                                                    <div>
-                                                        <h4 class="card-title card-title-dash">
-                                                            Performance Line Chart</h4>
-                                                        <h5 class="card-subtitle card-subtitle-dash">
-                                                            Lorem Ipsum is simply dummy text of the
-                                                            printing</h5>
-                                                    </div>
-                                                    <div id="performanceLine-legend"></div>
-                                                </div>
-                                                <div class="chartjs-wrapper mt-4">
-                                                    <canvas id="performanceLine" width=""></canvas>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col d-flex flex-column">
                                 <div class="col-12 grid-margin stretch-card">
                                     <div class="card card-rounded">
-                                        <div class="card-body">
+                                        <div class="card-body" data-controller="infos">
                                             <div class="d-sm-flex justify-content-between align-items-start">
                                                 <div>
                                                     <h4 class="card-title card-title-dash">
@@ -48,55 +25,90 @@
                                                     </p>
                                                 </div>
                                                 <div>
-                                                    <button class="btn btn-primary btn-lg text-white mb-0 me-0"
+                                                    <button data-action="click->infos#showAddForm"
+                                                        class="btn btn-primary btn-lg text-white mb-0 me-0"
                                                         type="button"><i class="fa fa-plus-circle"></i>
                                                         Nouvelle {clé:valeur}</button>
                                                 </div>
                                             </div>
-                                            <div class="table-responsive  mt-1">
-                                                <table class="table select-table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Clé</th>
-                                                            <th>Valeur</th>
-                                                            <th></th>
-                                                            <th></th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td contenteditable="true">
-                                                                <div class="d-flex">
-                                                                    <div>
-                                                                        <h6>github</h6>
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <p>https://github.com/roslove44</p>
-                                                            </td>
-                                                            <td><label class="badge badge-info">Update</label></td>
-                                                            <td><label class="badge badge-danger">Delete</label></td>
-                                                        </tr>
+                                            <form method="post">
+                                                <div class="table-responsive  mt-1">
+                                                    <table class="table select-table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Clé</th>
+                                                                <th>Valeur</th>
+                                                                <th></th>
+                                                                <th></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody data-infos-target="infosContainer">
+                                                            <template id="infoViewModel">
+                                                                <tr data-gu="{{absolute_url(path('admin_info_get'))}}"
+                                                                    data-token="{{csrf_token('postInfo' ~ app.user.email)}}">
+                                                                    <td>
+                                                                        <div class="d-flex">
+                                                                            <div>
+                                                                                <h6 class="clef"></h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <p class="value"></p>
+                                                                    </td>
+                                                                    <td>
+                                                                        <label
+                                                                            class="badge badge-info edit">Editer</label>
+                                                                    </td>
+                                                                    <td>
+                                                                        <label class="badge badge-danger">Delete</label>
+                                                                    </td>
+                                                                </tr>
+                                                            </template>
 
-                                                        <tr>
-                                                            <td contenteditable="true">
-                                                                <div class="d-flex">
-                                                                    <div>
-                                                                        <h6>github</h6>
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <p>https://github.com/roslove44</p>
-                                                            </td>
-                                                            <td><label class="badge badge-info">Ajouter</label></td>
-                                                            <td><label class="badge badge-danger">Annuler</label>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
+                                                            <template id="addFormModel">
+                                                                <tr data-pu="{{absolute_url(path('admin_info_post'))}}">
+                                                                    <td>
+                                                                        <div class="d-flex">
+                                                                            <input type="text" class="form-control"
+                                                                                placeholder="Clé" name="clef">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <input type="text" class="form-control"
+                                                                            placeholder="Valeur" name="value">
+                                                                    </td>
+                                                                    <td>
+                                                                        <button type="submit" class="badge badge-info"
+                                                                            data-token="{{csrf_token('postInfo' ~ app.user.email)}}">
+                                                                            Ajouter
+                                                                        </button>
+                                                                    </td>
+                                                                    <td>
+                                                                        <label class="badge badge-danger"
+                                                                            data-action="click->infos#removeAddForm">
+                                                                            Annuler
+                                                                        </label>
+                                                                    </td>
+                                                                </tr>
+                                                            </template>
+
+                                                            <template id="messageModel">
+                                                                <tr>
+                                                                    <td colspan="4">
+                                                                        <label
+                                                                            class="alert col-12 col-lg-6 d-flex justify-content-between mx-auto">
+                                                                            <span class="message"></span>
+                                                                            <span class="badge badge-dark"
+                                                                                data-action="click->infos#removeFlash">Fermer</span>
+                                                                        </label>
+                                                                    </td>
+                                                                </tr>
+                                                            </template>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
