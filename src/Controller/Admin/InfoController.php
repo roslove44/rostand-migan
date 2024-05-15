@@ -95,6 +95,7 @@ class InfoController extends AbstractController
             );
         }
 
+        $clef = $this->purify_input($clef);
         $info = $infoRepository->findOneBy(['clef' => $clef]);
         if (!$info) {
             return $this->postReturn(
@@ -135,7 +136,7 @@ class InfoController extends AbstractController
         );
     }
 
-    private function purify_input($input)
+    private function purify_input(string $input): string
     {
         $input = trim($input);
         $input = stripslashes($input);
