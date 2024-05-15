@@ -21,13 +21,14 @@
 														Infos
 													</h4>
 													<p class="card-subtitle card-subtitle-dash">
-														Vous avez enregistré <span data-infos-target="infosCount"></span>
+														Vous avez enregistré <span
+															data-infos-target="infosCount"></span>
 													</p>
 												</div>
 												<div>
 													<button data-action="click->infos#showAddForm"
-														class="btn btn-primary btn-lg text-white mb-0 me-0" type="button"><i
-															class="fa fa-plus-circle"></i>
+														class="btn btn-primary btn-lg text-white mb-0 me-0"
+														type="button"><i class="fa fa-plus-circle"></i>
 														Nouvelle {clé:valeur}</button>
 												</div>
 											</div>
@@ -56,7 +57,8 @@
 																		<p class="value"></p>
 																	</td>
 																	<td>
-																		<label class="badge badge-info edit">Editer</label>
+																		<label class="badge badge-info update"
+																			data-action="click->infos#editInfo">Editer</label>
 																	</td>
 																	<td>
 																		<label class="badge badge-danger"
@@ -69,19 +71,21 @@
 																<tr>
 																	<td>
 																		<div class="d-flex">
-																			<input type="text" class="form-control" placeholder="Clé" name="clef">
+																			<input type="text" class="form-control"
+																				placeholder="Clé" name="clef">
 																		</div>
 																	</td>
 																	<td>
-																		<input type="text" class="form-control" placeholder="Valeur" name="value">
+																		<input type="text" class="form-control"
+																			placeholder="Valeur" name="value">
 																	</td>
 																	<td>
 																		<button type="submit" class="badge badge-info">
-																			Ajouter
 																		</button>
 																	</td>
 																	<td>
-																		<label class="badge badge-danger" data-action="click->infos#removeAddForm">
+																		<label class="badge badge-danger"
+																			data-action="click->infos#removeAddForm">
 																			Annuler
 																		</label>
 																	</td>
@@ -91,7 +95,8 @@
 															<template id="messageModel">
 																<tr>
 																	<td colspan="4">
-																		<label class="alert col-12 col-lg-6 d-flex justify-content-between mx-auto">
+																		<label
+																			class="alert col-12 col-lg-6 d-flex justify-content-between mx-auto">
 																			<span class="message"></span>
 																			<span class="badge badge-dark"
 																				data-action="click->infos#removeFlash">Fermer</span>
@@ -100,7 +105,8 @@
 																</tr>
 															</template>
 
-															<input type="hidden" name="_narnia" value="{{csrf_token('info' ~ app.user.email)}}">
+															<input type="hidden" name="_narnia"
+																value="{{csrf_token('info' ~ app.user.email)}}">
 														</tbody>
 													</table>
 												</div>

@@ -8,6 +8,7 @@ export default class extends Controller {
     this.infoViewModel = document.getElementById("infoViewModel").content;
     this._narnia = document.querySelector('input[name="_narnia"]').value;
 
+    this.#getInfos();
     addEventListener("submit", (event) => {
       event.preventDefault();
       const _token = this._narnia;
@@ -22,22 +23,35 @@ export default class extends Controller {
         this.addFlash("danger", "La clé et la valeur ne peuvent être vides.");
       }
     });
-
-    this.#getInfos();
   }
 
-  showAddForm() {
-    if (document.querySelector("#addForm")) {
+  showAddForm(id, action, elementToReplace) {
+    if (!(id && action)) {
+      id = "addForm";
+      action = "Ajouter";
+    }
+    if (document.querySelector("#" + id)) {
       return;
     }
     const addFormModel = this.addFormModel.cloneNode(true);
-    addFormModel.querySelector("tr").setAttribute("id", "addForm");
-    this.infosContainerTarget.prepend(addFormModel);
+    addFormModel.querySelector("tr").setAttribute("id", id);
+    addFormModel.querySelector("tr button[type='submit']").textContent = action;
+    if (!elementToReplace) {
+      this.infosContainerTarget.prepend(addFormModel);
+      return;
+    }
+    elementToReplace.insertAdjacentElement(
+      "beforebegin",
+      addFormModel.querySelector("tr")
+    );
   }
   removeAddForm() {
     this.removeAllFlash();
     if (document.querySelector("#addForm")) {
       document.querySelector("#addForm").remove();
+    }
+    if (document.querySelector("#updateForm")) {
+      document.querySelector("#updateForm").remove();
     }
   }
 
@@ -62,14 +76,21 @@ export default class extends Controller {
 
   addInfoView(clef, value) {
     const infoViewModel = this.infoViewModel.cloneNode(true);
-    infoViewModel.querySelector("tr").removeAttribute("data-gu");
-    infoViewModel.querySelector("tr").removeAttribute("data-token");
     infoViewModel.querySelector("tr .clef").textContent = clef;
+    infoViewModel.querySelector("tr .clef").setAttribute("data-clef", clef);
     infoViewModel.querySelector("tr .value").textContent = value;
     this.infosContainerTarget.prepend(infoViewModel);
   }
   #infoToDelete(event) {
     return event.target.parentNode.parentNode;
+  }
+  editInfo(event) {
+    this.removeAddForm();
+    const infoContainer = event.target.parentNode.parentNode;
+    const Oldclef = infoContainer.querySelector(".clef").textContent;
+    const oldValue = infoContainer.querySelector(".value").textContent;
+    console.log(infoContainer);
+    this.showAddForm("updateForm", "Mettre à jour", infoContainer);
   }
 
   deleteInfo(event) {
