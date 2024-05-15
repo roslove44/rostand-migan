@@ -2,122 +2,118 @@
 
 {% block body %}
 <div class="content-wrapper">
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="home-tab">
-                <div class="d-sm-flex align-items-center justify-content-between border-bottom">
-                    {% include "_partials/_admin/_navTabs.html.twig" %}
-                </div>
-                <div class="tab-content tab-content-basic">
-                    <div class="tab-pane fade show active" id="profil" role="tabpanel" aria-labelledby="profil">
-                        <div class="row">
-                            <div class="col d-flex flex-column">
-                                <div class="col-12 grid-margin stretch-card">
-                                    <div class="card card-rounded">
-                                        <div class="card-body" data-controller="infos">
-                                            <div class="d-sm-flex justify-content-between align-items-start">
-                                                <div>
-                                                    <h4 class="card-title card-title-dash">
-                                                        Infos
-                                                    </h4>
-                                                    <p class="card-subtitle card-subtitle-dash">
-                                                        Vous avez enregistré 50 infos
-                                                    </p>
-                                                </div>
-                                                <div>
-                                                    <button data-action="click->infos#showAddForm"
-                                                        class="btn btn-primary btn-lg text-white mb-0 me-0"
-                                                        type="button"><i class="fa fa-plus-circle"></i>
-                                                        Nouvelle {clé:valeur}</button>
-                                                </div>
-                                            </div>
-                                            <form method="post">
-                                                <div class="table-responsive  mt-1">
-                                                    <table class="table select-table">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>Clé</th>
-                                                                <th>Valeur</th>
-                                                                <th></th>
-                                                                <th></th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody data-infos-target="infosContainer">
-                                                            <template id="infoViewModel">
-                                                                <tr data-gu="{{absolute_url(path('admin_info_get'))}}"
-                                                                    data-token="{{csrf_token('postInfo' ~ app.user.email)}}">
-                                                                    <td>
-                                                                        <div class="d-flex">
-                                                                            <div>
-                                                                                <h6 class="clef"></h6>
-                                                                            </div>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <p class="value"></p>
-                                                                    </td>
-                                                                    <td>
-                                                                        <label
-                                                                            class="badge badge-info edit">Editer</label>
-                                                                    </td>
-                                                                    <td>
-                                                                        <label class="badge badge-danger">Delete</label>
-                                                                    </td>
-                                                                </tr>
-                                                            </template>
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="home-tab">
+				<div class="d-sm-flex align-items-center justify-content-between border-bottom">
+					{% include "_partials/_admin/_navTabs.html.twig" %}
+				</div>
+				<div class="tab-content tab-content-basic">
+					<div class="tab-pane fade show active" id="profil" role="tabpanel" aria-labelledby="profil">
+						<div class="row">
+							<div class="col d-flex flex-column">
+								<div class="col-12 grid-margin stretch-card">
+									<div class="card card-rounded">
+										<div class="card-body" data-controller="infos">
+											<div class="d-sm-flex justify-content-between align-items-start">
+												<div>
+													<h4 class="card-title card-title-dash">
+														Infos
+													</h4>
+													<p class="card-subtitle card-subtitle-dash">
+														Vous avez enregistré <span data-infos-target="infosCount"></span>
+													</p>
+												</div>
+												<div>
+													<button data-action="click->infos#showAddForm"
+														class="btn btn-primary btn-lg text-white mb-0 me-0" type="button"><i
+															class="fa fa-plus-circle"></i>
+														Nouvelle {clé:valeur}</button>
+												</div>
+											</div>
+											<form method="post">
+												<div class="table-responsive  mt-1">
+													<table class="table select-table">
+														<thead>
+															<tr>
+																<th>Clé</th>
+																<th>Valeur</th>
+																<th></th>
+																<th></th>
+															</tr>
+														</thead>
+														<tbody data-infos-target="infosContainer">
+															<template id="infoViewModel">
+																<tr>
+																	<td>
+																		<div class="d-flex">
+																			<div>
+																				<h6 class="clef"></h6>
+																			</div>
+																		</div>
+																	</td>
+																	<td>
+																		<p class="value"></p>
+																	</td>
+																	<td>
+																		<label class="badge badge-info edit">Editer</label>
+																	</td>
+																	<td>
+																		<label class="badge badge-danger"
+																			data-action="click->infos#deleteInfo">Delete</label>
+																	</td>
+																</tr>
+															</template>
 
-                                                            <template id="addFormModel">
-                                                                <tr data-pu="{{absolute_url(path('admin_info_post'))}}">
-                                                                    <td>
-                                                                        <div class="d-flex">
-                                                                            <input type="text" class="form-control"
-                                                                                placeholder="Clé" name="clef">
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <input type="text" class="form-control"
-                                                                            placeholder="Valeur" name="value">
-                                                                    </td>
-                                                                    <td>
-                                                                        <button type="submit" class="badge badge-info"
-                                                                            data-token="{{csrf_token('postInfo' ~ app.user.email)}}">
-                                                                            Ajouter
-                                                                        </button>
-                                                                    </td>
-                                                                    <td>
-                                                                        <label class="badge badge-danger"
-                                                                            data-action="click->infos#removeAddForm">
-                                                                            Annuler
-                                                                        </label>
-                                                                    </td>
-                                                                </tr>
-                                                            </template>
+															<template id="addFormModel">
+																<tr>
+																	<td>
+																		<div class="d-flex">
+																			<input type="text" class="form-control" placeholder="Clé" name="clef">
+																		</div>
+																	</td>
+																	<td>
+																		<input type="text" class="form-control" placeholder="Valeur" name="value">
+																	</td>
+																	<td>
+																		<button type="submit" class="badge badge-info">
+																			Ajouter
+																		</button>
+																	</td>
+																	<td>
+																		<label class="badge badge-danger" data-action="click->infos#removeAddForm">
+																			Annuler
+																		</label>
+																	</td>
+																</tr>
+															</template>
 
-                                                            <template id="messageModel">
-                                                                <tr>
-                                                                    <td colspan="4">
-                                                                        <label
-                                                                            class="alert col-12 col-lg-6 d-flex justify-content-between mx-auto">
-                                                                            <span class="message"></span>
-                                                                            <span class="badge badge-dark"
-                                                                                data-action="click->infos#removeFlash">Fermer</span>
-                                                                        </label>
-                                                                    </td>
-                                                                </tr>
-                                                            </template>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+															<template id="messageModel">
+																<tr>
+																	<td colspan="4">
+																		<label class="alert col-12 col-lg-6 d-flex justify-content-between mx-auto">
+																			<span class="message"></span>
+																			<span class="badge badge-dark"
+																				data-action="click->infos#removeFlash">Fermer</span>
+																		</label>
+																	</td>
+																</tr>
+															</template>
+
+															<input type="hidden" name="_narnia" value="{{csrf_token('info' ~ app.user.email)}}">
+														</tbody>
+													</table>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 {% endblock %}
