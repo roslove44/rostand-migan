@@ -12,20 +12,31 @@ export default class extends Controller {
     addEventListener("submit", (event) => {
       event.preventDefault();
       const _token = this._narnia;
-      const clef = event.target.elements.clef.value;
-      const value = event.target.elements.value.value;
+      const clef = event.target.elements.clef;
+      const value = event.target.elements.value;
 
-      if (clef && value) {
-        const data = { _token: _token, clef: clef, value: value };
-        const message = null;
-        this.#postInfo(data);
-      } else {
+      if (!(clef && value)) {
         this.addFlash("danger", "La clé et la valeur ne peuvent être vides.");
+        return;
+      }
+      if (!event.submitter.dataset.submit) {
+        const data = { _token: _token, clef: clef.value, value: value.value };
+        this.#postInfo(data);
+        return;
+      }
+      if (event.submitter.dataset.submit == "update") {
+        const oldData = {
+          clef: clef.dataset.value,
+          value: value.dataset.value,
+        };
+        const data = { _token: _token, clef: clef.value, value: value.value };
+        this.#updateInfo(oldData, data);
+        return;
       }
     });
   }
 
-  showAddForm(id, action, elementToReplace) {
+  showAddForm(id, action, elementToReplace, data) {
     if (!(id && action)) {
       id = "addForm";
       action = "Ajouter";
@@ -36,6 +47,25 @@ export default class extends Controller {
     const addFormModel = this.addFormModel.cloneNode(true);
     addFormModel.querySelector("tr").setAttribute("id", id);
     addFormModel.querySelector("tr button[type='submit']").textContent = action;
+    if (id == "updateForm") {
+      addFormModel
+        .querySelector("tr button[type='submit']")
+        .setAttribute("data-submit", "update");
+    }
+    if (data) {
+      addFormModel
+        .querySelector("tr input[name='clef']")
+        .setAttribute("value", data.clef);
+      addFormModel
+        .querySelector("tr input[name='clef']")
+        .setAttribute("data-value", data.clef);
+      addFormModel
+        .querySelector("tr input[name='value']")
+        .setAttribute("data-value", data.value);
+      addFormModel
+        .querySelector("tr input[name='value']")
+        .setAttribute("value", data.value);
+    }
     if (!elementToReplace) {
       this.infosContainerTarget.prepend(addFormModel);
       return;
@@ -44,6 +74,7 @@ export default class extends Controller {
       "beforebegin",
       addFormModel.querySelector("tr")
     );
+    elementToReplace.setAttribute("data-ref", data.clef + "-" + data.value);
   }
   removeAddForm() {
     this.removeAllFlash();
@@ -87,10 +118,11 @@ export default class extends Controller {
   editInfo(event) {
     this.removeAddForm();
     const infoContainer = event.target.parentNode.parentNode;
-    const Oldclef = infoContainer.querySelector(".clef").textContent;
-    const oldValue = infoContainer.querySelector(".value").textContent;
-    console.log(infoContainer);
-    this.showAddForm("updateForm", "Mettre à jour", infoContainer);
+    const clef = infoContainer.querySelector(".clef").textContent;
+    const value = infoContainer.querySelector(".value").textContent;
+    const oldData = { clef, value };
+
+    this.showAddForm("updateForm", "Mettre à jour", infoContainer, oldData);
   }
 
   deleteInfo(event) {
@@ -174,7 +206,6 @@ export default class extends Controller {
           this.addFlash("danger", data.message);
           return;
         }
-        console.log(data);
         const content = data.content;
         if (!content.length) {
           this.infosCountTarget.textContent = "0 info";
@@ -186,6 +217,45 @@ export default class extends Controller {
       })
       .catch((error) => {
         this.addFlash("danger", "Une erreur technique s'est produite" + error);
+      });
+  }
+
+  #updateInfo(oldData, data) {
+    if (oldData.clef == data.clef && data.value == oldData.value) {
+      this.addFlash("info", "Aucun changement détecté");
+      return;
+    }
+
+    const update_url = "/api/info/update/" + oldData.clef;
+    // Configuration de la requête
+    const requestOptions = {
+      method: "UPDATE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    };
+    fetch(update_url, requestOptions)
+      .then((response) => {
+        // if (!response.ok) {throw new Error("Erreur lors de la requête");}
+        return response.json();
+      })
+      .then((data) => {
+        if (data.error) {
+          this.addFlash("danger", data.message);
+          return;
+        }
+        this.removeAddForm();
+        console.log("Réponse reçue :", data);
+        document
+          .querySelector(`tr[data-ref="${oldData.clef}-${oldData.value}"]`)
+          .remove();
+        const info = data.content;
+        this.addInfoView(info.clef, info.value);
+        this.addFlash("success", data.message);
+      })
+      .catch((error) => {
+        this.addFlash("danger", "Une erreur technique s'est produite");
       });
   }
 }
