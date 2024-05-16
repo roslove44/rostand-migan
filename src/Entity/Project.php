@@ -33,6 +33,15 @@ class Project
     #[ORM\ManyToMany(targetEntity: Stack::class, mappedBy: 'project')]
     private Collection $stacks;
 
+    #[ORM\Column(length: 255)]
+    private ?string $thumbnail = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $mobilePicture = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $desktopPicture = null;
+
     public function __construct()
     {
         $this->stacks = new ArrayCollection();
@@ -114,6 +123,42 @@ class Project
         if ($this->stacks->removeElement($stack)) {
             $stack->removeProject($this);
         }
+
+        return $this;
+    }
+
+    public function getThumbnail(): ?string
+    {
+        return $this->thumbnail;
+    }
+
+    public function setThumbnail(string $thumbnail): static
+    {
+        $this->thumbnail = $thumbnail;
+
+        return $this;
+    }
+
+    public function getMobilePicture(): ?string
+    {
+        return $this->mobilePicture;
+    }
+
+    public function setMobilePicture(?string $mobilePicture): static
+    {
+        $this->mobilePicture = $mobilePicture;
+
+        return $this;
+    }
+
+    public function getDesktopPicture(): ?string
+    {
+        return $this->desktopPicture;
+    }
+
+    public function setDesktopPicture(string $desktopPicture): static
+    {
+        $this->desktopPicture = $desktopPicture;
 
         return $this;
     }
