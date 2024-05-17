@@ -469,18 +469,29 @@ button.selector[data-filter="best"].active {
   @apply text-rostBlue text-3xl font-bold text-wrap;
 }
 #post article p,
-#portfolio-detail {
-  @apply mt-2 leading-8;
+#portfolio-detail,
+#portfolio-detail p {
+  @apply mt-4 leading-8;
 }
 
-h2.post__content-title {
-  @apply mt-4 text-xl xl:text-2xl font-bold text-wrap leading-7;
+.post__content a {
+  @apply external-link bg-slate-200 hover:bg-slate-300;
 }
-h3.post__content-title {
-  @apply mt-3 text-lg xl:text-xl font-semibold text-wrap leading-7;
+
+.post__content h2 {
+  @apply mt-4 text-xl/7 xl:text-2xl/7 font-bold text-wrap;
 }
-h4.post__content-title {
-  @apply mt-3 text-base xl:text-lg font-semibold text-wrap leading-5;
+.post__content h3 {
+  @apply mt-3 text-lg/7 xl:text-xl/7 font-bold text-wrap;
+}
+.post__content h4 {
+  @apply mt-3 text-base/5 xl:text-lg/5 font-semibold text-wrap;
+}
+.post__content h5 {
+  @apply mt-3 text-base/5 xl:text-lg/5 font-medium text-wrap italic;
+}
+.post__content h6 {
+  @apply mt-3 text-base/5 xl:text-lg/5 font-medium text-wrap italic;
 }
 /* End {Blog Portfolio} : Details */
 

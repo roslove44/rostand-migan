@@ -1,0 +1,111 @@
+{% extends "adminBase.html.twig" %}
+
+{% block body %}
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="home-tab">
+                <div class="d-sm-flex align-items-center justify-content-between border-bottom">
+                    {% include "_partials/_admin/_navTabs.html.twig" %}
+                </div>
+                <div class="tab-content tab-content-basic">
+                    <div class="tab-pane fade show active" id="profil" role="tabpanel" aria-labelledby="profil">
+                        <div class="row">
+                            <div class="col d-flex flex-column">
+                                <div class="card card-rounded">
+                                    <div class="card-body">
+                                        <div class="d-sm-flex justify-content-between align-items-start">
+                                            <div>
+                                                <h4 class="card-title card-title-dash">
+                                                    Projet
+                                                </h4>
+                                                <p class="card-subtitle card-subtitle-dash">
+                                                    Compta Open
+                                                </p>
+                                            </div>
+                                        </div>
+                                        {{form_start(projectForm, {'attr': {'class': 'forms-sample'}})}}
+                                        <div class="form-group">
+                                            {{form_label(projectForm.title)}}
+                                            {{form_widget(projectForm.title)}}
+                                            <div class="form-text text-danger" role="alert">
+                                                {{ form_errors(projectForm.title) }}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            {{form_label(projectForm.summary)}}
+                                            {{form_widget(projectForm.summary)}}
+                                            <div class="form-text text-danger" role="alert">
+                                                {{ form_errors(projectForm.summary) }}
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    {{form_label(projectForm.url)}}
+                                                    {{form_widget(projectForm.url)}}
+                                                    <div class="form-text text-danger" role="alert">
+                                                        {{ form_errors(projectForm.url) }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    {{form_label(projectForm.urlType)}}
+                                                    {{form_widget(projectForm.urlType)}}
+                                                    <div class="form-text text-danger" role="alert">
+                                                        {{ form_errors(projectForm.urlType) }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            {{form_label(projectForm.thumbnail)}}
+                                            {{form_widget(projectForm.thumbnail)}}
+                                            <div class="form-text text-danger" role="alert">
+                                                {{ form_errors(projectForm.thumbnail) }}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            {{form_label(projectForm.mobilePicture)}}
+                                            {{form_widget(projectForm.mobilePicture)}}
+                                            <div class="form-text text-danger" role="alert">
+                                                {{ form_errors(projectForm.mobilePicture) }}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            {{form_label(projectForm.desktopPicture)}}
+                                            {{form_widget(projectForm.desktopPicture)}}
+                                            <div class="form-text text-danger" role="alert">
+                                                {{ form_errors(projectForm.desktopPicture) }}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            {{form_label(projectForm.stacks)}}
+                                            {{form_widget(projectForm.stacks)}}
+                                            <div class="form-text text-danger" role="alert">
+                                                {{ form_errors(projectForm.stacks) }}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            {{form_label(projectForm.description)}}
+                                            {{form_widget(projectForm.description)}}
+                                            <div class="form-text text-danger" role="alert">
+                                                {{ form_errors(projectForm.description) }}
+                                            </div>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary me-2 text-white">Soumettre</button>
+                                        <button class="btn btn-light" onclick="location.reload()">Cancel</button>
+                                        {{form_end(projectForm)}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
