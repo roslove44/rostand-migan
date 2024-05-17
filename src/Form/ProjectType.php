@@ -141,7 +141,9 @@ class ProjectType extends AbstractType
                 ],
                 "required" => false
             ])
-            ->add('description', CKEditorType::class);
+            ->add('description', CKEditorType::class, [
+                'config_name' => 'rost'
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
