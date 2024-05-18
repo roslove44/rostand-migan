@@ -30,8 +30,21 @@ class PictureService
 
         try {
             $file->move($path, $name);
-            return $path . $name;
+            return $name;
         } catch (FileException $e) {
         }
+    }
+
+    public function removeFile(string $fileName, ?string $folder = null): bool
+    {
+        $path = $this->parameterBag->get('images_directory');
+        if ($folder) {
+            $path = $path . $folder . '/';
+        }
+        $file = $path . $fileName;
+        if (!file_exists($file)) {
+            return false;
+        }
+        return unlink($file);
     }
 }

@@ -1,0 +1,9 @@
+{% for label, messages in app.flashes %}
+{% for message in messages %}
+<div style="font-size: 13px; padding: 1rem 2.187rem 1rem 3.5rem;">
+    <div class="w-100 alert alert-{{label}}">
+        {{message}}</i>
+    </div>
+</div>
+{% endfor %}
+{% endfor %}
