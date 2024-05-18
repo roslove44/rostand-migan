@@ -7,6 +7,7 @@ parameters:
   SHIPPING_MAIL: "%env(SHIPPING_MAIL)%"
   RECIPIENT_MAIL: "%env(RECIPIENT_MAIL)%"
   ADMIN_MAIL: "%env(ADMIN_MAIL)%"
+  images_directory: "%kernel.project_dir%/public/uploads/"
 
 services:
   # default configuration for services in *this* file

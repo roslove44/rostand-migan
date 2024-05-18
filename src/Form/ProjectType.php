@@ -34,11 +34,16 @@ class ProjectType extends AbstractType
             ->add('url', UrlType::class, [
                 'label' => 'Lien du projet',
                 'attr' => [
+                    'type' => 'url',
                     'class' => 'form-control',
                     'placeholder' => 'Lien du projet',
                 ],
                 'constraints' => [
                     new Assert\NotBlank(),
+                    new Assert\Url(
+                        protocols: ['https'],
+                        message: 'L\'URL "{{ value }}" n\'est pas une URL valide.'
+                    )
                 ]
             ])
             ->add('urlType', ChoiceType::class, [
