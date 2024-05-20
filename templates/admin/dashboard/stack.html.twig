@@ -1,0 +1,94 @@
+{% extends "adminBase.html.twig" %}
+
+{% block body %}
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="home-tab">
+                <div class="d-sm-flex align-items-center justify-content-between border-bottom">
+                    {% include "_partials/_admin/_navTabs.html.twig" %}
+                </div>
+                <div class="tab-content tab-content-basic">
+                    <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview">
+                        <div class="row flex-grow">
+                            <div class="col-lg-6 grid-margin stretch-card">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Ajoutez votre Techno</h4>
+                                        <p class="card-description"> Basic form layout </p>
+                                        <form class="forms-sample" method="post" action="{{path('admin_stack_add')}}">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="addTechno" name="addTechno"
+                                                    placeholder="Techno" required>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary text-white">Ajouter</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 grid-margin stretch-card">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Modifiez une techno</h4>
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Technos</th>
+                                                        <th colspan="2">In Projects</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Jacob</td>
+                                                        <td colspan="2" style="text-wrap: pretty;">53275531</td>
+                                                        <td>
+                                                            <a class="badge badge-danger"
+                                                                href="{{path('admin_stack_update', {id:1})}}"
+                                                                style="outline: none; text-decoration: none;">Pending</a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row flex-grow">
+                            <div class="col-lg-6 grid-margin stretch-card">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Liste des Stacks</h4>
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Technos</th>
+                                                        <th colspan="2">In Projects</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Jacob</td>
+                                                        <td colspan="2" style="text-wrap: pretty;">53275531</td>
+                                                        <td>
+                                                            <a class="badge badge-danger"
+                                                                href="{{path('admin_stack_update', {id:1})}}"
+                                                                style="outline: none; text-decoration: none;">Pending</a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

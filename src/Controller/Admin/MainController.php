@@ -22,4 +22,10 @@ class MainController extends AbstractController
     {
         return $this->render('admin/dashboard/profil.html.twig');
     }
+
+    #[Route('/dashboard/stack', name: 'admin_stack')]
+    public function stack(): Response
+    {
+        return $this->render('admin/dashboard/stack.html.twig');
+    }
 }
