@@ -13,13 +13,36 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints as Assert;
 
 class ProjectType extends AbstractType
 {
+    private string $currentRoute;
+    public function __construct(RequestStack $requestStack)
+    {
+        $this->currentRoute = $requestStack->getCurrentRequest()->attributes->get('_route');
+    }
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
+        $filesConstraints = [
+            new Assert\Image(
+                maxSize: '10240K',
+                mimeTypes: [
+                    'image/jpeg',
+                    'image/png',
+                    'image/webp',
+                ]
+            ),
+        ];
+        $requiredFiles = true;
+        if ($this->currentRoute === 'admin_project_edit') {
+            $requiredFiles = false;
+        } else {
+            $constraints[] = new Assert\NotBlank();
+        }
+
         $builder
             ->add('title', TextType::class, [
                 'label' => 'Titre',
@@ -79,17 +102,8 @@ class ProjectType extends AbstractType
                     'class' => 'form-control file-upload-info',
                     'placeholder' => 'Ajoutez la vignette',
                 ],
-                'constraints' => [
-                    new Assert\NotBlank(),
-                    new Assert\Image(
-                        maxSize: '10240K',
-                        mimeTypes: [
-                            'image/jpeg',
-                            'image/png',
-                            'image/webp',
-                        ]
-                    )
-                ]
+                'constraints' => $filesConstraints,
+                'required' => $requiredFiles,
             ])
             ->add('mobilePicture', FileType::class, [
                 'mapped' => false,
@@ -99,17 +113,8 @@ class ProjectType extends AbstractType
                     'class' => 'form-control file-upload-info',
                     'placeholder' => 'Ajoutez l\'image pour mobile',
                 ],
-                'constraints' => [
-                    new Assert\NotBlank(),
-                    new Assert\Image(
-                        maxSize: '10240K',
-                        mimeTypes: [
-                            'image/jpeg',
-                            'image/png',
-                            'image/webp',
-                        ]
-                    )
-                ]
+                'constraints' => $filesConstraints,
+                'required' => $requiredFiles,
             ])
             ->add('desktopPicture', FileType::class, [
                 'mapped' => false,
@@ -119,17 +124,8 @@ class ProjectType extends AbstractType
                     'class' => 'form-control file-upload-info',
                     'placeholder' => 'Ajoutez l\'image pour desktop',
                 ],
-                'constraints' => [
-                    new Assert\NotBlank(),
-                    new Assert\Image(
-                        maxSize: '10240K',
-                        mimeTypes: [
-                            'image/jpeg',
-                            'image/png',
-                            'image/webp',
-                        ]
-                    )
-                ]
+                'constraints' => $filesConstraints,
+                'required' => $requiredFiles,
             ])
             ->add('stacks', EntityType::class, [
                 'class' => Stack::class,

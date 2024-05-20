@@ -10,56 +10,14 @@
                 </div>
                 <div class="tab-content tab-content-basic">
                     <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="statistics-details d-flex align-items-center justify-content-between">
-                                    <div>
-                                        <p class="statistics-title">Bounce Rate</p>
-                                        <h3 class="rate-percentage">32.53%</h3>
-                                        <p class="text-danger d-flex"><i
-                                                class="mdi mdi-menu-down"></i><span>-0.5%</span></p>
-                                    </div>
-                                    <div>
-                                        <p class="statistics-title">Page Views</p>
-                                        <h3 class="rate-percentage">7,682</h3>
-                                        <p class="text-success d-flex"><i class="mdi mdi-menu-up"></i><span>+0.1%</span>
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <p class="statistics-title">New Sessions</p>
-                                        <h3 class="rate-percentage">68.8</h3>
-                                        <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>68.8</span>
-                                        </p>
-                                    </div>
-                                    <div class="d-none d-md-block">
-                                        <p class="statistics-title">Avg. Time on Site</p>
-                                        <h3 class="rate-percentage">2m:35s</h3>
-                                        <p class="text-success d-flex"><i
-                                                class="mdi mdi-menu-down"></i><span>+0.8%</span></p>
-                                    </div>
-                                    <div class="d-none d-md-block">
-                                        <p class="statistics-title">New Sessions</p>
-                                        <h3 class="rate-percentage">68.8</h3>
-                                        <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>68.8</span>
-                                        </p>
-                                    </div>
-                                    <div class="d-none d-md-block">
-                                        <p class="statistics-title">Avg. Time on Site</p>
-                                        <h3 class="rate-percentage">2m:35s</h3>
-                                        <p class="text-success d-flex"><i
-                                                class="mdi mdi-menu-down"></i><span>+0.8%</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="row flex-grow">
                             {% if works|length >= 1 %}
                             {% for work in works %}
-                            <div class="col-12 col-lg-4 col-xl-3 grid-margin stretch-card">
+                            <div class="col-12 col-sm-6 col-lg-4 col-xl-3 grid-margin stretch-card">
                                 <div class="card card-rounded" style="width: 380px !important;">
                                     <img class="card-img-top"
                                         src="{{ asset('uploads/work/thumbnail/' ~ work.thumbnail) }}"
-                                        style="height: 360px; object-fit: cover;">
+                                        style="height: 200px; object-fit: contain;">
                                     <div class="card-body">
                                         <div class="d-sm-flex justify-content-between align-items-start">
                                             <div>
@@ -82,20 +40,28 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="d-flex justify-content-between align-items-start">
-                                            <div>
-                                                <ul class="d-flex flex-row justify-content-between">
-                                                    <li>
-                                                        Modifier
-                                                    </li>
-                                                    <li>
-                                                        Voir
-                                                    </li>
-                                                    <li>
-                                                        Supprimer
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                        <div class="w-100 d-flex justify-content-between align-items-start">
+                                            <ul class="w-100 d-flex flex-row justify-content-between"
+                                                style="list-style-type: none;">
+                                                <li>
+                                                    <a href="{{path('admin_project_edit', {slug: work.slug})}}"
+                                                        class="btn btn-outline-warning btn-sm" title="Editer">
+                                                        <i class="fa fa-edit"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{path('app_work_detail', {slug: work.slug})}}"
+                                                        class="btn btn-outline-primary btn-sm" title="Voir"
+                                                        target="_blank">
+                                                        <i class="fa fa-eye"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="" class="btn btn-outline-danger btn-sm" title="Supprimer">
+                                                        <i class="fa fa-trash-o"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>

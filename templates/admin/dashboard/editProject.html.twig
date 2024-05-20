@@ -17,9 +17,10 @@
                                         <div class="d-sm-flex justify-content-between align-items-start">
                                             <div>
                                                 <h4 class="card-title card-title-dash">
-                                                    Ajouter votre Projet
+                                                    Editer votre Projet
                                                 </h4>
                                                 <p class="card-subtitle card-subtitle-dash">
+                                                    {{work.title}}
                                                 </p>
                                             </div>
                                         </div>
@@ -95,7 +96,7 @@
                                         </div>
 
                                         <button type="submit" class="btn btn-primary me-2 text-white">Soumettre</button>
-                                        <button class="btn btn-light" onclick="location.reload()">Cancel</button>
+                                        <a class="btn btn-light" href="{{path('admin_main')}}">Cancel</a>
                                         {{form_end(projectForm)}}
                                     </div>
                                 </div>

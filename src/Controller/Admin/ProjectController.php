@@ -55,4 +55,60 @@ class ProjectController extends AbstractController
         $projectForm->createView();
         return $this->render('admin/dashboard/project.html.twig', compact('projectForm'));
     }
+
+    #[Route('/dashboard/projet/edit/{slug}', name: 'admin_project_edit')]
+    public function edit(Request $request, Project $project = null, SluggerInterface $slugger, PictureService $pictureService, EntityManagerInterface $em): Response
+    {
+        if ($project === null) {
+            $this->addFlash('danger', "Aucun projet ne correspond à l'url auquel vous essayez d'accéder");
+            return $this->redirectToRoute('admin_main', [], Response::HTTP_MOVED_PERMANENTLY);
+        }
+        $oldThumbnail = $project->getThumbnail();
+        $oldMobilePicture = $project->getMobilePicture();
+        $oldDesktopPicture = $project->getDesktopPicture();
+
+        $projectForm = $this->createForm(ProjectType::class, $project);
+        $projectForm->handleRequest($request);
+
+        if ($projectForm->isSubmitted() && $projectForm->isValid()) {
+            // Get Files
+            if ($thumbnail = $projectForm->get('thumbnail')->getData()) {
+                $thumbnail = $pictureService->addFile($thumbnail, 'work/thumbnail');
+                $pictureService->removeFile($oldThumbnail, 'work/thumbnail');
+                $project->setThumbnail($thumbnail);
+            }
+            if ($mobilePicture = $projectForm->get('mobilePicture')->getData()) {
+                $mobilePicture = $pictureService->addFile($mobilePicture, 'work/mobilePicture');
+                $pictureService->removeFile($oldMobilePicture, 'work/mobilePicture');
+                $project->setMobilePicture($mobilePicture);
+            }
+            if ($desktopPicture = $projectForm->get('desktopPicture')->getData()) {
+                $desktopPicture = $pictureService->addFile($desktopPicture, 'work/desktopPicture');
+                $pictureService->removeFile($oldDesktopPicture, 'work/desktopPicture');
+                $project->setDesktopPicture($desktopPicture);
+            }
+
+            // Set Project
+            $slug = $slugger->slug($project->getTitle())->lower();
+            $project->setSlug($slug);
+
+            try {
+                $em->persist($project);
+                $em->flush();
+                $this->addFlash('success', "Projet " . $project->getTitle() . " modifié avec succès.");
+                return $this->redirectToRoute('admin_main', [], Response::HTTP_MOVED_PERMANENTLY);
+            } catch (\Throwable $th) {
+                $pictureService->removeFile($project->getThumbnail());
+                $pictureService->removeFile($project->getMobilePicture());
+                $pictureService->removeFile($project->getDesktopPicture());
+                $this->addFlash('danger', "Une erreur s'est produite : " . $th->getMessage());
+                return $this->redirectToRoute('admin_main');
+            }
+        }
+
+
+        $projectForm->createView();
+        $work = $project;
+        return $this->render('admin/dashboard/editProject.html.twig', compact('projectForm', 'work'));
+    }
 }
