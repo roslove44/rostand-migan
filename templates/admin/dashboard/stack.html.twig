@@ -55,11 +55,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row flex-grow">
+                        <div class="row flex-grow justify-content-center">
                             <div class="col-lg-6 grid-margin stretch-card">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title">Liste des Stacks</h4>
+                                        <h4 class="card-title">Liste des Stacks ({{stack|length}})</h4>
                                         <div class="table-responsive">
                                             <table class="table">
                                                 <thead>
@@ -69,15 +69,34 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                    {% if stack|length == 0 %}
                                                     <tr>
-                                                        <td>Jacob</td>
-                                                        <td colspan="2" style="text-wrap: pretty;">53275531</td>
+                                                        <td colspan="4">Aucune techno enregistrée</td>
+                                                    </tr>
+                                                    {% else %}
+                                                    {% for techno in stack %}
+                                                    <tr>
+                                                        <td>{{techno.name}}</td>
+                                                        <td colspan="2" style="text-wrap: pretty;">
+                                                            {% if techno.project|length == 0 %}
+                                                            Aucun projet affecté.
+                                                            {% else %}
+                                                            <ul
+                                                                style="display: flex; flex-direction: row; flex-wrap: wrap; padding-left: 0;">
+                                                                {% for project in techno.project %}
+                                                                <li>{{project}}</li>
+                                                                {% endfor %}
+                                                            </ul>
+                                                            {% endif %}
+                                                        </td>
                                                         <td>
                                                             <a class="badge badge-danger"
-                                                                href="{{path('admin_stack_update', {id:1})}}"
-                                                                style="outline: none; text-decoration: none;">Pending</a>
+                                                                href="{{path('admin_stack_update', {id:techno.id})}}"
+                                                                style="outline: none; text-decoration: none;">Supprimé</a>
                                                         </td>
                                                     </tr>
+                                                    {% endfor %}
+                                                    {% endif %}
                                                 </tbody>
                                             </table>
                                         </div>

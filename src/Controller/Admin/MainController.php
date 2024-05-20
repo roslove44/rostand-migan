@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Repository\ProjectRepository;
+use App\Repository\StackRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -24,8 +25,9 @@ class MainController extends AbstractController
     }
 
     #[Route('/dashboard/stack', name: 'admin_stack')]
-    public function stack(): Response
+    public function stack(StackRepository $stackRepository): Response
     {
-        return $this->render('admin/dashboard/stack.html.twig');
+        $stack = $stackRepository->findAll();
+        return $this->render('admin/dashboard/stack.html.twig', compact('stack'));
     }
 }
