@@ -60,6 +60,27 @@ class StackController extends AbstractController
         }
     }
 
+    #[Route('/api/stack/delete/{id}', name: 'admin_stack_delete', requirements: ['id' => '\d+'])]
+    public function deleteStack(int $id, Request $request, EntityManagerInterface $em, StackRepository $stackRepository): Response
+    {
+        $stack = $stackRepository->findOneBy(['id' => $id]);
+
+        if (!$stack) {
+            $this->addFlash('danger', 'Paramètres invalides');
+            return $this->redirectToRoute('admin_stack');
+        }
+
+        try {
+            $em->remove($stack);
+            $em->flush();
+            $this->addFlash('success', 'La techno a bien été supprimée.');
+            return $this->redirectToRoute('admin_stack');
+        } catch (\Throwable $th) {
+            $this->addFlash('danger', 'Erreur : ' . $th->getMessage());
+            return $this->redirectToRoute('admin_stack');
+        }
+    }
+
     private function purify_input(string $input): string
     {
         $input = trim($input);
