@@ -21,7 +21,7 @@ class Stack
     /**
      * @var Collection<int, Project>
      */
-    #[ORM\ManyToMany(targetEntity: Project::class, inversedBy: 'stacks')]
+    #[ORM\ManyToMany(targetEntity: Project::class, mappedBy: 'stacks')]
     private Collection $project;
 
     public function __construct()

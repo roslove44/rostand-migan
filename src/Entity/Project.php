@@ -31,7 +31,7 @@ class Project
     /**
      * @var Collection<int, Stack>
      */
-    #[ORM\ManyToMany(targetEntity: Stack::class, mappedBy: 'project')]
+    #[ORM\ManyToMany(targetEntity: Stack::class, inversedBy: 'project')]
     private Collection $stacks;
 
     #[ORM\Column(length: 255)]
