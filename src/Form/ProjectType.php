@@ -129,7 +129,7 @@ class ProjectType extends AbstractType
             ])
             ->add('stacks', EntityType::class, [
                 'class' => Stack::class,
-                'choice_label' => 'id',
+                'choice_label' => 'name',
                 'multiple' => true,
                 'attr' => [
                     'class' => 'form-select form-select-sm',

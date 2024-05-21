@@ -24,16 +24,40 @@ class StackController extends AbstractController
         $techno = ucwords($this->purify_input($techno));
         $stack = new Stack();
         $stack->setName($techno);
-        $em->persist($stack);
-        $em->flush();
-        $this->addFlash('success', 'Techno enregistré avec succès.');
-        return $this->redirectToRoute('admin_stack');
+        try {
+            $em->persist($stack);
+            $em->flush();
+            $this->addFlash('success', 'Techno enregistré avec succès.');
+        } catch (\Throwable $th) {
+            $this->addFlash('warning', 'Erreur ' . $th->getMessage());
+            return $this->redirectToRoute('admin_stack');
+        } finally {
+            return $this->redirectToRoute('admin_stack');
+        }
     }
 
-    #[Route('/api/stack/update/{id}', name: 'admin_stack_update', requirements: ['id' => '\d+'])]
-    public function updateStack(int $id): Response
+    #[Route('/api/stack/update/', name: 'admin_stack_update')] //, requirements: ['id' => '\d+']
+    public function updateStack(Request $request, EntityManagerInterface $em, StackRepository $stackRepository): Response
     {
-        dd($id);
+        $name = $request->request->get('newName');
+        $id = (int) $request->request->get('techno');
+        $stack = $stackRepository->findOneBy(['id' => $id]);
+
+        if (!$name && !$stack) {
+            $this->addFlash('danger', 'Paramètres invalides');
+            return $this->redirectToRoute('admin_stack');
+        }
+
+        try {
+            $stack->setName(ucwords($this->purify_input($name)));
+            $em->persist($stack);
+            $em->flush();
+            $this->addFlash('success', 'La techno a bien été modifiée.');
+            return $this->redirectToRoute('admin_stack');
+        } catch (\Throwable $th) {
+            $this->addFlash('danger', 'Erreur : ' . $th->getMessage());
+            return $this->redirectToRoute('admin_stack');
+        }
     }
 
     private function purify_input(string $input): string
