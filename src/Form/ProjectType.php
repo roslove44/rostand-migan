@@ -132,7 +132,7 @@ class ProjectType extends AbstractType
                 'choice_label' => 'name',
                 'multiple' => true,
                 'attr' => [
-                    'class' => 'form-select form-select-sm',
+                    'class' => '',
                     'placeholder' => 'Stacks',
                 ],
                 'constraints' => [
@@ -140,7 +140,8 @@ class ProjectType extends AbstractType
                         'message' => 'Veuillez renseigner l\url du projet',
                     ]),
                 ],
-                "required" => false
+                "required" => false,
+                'autocomplete' => true,
             ])
             ->add('description', CKEditorType::class, [
                 'config_name' => 'rost'
