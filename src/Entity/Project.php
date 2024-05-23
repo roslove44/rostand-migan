@@ -49,9 +49,16 @@ class Project
     #[ORM\Column(length: 255, unique: true)]
     private ?string $slug = null;
 
+    /**
+     * @var Collection<int, Filter>
+     */
+    #[ORM\ManyToMany(targetEntity: Filter::class, inversedBy: 'projects')]
+    private Collection $filters;
+
     public function __construct()
     {
         $this->stacks = new ArrayCollection();
+        $this->filters = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -190,6 +197,30 @@ class Project
     public function setSlug(string $slug): static
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Filter>
+     */
+    public function getFilters(): Collection
+    {
+        return $this->filters;
+    }
+
+    public function addFilter(Filter $filter): static
+    {
+        if (!$this->filters->contains($filter)) {
+            $this->filters->add($filter);
+        }
+
+        return $this;
+    }
+
+    public function removeFilter(Filter $filter): static
+    {
+        $this->filters->removeElement($filter);
 
         return $this;
     }

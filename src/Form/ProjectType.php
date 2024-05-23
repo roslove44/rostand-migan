@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use App\Entity\Filter;
 use App\Entity\Project;
 use App\Entity\Stack;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
@@ -114,7 +115,7 @@ class ProjectType extends AbstractType
                     'placeholder' => 'Ajoutez l\'image pour mobile',
                 ],
                 'constraints' => $filesConstraints,
-                'required' => $requiredFiles,
+                'required' => false,
             ])
             ->add('desktopPicture', FileType::class, [
                 'mapped' => false,
@@ -127,6 +128,20 @@ class ProjectType extends AbstractType
                 'constraints' => $filesConstraints,
                 'required' => $requiredFiles,
             ])
+            ->add('filters', EntityType::class, [
+                'class' => Filter::class,
+                'choice_label' => 'name',
+                'multiple' => true,
+                'attr' => [
+                    'class' => '',
+                    'placeholder' => 'Filtres',
+                ],
+                'constraints' => [
+                    new Assert\NotBlank([]),
+                ],
+                "required" => false,
+                'autocomplete' => true,
+            ])
             ->add('stacks', EntityType::class, [
                 'class' => Stack::class,
                 'choice_label' => 'name',
@@ -136,15 +151,14 @@ class ProjectType extends AbstractType
                     'placeholder' => 'Stacks',
                 ],
                 'constraints' => [
-                    new Assert\NotBlank([
-                        'message' => 'Veuillez renseigner l\url du projet',
-                    ]),
+                    new Assert\NotBlank([]),
                 ],
                 "required" => false,
                 'autocomplete' => true,
             ])
             ->add('description', CKEditorType::class, [
-                'config_name' => 'rost'
+                'config_name' => 'rost',
+                'required' => true,
             ]);
     }
 

@@ -23,19 +23,30 @@ class ProjectController extends AbstractController
         $projectForm->handleRequest($request);
 
         if ($projectForm->isSubmitted() && $projectForm->isValid()) {
-            // Get Files 
-            $thumbnail = $projectForm->get('thumbnail')->getData();
-            $mobilePicture = $projectForm->get('mobilePicture')->getData();
-            $desktopPicture = $projectForm->get('desktopPicture')->getData();
+            //Check Ckeditor Field 
+            if (!$project->getDescription()) {
+                $this->addFlash('danger', "Veuillez à ce que le champ description ne soit pas nul.");
+                return $this->redirectToRoute('admin_project_add');
+            }
+            // Get Files & Add Files to Server
+            if ($thumbnail = $projectForm->get('thumbnail')->getData()) {
+                $thumbnail = $pictureService->addFile($thumbnail, 'work/thumbnail');
+                $project->setThumbnail($thumbnail);
+            }
 
-            // Add Files to Server
-            $thumbnail = $pictureService->addFile($thumbnail, 'work/thumbnail');
-            $mobilePicture = $pictureService->addFile($mobilePicture, 'work/mobilePicture');
-            $desktopPicture = $pictureService->addFile($desktopPicture, 'work/desktopPicture');
+            if ($mobilePicture = $projectForm->get('mobilePicture')->getData()) {
+                $mobilePicture = $pictureService->addFile($mobilePicture, 'work/mobilePicture');
+                $project->setMobilePicture($mobilePicture);
+            }
+
+            if ($desktopPicture = $projectForm->get('desktopPicture')->getData()) {
+                $desktopPicture = $pictureService->addFile($desktopPicture, 'work/desktopPicture');
+                $project->setDesktopPicture($desktopPicture);
+            }
 
             // Set Project
             $slug = $slugger->slug($project->getTitle())->lower();
-            $project->setSlug($slug)->setThumbnail($thumbnail)->setMobilePicture($mobilePicture)->setDesktopPicture($desktopPicture);
+            $project->setSlug($slug);
 
             try {
                 $em->persist($project);
@@ -44,13 +55,14 @@ class ProjectController extends AbstractController
                 return $this->redirectToRoute('admin_main');
             } catch (\Throwable $th) {
                 $pictureService->removeFile($project->getThumbnail());
-                $pictureService->removeFile($project->getMobilePicture());
+                if ($project->getMobilePicture()) {
+                    $pictureService->removeFile($project->getMobilePicture());
+                }
                 $pictureService->removeFile($project->getDesktopPicture());
                 $this->addFlash('danger', "Une erreur s'est produite : " . $th->getMessage());
                 return $this->redirectToRoute('admin_project_add');
             }
         }
-
 
         $projectForm->createView();
         return $this->render('admin/dashboard/project.html.twig', compact('projectForm'));
@@ -71,6 +83,11 @@ class ProjectController extends AbstractController
         $projectForm->handleRequest($request);
 
         if ($projectForm->isSubmitted() && $projectForm->isValid()) {
+            //Check Ckeditor Field 
+            if (!$project->getDescription()) {
+                $this->addFlash('danger', "Veuillez à ce que le champ description ne soit pas nul.");
+                return $this->redirectToRoute('admin_project_edit');
+            }
             // Get Files
             if ($thumbnail = $projectForm->get('thumbnail')->getData()) {
                 $thumbnail = $pictureService->addFile($thumbnail, 'work/thumbnail');
