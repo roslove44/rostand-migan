@@ -1,16 +1,20 @@
 <ul class="nav nav-tabs" role="tablist">
     <li class="nav-item">
-        <a class="nav-link active ps-0" href="{{path('admin_main')}}">Projets</a>
+        <a class="nav-link ps-0 {% if app.current_route=='admin_main' %}active fw-bold{% endif%}"
+            href="{{path('admin_main')}}">Projets</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="{{path('admin_profil')}}">Profil</a>
+        <a class="nav-link {% if app.current_route=='admin_profil' %}active fw-bold{% endif%}"
+            href="{{path('admin_profil')}}">Profil</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="{{path('admin_stack')}}">Stacks</a>
+        <a class="nav-link {% if app.current_route=='admin_stack' %}active fw-bold{% endif%}"
+            href="{{path('admin_stack')}}">Stack</a>
     </li>
-    {# <li class="nav-item">
-        <a class="nav-link border-0" href="">More</a>
-    </li> #}
+    <li class="nav-item">
+        <a class="nav-link border-0 {% if app.current_route=='admin_filter' %}active fw-bold{% endif%}"
+            href="{{path('admin_filter')}}">Filtres</a>
+    </li>
 </ul>
 <div>
     <div class="btn-wrapper">

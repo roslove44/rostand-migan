@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Repository\FilterRepository;
 use App\Repository\ProjectRepository;
 use App\Repository\StackRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -29,5 +30,12 @@ class MainController extends AbstractController
     {
         $stack = $stackRepository->findAll();
         return $this->render('admin/dashboard/stack.html.twig', compact('stack'));
+    }
+
+    #[Route('/dashboard/filter', name: 'admin_filter')]
+    public function filter(FilterRepository $filterRepository): Response
+    {
+        $filters = $filterRepository->findAll();
+        return $this->render('admin/dashboard/filter.html.twig', compact('filters'));
     }
 }

@@ -88,6 +88,13 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
+                                            {{form_label(projectForm.filters)}}
+                                            {{form_widget(projectForm.filters)}}
+                                            <div class="form-text text-danger" role="alert">
+                                                {{ form_errors(projectForm.filters) }}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
                                             {{form_label(projectForm.description)}}
                                             {{form_widget(projectForm.description)}}
                                             <div class="form-text text-danger" role="alert">
