@@ -18,13 +18,15 @@ class FilterController extends AbstractController
     public function addFilter(Request $request, EntityManagerInterface $em): Response
     {
         $filter = $request->request->get('addFilter');
-        if (!$filter) {
+        $slug = $request->request->get('slug');
+        if (!$filter || !$slug) {
             $this->addFlash('danger', 'Filtre renseigné invalide');
             return $this->redirectToRoute('admin_filter');
         }
-        $filter = ucwords($this->purify_input($filter));
+        $filter = ucfirst($this->purify_input($filter));
+        $slug = strtolower($this->purify_input($slug));
         $stack = new Filter();
-        $stack->setName($filter);
+        $stack->setName($filter)->setSlug($slug);
         try {
             $em->persist($stack);
             $em->flush();
@@ -41,16 +43,24 @@ class FilterController extends AbstractController
     public function updateFilter(Request $request, EntityManagerInterface $em, FilterRepository $filterRepository): Response
     {
         $name = $request->request->get('newName');
+        $slug = $request->request->get('newSlug');
         $id = (int) $request->request->get('filter');
         $filter = $filterRepository->findOneBy(['id' => $id]);
 
-        if (!$name && !$filter) {
+        if (!$filter) {
             $this->addFlash('danger', 'Paramètres invalides');
             return $this->redirectToRoute('admin_filter');
         }
 
         try {
-            $filter->setName(ucwords($this->purify_input($name)));
+            if ($name) {
+                $filter->setName(ucfirst($this->purify_input($name)));
+            }
+
+            if ($slug) {
+                $filter->setSlug(strtolower($this->purify_input($slug)));
+            }
+
             $em->persist($filter);
             $em->flush();
             $this->addFlash('success', 'Le filtre a bien été modifié.');

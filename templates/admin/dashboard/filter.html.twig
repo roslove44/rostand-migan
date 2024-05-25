@@ -20,6 +20,8 @@
                                             <div class="form-group">
                                                 <input type="text" class="form-control" id="addFilter" name="addFilter"
                                                     placeholder="Filter" required>
+                                                <input type="text" class="form-control mt-3" id="slug" name="slug"
+                                                    placeholder="Slug" required>
                                             </div>
                                             <button type="submit" class="btn btn-primary text-white">Ajouter</button>
                                         </form>
@@ -46,6 +48,8 @@
                                             <div class="form-group">
                                                 <input type="text" class="form-control" name="newName"
                                                     placeholder="Nouveau nom" required>
+                                                <input type="text" class="form-control mt-3" name="newSlug"
+                                                    placeholder="Nouveau slug" required>
                                             </div>
                                             <button type="submit"
                                                 class="btn btn-primary me-2 text-white">Soumettre</button>
@@ -64,6 +68,7 @@
                                                 <thead>
                                                     <tr>
                                                         <th>Filtre</th>
+                                                        <th>Slug</th>
                                                         <th colspan="2">In Projects</th>
                                                     </tr>
                                                 </thead>
@@ -76,6 +81,7 @@
                                                     {% for filter in filters %}
                                                     <tr>
                                                         <td>{{filter.name}}</td>
+                                                        <td>{{filter.slug}}</td>
                                                         <td colspan="2" style="text-wrap: pretty;">
                                                             {% if filter.projects|length == 0 %}
                                                             Aucun projet affecté.
