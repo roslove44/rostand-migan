@@ -14,17 +14,15 @@
             </div>
 
             <div>
-                <h2
-                    class="text-lg sm:text-xl md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl text-wrap font-bold text-orange-400">
-                    Développeur Web <br>
-                    <span class="typed" data-typed-items="PHP,Full Stack,Symfony,JavaScript, React, Python">
-                        Full Stack.
+                <h2 class="text-lg/snug sm:text-xl/snug md:text-xl/snug lg:text-2xl/snug xl:text-3xl/snug 2xl:text-4xl/snug text-wrap font-bold text-orange-400"
+                    data-controller="fixeTyped">
+                    Développeur Web <span class="text-[0px]">Full Stack</span> <br>
+                    <span {{ stimulus_controller('symfony/ux-typed', { strings: ['Full Stack','Symfony', 'React'
+                        , 'Python' , 'Node.js' ], smartBackspace: true, startDelay: 0, backSpeed: 80, backDelay: 300,
+                        loop: true, showCursor: true, cursorChar: '|' }) }} class="transition-all duration-300">
                     </span>
                 </h2>
-                <h3
-                    class="hidden text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl text-wrap font-bold text-orange-400">
-                    Full Stack.
-                </h3>
+                <h3 class="text-[0px]">Développeur Web Freelance</h3>
             </div>
 
             <p class="text-base/relaxed text-wrap md:w-2/3">
@@ -66,7 +64,7 @@
                     </h2>
                 </div>
                 <div class="intro-description">
-                    <p>
+                    <p class="leading-relaxed">
                         Bienvenue dans mon espace dédié à la transformation de vos idées en solutions numériques
                         exceptionnelles. En tant que
                         développeur Full Stack passionné et polyvalent, je suis engagé à fournir des
@@ -228,7 +226,6 @@
         </div>
     </div>
 </section>
-
 
 <section id="about" class="dark-gradient py-10">
     <div class="section-content flex flex-col lg:flex-row-reverse mx-5 sm:mx-10 my-8 justify-center md:mx-24">
