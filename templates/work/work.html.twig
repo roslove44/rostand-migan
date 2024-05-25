@@ -11,7 +11,7 @@
         <div class="flex items-center justify-center gap-2 mt-5 border-y border-slate-200 py-4">
             <a href="{{work.url}}" target="_blank"
                 class="rounded-full shadow-md py-1 px-2 flex items-center gap-2 duration-300 text-sm hover:bg-teal-200 bg-teal-100 text-slate-700 transition-all">
-                <div class="svg text-rostBlue text-lg" href="">
+                <div class="svg text-rostBlue text-lg " href="">
                     {% if work.urlType == 'github' %}
                     <svg>
                         <use href="#github"></use>
@@ -31,8 +31,10 @@
             <div class="relative flex items-center justify-center w-full md:h-[450px] md:w-fit mt-14 sm:mt-8">
                 <img class="object-contain md:h-full w-full"
                     src="{{ asset('uploads/work/desktopPicture/' ~ work.desktopPicture) }}">
+                {% if work.mobilePicture %}
                 <img class="h-0 sm:h-[250px] md:h-[300px] absolute right-0 bottom-5 object-cover"
                     src="{{ asset('uploads/work/mobilePicture/' ~ work.mobilePicture) }}">
+                {% endif %}
             </div>
         </div>
     </div>
@@ -74,14 +76,6 @@
                             <div class="tags flex justify-between mt-2">
                                 <div class="flex gap-2 flex-wrap">
                                     {% if work.stacks|length > 0 %}
-                                    {% for techno in work.stacks %}
-                                    <button
-                                        class=" rounded-full shadow-md py-2 px-3 flex items-center gap-2 duration-300  hover:bg-slate-100 bg-slate-50 text-slate-700 transition-all">
-                                        <div class="text-xs font-medium leading-none">
-                                            {{techno.name}}
-                                        </div>
-                                    </button>
-                                    {% endfor %}
                                     {% for techno in work.stacks %}
                                     <button
                                         class=" rounded-full shadow-md py-2 px-3 flex items-center gap-2 duration-300  hover:bg-slate-100 bg-slate-50 text-slate-700 transition-all">

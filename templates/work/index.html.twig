@@ -16,28 +16,40 @@
             <button class="selector active" data-filter="*" data-action="click->portfolio#filter">
                 <div class="text-sm font-medium leading-none">Tous</div>
             </button>
-            <button class="selector" data-filter="best" data-action="click->portfolio#filter">
-                <div class="text-sm font-medium leading-none">En lumière</div>
+            {% if filters|length > 0 %}
+            {% for filter in filters %}
+            <button class="selector" data-filter="{{filter.slug}}" data-action="click->portfolio#filter">
+                <div class="text-sm font-medium leading-none">{{filter.name}}</div>
             </button>
+            {% endfor %}
+            {% endif %}
         </div>
         <div class="portfolio-projects" data-portfolio-target="portfolioProjects">
 
-            <a href="{{path('app_work_details')}}" class="project group best">
+            {% if works|length >0 %}
+            {% for work in works %}
+            <a href="{{path('app_work_detail', {slug:work.slug})}}" title="Voir les détails"
+                class="project group {% if work.filters %}{% for filter in work.filters %}{{filter.slug}}{% endfor %}{% endif %}">
                 <div
                     class="absolute inset-0 rounded-2xl bg-slate-500 w-full h-[208px] overflow-hidden group-hover:h-full transition-all duration-500">
-                    <img class="w-full h-full object-cover" src="{{asset('img/contact-bg.jpg')}}">
+                    <img class="w-full h-full object-cover"
+                        src="{{ asset('uploads/work/thumbnail/' ~ work.thumbnail) }}">
                 </div>
-                <div class="p-6 flex flex-col gap-2 text-slate-700 h-auto">
+                <div class="p-6 flex flex-col gap-2 text-slate-700">
                     <div class="flex gap-2 text-2xl items-center">
                         <h3 class="text-2xl font-bold font-secondary line-clamp-1 text-slate-700">
-                            Compta Open best
+                            {{work.title}}
                         </h3>
                     </div>
                     <p class="text-base font-medium text-slate-600 leading-[140%] text-left line-clamp-2">
-                        Plateforme collaborative pour comptables et acteurs d'entreprises.
+                        {{work.summary}}
                     </p>
                     <p class="text-xs font-medium text-sky-600 leading-[140%] text-left line-clamp-1">
-                        #react #php8 #symfony6
+                        {% if work.stacks|length > 0 %}
+                        {% for stack in work.stacks %}
+                        #{{stack.name}}
+                        {% endfor %}
+                        {% endif %}
                     </p>
                     <span class="lg:hidden text-xs font-bold text-sky-600 leading-[140%] text-left">&#8594;
                         Détails</span>
@@ -45,106 +57,15 @@
 
                 <div class="absolute mx-auto bottom-[10%] left-1/2 -translate-x-1/2">
                     <button
-                        class="rounded-full py-2 px-6 flex items-center gap-2 opacity-0 border border-sky-600 hover:bg-sky-500 hover:border-sky-500 bg-sky-600 text-sky-50 transition-all duration-500 group-hover:animate-portfolio-action">
+                        class="rounded-full py-2 px-6 flex items-center gap-2 opacity-0 bg-slate-800 text-sky-50 transition-all duration-500 group-hover:animate-portfolio-action">
                         <div class="text-sm font-medium leading-none">
-                            Compta Open
+                            {{work.title}} -->
                         </div>
                     </button>
                 </div>
             </a>
-
-            <a href="{{path('app_work_details')}}" class="project group">
-                <div
-                    class="absolute inset-0 rounded-2xl bg-slate-500 w-full h-[208px] overflow-hidden group-hover:h-full transition-all duration-500">
-                    <img class="w-full h-full object-cover" src="{{asset('img/contact-bg.jpg')}}">
-                </div>
-                <div class="p-6 flex flex-col gap-2 text-slate-700 h-auto">
-                    <div class="flex gap-2 text-2xl items-center">
-                        <h3 class="text-2xl font-bold font-secondary line-clamp-1 text-slate-700">
-                            Compta Open
-                        </h3>
-                    </div>
-                    <p class="text-base font-medium text-slate-600 leading-[140%] text-left line-clamp-2">
-                        Plateforme collaborative pour comptables et acteurs d'entreprises.
-                    </p>
-                    <p class="text-xs font-medium text-sky-600 leading-[140%] text-left line-clamp-1">
-                        #react #php8 #symfony6
-                    </p>
-                    <span class="lg:hidden text-xs font-bold text-sky-600 leading-[140%] text-left">&#8594;
-                        Détails</span>
-                </div>
-
-                <div class="absolute mx-auto bottom-[10%] left-1/2 -translate-x-1/2">
-                    <button
-                        class="rounded-full py-2 px-6 flex items-center gap-2 opacity-0 border border-sky-600 hover:bg-sky-500 hover:border-sky-500 bg-sky-600 text-sky-50 transition-all duration-500 group-hover:animate-portfolio-action">
-                        <div class="text-sm font-medium leading-none">
-                            Compta Open
-                        </div>
-                    </button>
-                </div>
-            </a>
-
-            <a href="{{path('app_work_details')}}" class="project group">
-                <div
-                    class="absolute inset-0 rounded-2xl bg-slate-500 w-full h-[208px] overflow-hidden group-hover:h-full transition-all duration-500">
-                    <img class="w-full h-full object-cover" src="{{asset('img/contact-bg.jpg')}}">
-                </div>
-                <div class="p-6 flex flex-col gap-2 text-slate-700 h-auto">
-                    <div class="flex gap-2 text-2xl items-center">
-                        <h3 class="text-2xl font-bold font-secondary line-clamp-1 text-slate-700">
-                            Compta Open
-                        </h3>
-                    </div>
-                    <p class="text-base font-medium text-slate-600 leading-[140%] text-left line-clamp-2">
-                        Plateforme collaborative pour comptables et acteurs d'entreprises.
-                    </p>
-                    <p class="text-xs font-medium text-sky-600 leading-[140%] text-left line-clamp-1">
-                        #react #php8 #symfony6
-                    </p>
-                    <span class="lg:hidden text-xs font-bold text-sky-600 leading-[140%] text-left">&#8594;
-                        Détails</span>
-                </div>
-
-                <div class="absolute mx-auto bottom-[10%] left-1/2 -translate-x-1/2">
-                    <button
-                        class="rounded-full py-2 px-6 flex items-center gap-2 opacity-0 border border-sky-600 hover:bg-sky-500 hover:border-sky-500 bg-sky-600 text-sky-50 transition-all duration-500 group-hover:animate-portfolio-action">
-                        <div class="text-sm font-medium leading-none">
-                            Compta Open
-                        </div>
-                    </button>
-                </div>
-            </a>
-
-            <a href="{{path('app_work_details')}}" class="project group best better">
-                <div
-                    class="absolute inset-0 rounded-2xl bg-slate-500 w-full h-[208px] overflow-hidden group-hover:h-full transition-all duration-500">
-                    <img class="w-full h-full object-cover" src="{{asset('img/contact-bg.jpg')}}">
-                </div>
-                <div class="p-6 flex flex-col gap-2 text-slate-700 h-auto">
-                    <div class="flex gap-2 text-2xl items-center">
-                        <h3 class="text-2xl font-bold font-secondary line-clamp-1 text-slate-700">
-                            Compta Open best
-                        </h3>
-                    </div>
-                    <p class="text-base font-medium text-slate-600 leading-[140%] text-left line-clamp-2">
-                        Plateforme collaborative pour comptables et acteurs d'entreprises.
-                    </p>
-                    <p class="text-xs font-medium text-sky-600 leading-[140%] text-left line-clamp-1">
-                        #react #php8 #symfony6
-                    </p>
-                    <span class="lg:hidden text-xs font-bold text-sky-600 leading-[140%] text-left">&#8594;
-                        Détails</span>
-                </div>
-
-                <div class="absolute mx-auto bottom-[10%] left-1/2 -translate-x-1/2">
-                    <button
-                        class="rounded-full py-2 px-6 flex items-center gap-2 opacity-0 border border-sky-600 hover:bg-sky-500 hover:border-sky-500 bg-sky-600 text-sky-50 transition-all duration-500 group-hover:animate-portfolio-action">
-                        <div class="text-sm font-medium leading-none">
-                            Compta Open
-                        </div>
-                    </button>
-                </div>
-            </a>
+            {% endfor %}
+            {% endif %}
         </div>
     </div>
 </section>
