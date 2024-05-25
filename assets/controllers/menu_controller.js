@@ -10,6 +10,17 @@ export default class extends Controller {
       hamburgerBtn.classList.remove("toggle-btn");
       menuList.classList.remove("is-visible");
     });
+    hamburgerBtn.addEventListener("blur", (event) => {
+      if (menuList.contains(event.relatedTarget)) {
+        return;
+      }
+      menuList.classList.remove("is-visible");
+      menuList.classList.add("animate-close-menu");
+      setTimeout(() => {
+        hamburgerBtn.classList.remove("toggle-btn");
+        menuList.classList.remove("animate-close-menu");
+      }, 300);
+    });
   }
 
   toggleMenu() {
