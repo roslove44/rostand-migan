@@ -154,45 +154,107 @@
     </div>
 
 
-    <footer
-        class="text-center  pt-1 pb-10 flex flex-col md:flex-row justify-center items-center gap-x-40 reverse-dark-gradient">
-        <div class="flex justify-center gap-5 social-links mt-7 text-white">
-            <a href="" class="group relative inline-flex svg">
-                <svg>
-                    <use href="#mail" />
-                </svg>
-                <span class="social-bubble">&nbsp;Mail&nbsp;</span>
-            </a>
-            <a href="" class="group relative inline-flex svg">
-                <svg>
-                    <use href="#github" />
-                </svg>
-                <span class="social-bubble">Github</span>
-            </a>
-            <a href="" class="group relative inline-flex svg">
-                <svg>
-                    <use href="#linkedin" />
-                </svg>
-                <span class="social-bubble">Linkedin</span>
-            </a>
-            <a href="" class="group relative inline-flex svg">
-                <svg>
-                    <use href="#twitter" />
-                </svg>
-                <span class="social-bubble">&nbsp;&nbsp;X&nbsp;&nbsp;</span>
-            </a>
-            <a href="" class="group relative inline-flex svg">
-                <svg>
-                    <use href="#telegram" />
-                </svg>
-                <span class="social-bubble">Telegram</span>
-            </a>
-        </div>
-        <div class="mt-5 text-center md:text-left text-sm max-w-md text-slate-300/60">
-            <p>
-                Construis avec <span class="text-rostBlue/45">&#9829;</span> à partir de zéro
-                et coder en Tailwind CSS par <a href="">Rostand</a>.
-            </p>
+    <footer class="reverse-dark-gradient w-full p-10">
+        <div class="container max-w-7xl mx-auto p-2 flex flex-col gap-4">
+            <div class="flex flex-col sm:flex-row sm:space-x-36 md:space-x-56 lg:space-x-72">
+                <div class="footer-contact space-y-4">
+                    <span class="text-lg title-font font-medium text-slate-300/60">
+                        Contactez-moi
+                    </span>
+
+                    <ul class="pl-3 flex flex-col items-center justify-start gap-2 text-base text-white">
+                        <li class="w-full flex">
+                            <a href="mailto:hello@rostand-migan.com" class="group menu-item">
+                                <span>hello@rostand-migan.com</span>
+                                <span class="sub-border group-hover:opacity-95 group-hover:scale-100"></span>
+                            </a>
+                        </li>
+
+                        <li class="w-full flex">
+                            <a href="https://twitter.com/migan_rostand"
+                                class="group menu-item">twitter.com/migan_rostand
+                                <span class="sub-border group-hover:opacity-95 group-hover:scale-100">
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="useful-link space-y-4 mt-4 sm:mt-0">
+                    <span class="text-lg title-font font-medium text-slate-300/60 sm:invisible">
+                        Liens utiles
+                    </span>
+                    <ul class="pl-3 flex flex-col justify-start gap-3 text-base/relaxed text-white">
+                        <li class="{% if app.current_route=='app_main' %}hidden{% endif%}">
+                            <a href="{{path('app_main')}}" class="group menu-item">
+                                <span>Accueil</span>
+                                <span class="sub-border group-hover:opacity-95 group-hover:scale-100">
+                                </span>
+                            </a>
+                        </li>
+                        <li class="{% if app.current_route=='app_work' %}hidden{% endif%}">
+                            <a href="{{path('app_work')}}" class="group menu-item">
+                                <span>Mes réalisations</span>
+                                <span class="sub-border group-hover:opacity-95 group-hover:scale-100">
+                                </span>
+                            </a>
+                        </li>
+                        <li class="{% if app.current_route=='app_blog' %}hidden{% endif%}">
+                            <a href="{{path('app_blog')}}" class="group menu-item">
+                                <span>Mon Blog</span>
+                                <span class="sub-border group-hover:opacity-95 group-hover:scale-100">
+                                </span>
+                            </a>
+                        </li>
+                        <li class="{% if app.current_route=='app_resume' %}hidden{% endif%}">
+                            <a href="{{path('app_resume')}}" class="group menu-item">
+                                <span>Mon CV</span>
+                                <span class="sub-border group-hover:opacity-95 group-hover:scale-100">
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="mylabor pt-8 border-t border-slate-50/5 flex flex-col-reverse gap-3 md:flex-row md:gap-0 justify-between items-center text-slate-300/60">
+                <p class="text-center md:text-start">
+                    @2024 Construis avec <span class="text-rostBlue">&#9829;</span> à partir de zéro et coder en
+                    Tailwind CSS & Symfony par <a href="{{path('app_main')}}">Rostand</a>.
+                </p>
+                <div class="flex justify-center gap-5 social-links text-white">
+                    <a href="" class="group relative inline-flex svg">
+                        <svg>
+                            <use href="#mail" />
+                        </svg>
+                        <span class="social-bubble">&nbsp;Mail&nbsp;</span>
+                    </a>
+                    <a href="" class="group relative inline-flex svg">
+                        <svg>
+                            <use href="#github" />
+                        </svg>
+                        <span class="social-bubble">Github</span>
+                    </a>
+                    <a href="" class="group relative inline-flex svg">
+                        <svg>
+                            <use href="#linkedin" />
+                        </svg>
+                        <span class="social-bubble">Linkedin</span>
+                    </a>
+                    <a href="" class="group relative inline-flex svg">
+                        <svg>
+                            <use href="#twitter" />
+                        </svg>
+                        <span class="social-bubble">&nbsp;&nbsp;X&nbsp;&nbsp;</span>
+                    </a>
+                    <a href="" class="group relative inline-flex svg">
+                        <svg>
+                            <use href="#telegram" />
+                        </svg>
+                        <span class="social-bubble">Telegram</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </footer>
 
