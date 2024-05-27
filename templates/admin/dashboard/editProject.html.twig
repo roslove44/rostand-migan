@@ -101,6 +101,20 @@
                                                 {{ form_errors(projectForm.description) }}
                                             </div>
                                         </div>
+                                        <div class="form-group">
+                                            {{form_label(projectForm.meta_description)}}
+                                            {{form_widget(projectForm.meta_description)}}
+                                            <div class="form-text text-danger" role="alert">
+                                                {{ form_errors(projectForm.meta_description) }}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            {{form_label(projectForm.meta_keywords)}}
+                                            {{form_widget(projectForm.meta_keywords)}}
+                                            <div class="form-text text-danger" role="alert">
+                                                {{ form_errors(projectForm.meta_keywords) }}
+                                            </div>
+                                        </div>
 
                                         <button type="submit" class="btn btn-primary me-2 text-white">Soumettre</button>
                                         <a class="btn btn-light" href="{{path('admin_main')}}">Cancel</a>

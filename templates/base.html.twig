@@ -6,8 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block turboMeta %}{% endblock %}
     <title>{% block title %}Rostand MIGAN | Développeur Web{% endblock %}</title>
+    <meta name="author" content="Rostand MIGAN">
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22></text></svg>">
+
+    <!-- Meta Description -->
+    <meta name="description" content="{% block meta_description %}
+        Explorez le portfolio de Rostand MIGAN, Développeur Web Full Stack Freelance. Expert en création d'applications et sites web pour entreprises et particuliers.
+        {% endblock %}">
+
+    <!-- Meta Keywords -->
+    <meta name="keywords"
+        content="{% block meta_keywords %}Développeur Web, Développeur Web Full Stack, Freelance, Conception d'Applications Web, Création de Sites Web, Développement Front-End, Développement Back-End, React, Next.js, Symfony, Django, Node.js, JavaScript, TypeScript, PHP, Python, HTML, CSS, Tailwind CSS, WordPress, ERP, Fintech, Automatisation des Tâches, Scripts Python, Gestion de Base de Données, UX Design, Responsive Design, Sécurité Web, Performance Web, Scalabilité, Solutions Clé en Main, Start-Up, Entreprises, Particuliers, France, Canada, Bénin, Développement Web Personnalisé, Expertise SEO{% endblock %}">
+
+    <!-- Open Graph Metadata -->
+    <meta property="og:title"
+        content="{% block og_title %}Rostand MIGAN - Développeur Web FullStack & Fintech Enthousiaste{% endblock %}">
+    <meta property="og:description"
+        content="{% block og_description %}Explorez le portfolio de Rostand MIGAN, Développeur Web Full Stack Freelance. Expert en création d'applications et sites web pour entreprises et particuliers.{% endblock %}">
+    <meta property="og:image" content="{% block og_image %}default-image-url.jpg{% endblock %}">
+    <meta property="og:url"
+        content="{% block og_canonical %}{{ url(app.request.get('_route'), app.request.get('_route_params')) }}{% endblock %}">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Metadata -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title"
+        content="{% block twitter_title %}Rostand MIGAN - Développeur Web FullStack & Fintech Enthousiaste{% endblock %}">
+    <meta name="twitter:description"
+        content="{% block twitter_description %}Explorez le portfolio de Rostand MIGAN, Développeur Web Full Stack Freelance. Expert en création d'applications et sites web pour entreprises et particuliers.{% endblock %}">
+    <meta name="twitter:image" content="{% block twitter_image %}default-image-url.jpg{% endblock %}">
+    <meta name="twitter:creator" content="Rostand MIGAN">
+    <meta property="twitter:url"
+        content="{% block twitter_canonical %}{{ url(app.request.get('_route'), app.request.get('_route_params')) }}{% endblock %}">
+
+    <!-- Canonical Link -->
+    <link rel="canonical"
+        href="{% block canonical %}{{ url(app.request.get('_route'), app.request.get('_route_params')) }}{% endblock %}">
+
     {% block stylesheets %}
     {% endblock %}
 

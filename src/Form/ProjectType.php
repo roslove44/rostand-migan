@@ -159,6 +159,22 @@ class ProjectType extends AbstractType
             ->add('description', CKEditorType::class, [
                 'config_name' => 'rost',
                 'required' => true,
+            ])
+            ->add('meta_description', TextType::class, [
+                'label' => 'Meta description',
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Meta description',
+                ],
+                'required' => false,
+            ])
+            ->add('meta_keywords', TextType::class, [
+                'label' => 'Meta keywords',
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Meta keywords',
+                ],
+                'required' => false,
             ]);
     }
 

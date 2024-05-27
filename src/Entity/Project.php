@@ -55,6 +55,12 @@ class Project
     #[ORM\ManyToMany(targetEntity: Filter::class, inversedBy: 'projects')]
     private Collection $filters;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $meta_description = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $meta_keywords = null;
+
     public function __construct()
     {
         $this->stacks = new ArrayCollection();
@@ -221,6 +227,30 @@ class Project
     public function removeFilter(Filter $filter): static
     {
         $this->filters->removeElement($filter);
+
+        return $this;
+    }
+
+    public function getMetaDescription(): ?string
+    {
+        return $this->meta_description;
+    }
+
+    public function setMetaDescription(?string $meta_description): static
+    {
+        $this->meta_description = $meta_description;
+
+        return $this;
+    }
+
+    public function getMetaKeywords(): ?string
+    {
+        return $this->meta_keywords;
+    }
+
+    public function setMetaKeywords(?string $meta_keywords): static
+    {
+        $this->meta_keywords = $meta_keywords;
 
         return $this;
     }
