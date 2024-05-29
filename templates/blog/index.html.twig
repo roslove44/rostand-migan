@@ -1,6 +1,25 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Portfolio | Rostand MIGAN{% endblock %}
+{# Déclaraton des variables #}
+{% set seo_title = "Blog - Rostand MIGAN" %}
+{% set meta_description = "Explorez le blog de Rostand MIGAN, Développeur Web Full Stack. Découvrez des articles sur le
+développement web, les technologies fintech, les meilleures pratiques en programmation, et des conseils pour les
+développeurs. Restez à jour avec les dernières tendances et astuces." %}
+{% set seo_image = absolute_url(asset('img/og_image/blog.png')) %}
+{# End Déclaraton des variables #}
+
+{# SEO #}
+{% block meta_description %}{{meta_description}}{% endblock %}
+{% block meta_keywords %}Blog, {{parent()}}{% endblock %}
+{% block og_title %}{{seo_title}}{% endblock %}
+{% block og_description %}{{meta_description}}{% endblock %}
+{% block og_image %}{{seo_image}}{% endblock %}
+{% block twitter_title %}{{seo_title}}{% endblock %}
+{% block twitter_description %}{{meta_description}}{% endblock %}
+{% block twitter_image %}{{seo_image}}{% endblock %}
+{# End SEO #}
+
+{% block title %}{{seo_title}}{% endblock %}
 
 {% block body %}
 <section id="blog" class="min-h-[calc(100dvh-70px)] mx-auto lg:flex justify-center" data-controller="blog">
@@ -39,99 +58,54 @@
         <!--Liste des articles-->
         <div class="flex flex-col gap-5 mt-12" data-blog-target="postsContainer">
 
-            <article class="grid border-b border-b-slate-200">
-                <div class="w-full text-sm font-mono mb-3 gap-3 cursor-pointer">Epinglé</div>
-                <div>
-                    <h3 class="font-bold text-lg/loose tracking-wide cursor-pointer hover:text-rostBlue">
-                        <a href="{{path('app_blog_post')}}" class="articleLink">Comment devenir développeur web ?</a>
-                    </h3>
-                    <div class="flex">
-                        <div>
-                            <p class="line-clamp-2 md:line-clamp-3 cursor-pointer">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, nisi. Lorem
-                                ipsum,
-                                dolor sit amet consectetur adipisicing elit. Blanditiis nulla sed iure omnis
-                                quidem
-                                dolores praesentium temporibus aliquid quisquam quia?
-                            </p>
-                            <div class="tags flex justify-between py-5">
-                                <div class="flex gap-2">
-                                    <button
-                                        class=" rounded-full shadow-md py-1 px-2 flex items-center gap-2 duration-300  hover:bg-slate-100 bg-slate-50 text-slate-700 transition-all">
-                                        <div class="text-xs font-medium leading-none">Php</div>
-                                    </button>
-                                    <button
-                                        class=" rounded-full shadow-md py-1 px-2 flex items-center gap-2 duration-300  hover:bg-slate-100 bg-slate-50 text-slate-700 transition-all">
-                                        <div class="text-xs font-medium leading-none">JavaScript</div>
-                                    </button>
-                                </div>
-                                <div class="flex justify-end">
-                                    <button class="svg text-rostBlue" title="Visionnages">
-                                        <svg>
-                                            <use href="#view"></use>
-                                        </svg>
-                                        <i class="text-xs font-medium leading-none">77</i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ml-5 max-h-[80px] max-w-[80px] lg:max-h-[112px] lg:max-w-[112px] cursor-pointer ">
-                            <img src="{{asset('img/contact-bg.jpg')}}" alt="">
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <article class="grid border-b border-b-slate-200">
-                <div class="w-full text-sm font-mono mb-3 gap-3 cursor-pointer">Publié le 09 Sept 2023.
-                </div>
-                <div>
-                    <h3 class="font-bold text-lg/loose tracking-wide cursor-pointer hover:text-rostBlue">
-                        <a href="{{path('app_blog_post')}}" class="articleLink">Comment devenir développeur web ?</a>
-                    </h3>
-                    <div class="flex">
-                        <div>
-                            <p class="line-clamp-2 md:line-clamp-3 cursor-pointer ">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, nisi. Lorem
-                                ipsum,
-                                dolor sit amet consectetur adipisicing elit. Blanditiis nulla sed iure omnis
-                                quidem
-                                dolores praesentium temporibus aliquid quisquam quia?
-                            </p>
-                            <div class="tags flex justify-between py-5">
-                                <div class="flex gap-2">
-                                    <button
-                                        class=" rounded-full shadow-md py-1 px-2 flex items-center gap-2 duration-300  hover:bg-slate-100 bg-slate-50 text-slate-700 transition-all">
-                                        <div class="text-xs font-medium leading-none">Php</div>
-                                    </button>
-                                    <button
-                                        class=" rounded-full shadow-md py-1 px-2 flex items-center gap-2 duration-300  hover:bg-slate-100 bg-slate-50 text-slate-700 transition-all">
-                                        <div class="text-xs font-medium leading-none">JavaScript</div>
-                                    </button>
-                                </div>
-                                <div class="flex justify-end">
-                                    <button class="svg text-rostBlue" title="Visionnages">
-                                        <svg>
-                                            <use href="#view"></use>
-                                        </svg>
-                                        <i class="text-xs font-medium leading-none">77</i>
-                                    </button>
+            <template>
+                <article class="grid border-b border-b-slate-200">
+                    <div class="w-full text-sm font-mono mb-3 gap-3 cursor-pointer">Epinglé</div>
+                    <div>
+                        <h3 class="font-bold text-lg/loose tracking-wide cursor-pointer hover:text-rostBlue">
+                            <a href="{{path('app_blog_post')}}" class="articleLink">Comment devenir développeur web
+                                ?</a>
+                        </h3>
+                        <div class="flex">
+                            <div>
+                                <p class="line-clamp-2 md:line-clamp-3 cursor-pointer">
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, nisi. Lorem
+                                    ipsum,
+                                    dolor sit amet consectetur adipisicing elit. Blanditiis nulla sed iure omnis
+                                    quidem
+                                    dolores praesentium temporibus aliquid quisquam quia?
+                                </p>
+                                <div class="tags flex justify-between py-5">
+                                    <div class="flex gap-2">
+                                        <button
+                                            class=" rounded-full shadow-md py-1 px-2 flex items-center gap-2 duration-300  hover:bg-slate-100 bg-slate-50 text-slate-700 transition-all">
+                                            <div class="text-xs font-medium leading-none">Php</div>
+                                        </button>
+                                        <button
+                                            class=" rounded-full shadow-md py-1 px-2 flex items-center gap-2 duration-300  hover:bg-slate-100 bg-slate-50 text-slate-700 transition-all">
+                                            <div class="text-xs font-medium leading-none">JavaScript</div>
+                                        </button>
+                                    </div>
+                                    <div class="flex justify-end">
+                                        <button class="svg text-rostBlue" title="Visionnages">
+                                            <svg>
+                                                <use href="#view"></use>
+                                            </svg>
+                                            <i class="text-xs font-medium leading-none">77</i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="ml-5 max-h-[80px] max-w-[80px] lg:max-h-[112px] lg:max-w-[112px] cursor-pointer ">
-                            <img src="{{asset('img/contact-bg.jpg')}}" alt="">
+                            <div
+                                class="ml-5 max-h-[80px] max-w-[80px] lg:max-h-[112px] lg:max-w-[112px] cursor-pointer ">
+                                <img src="{{asset('img/contact-bg.jpg')}}" alt="">
+                            </div>
                         </div>
                     </div>
-                </div>
-            </article>
+                </article>
+            </template>
 
             {# Info Start #}
-            <div class="p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
-                role="alert">
-                <span class="font-medium">Mes articles seront bientôt disponibles ici.</span>
-                Revenez prochainement pour les découvrir !
-            </div>
             <div class="border border-blue-300 shadow rounded-md p-4 w-full mx-auto">
                 <div class="animate-pulse flex flex-col space-x-4">
                     <div class="flex-1 space-y-6 py-1">
@@ -148,6 +122,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
+                role="alert">
+                <span class="font-medium">Mes articles seront bientôt disponibles ici.</span>
+                Revenez prochainement pour les découvrir !
             </div>
             {# End Info #}
 

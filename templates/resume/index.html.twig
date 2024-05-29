@@ -1,10 +1,41 @@
+{# Déclaraton des variables #}
+{% set seo_title = "Resume - Rostand MIGAN" %}
+{% set meta_description = "Découvrez le CV de Rostand MIGAN, Développeur Web Full Stack Freelance. Explorez mes
+compétences, mon expérience professionnelle et mes réalisations en développement web et fintech." %}
+{% set seo_image = absolute_url(asset('img/og_image/resume.png')) %}
+{# End Déclaraton des variables #}
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rostand MIGAN | Resume</title>
+    <title>{{seo_title}}</title>
+    <meta name="author" content="Rostand MIGAN">
+    <meta name="description" content="{{meta_description}}">
+    <meta property="og:site_name" content="Rostand MIGAN">
+
+    <!-- Meta Keywords -->
+    <meta name="keywords"
+        content="Développeur Web, Développeur Web Full Stack, Freelance, Conception d'Applications Web, Création de Sites Web, Développement Front-End, Développement Back-End, React, Next.js, Symfony, Django, Node.js, JavaScript, TypeScript, PHP, Python, HTML, CSS, Tailwind CSS, WordPress, ERP, Fintech, Automatisation des Tâches, Scripts Python, Gestion de Base de Données, UX Design, Responsive Design, Sécurité Web, Performance Web, Scalabilité, Solutions Clé en Main, Start-Up, Entreprises, Particuliers, France, Canada, Bénin, Développement Web Personnalisé, Expertise SEO">
+
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="{{seo_title}}">
+    <meta property="og:description" content="{{meta_description}}">
+    <meta property="og:image" content="{{seo_image}}">
+    <meta property="og:url" content="{{ url(app.request.get('_route'), app.request.get('_route_params')) }}">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Metadata -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{seo_title}}">
+    <meta name="twitter:description" content="{{meta_description}}">
+    <meta name="twitter:image" content="{{seo_image}}">
+    <meta name="twitter:creator" content="Rostand MIGAN">
+    <meta property="twitter:url" content="{{ url(app.request.get('_route'), app.request.get('_route_params')) }}">
+
+    <!-- Canonical Link -->
+    <link rel="canonical" href="{{ url(app.request.get('_route'), app.request.get('_route_params')) }}">
     {% block javascripts %}
     {% block importmap %}{{ importmap('app') }}{% endblock %}
     {% endblock %}
