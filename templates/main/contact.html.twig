@@ -3,17 +3,34 @@
 {% block turboMeta %}
 <meta name="turbo-cache-control" content="no-preview">
 {% endblock %}
-{% block title %}Rostand MIGAN | Contact{% endblock %}
+
+{# Déclaraton des variables #}
+{% set seo_title = "Contact - Rostand MIGAN" %}
+{% set meta_description = 'Contactez Rostand MIGAN, Développeur Web Full Stack, pour discuter de vos projets en
+développement web et fintech. Obtenez des solutions personnalisées et transformez vos idées en réalité. Réponse rapide
+et professionnelle garantie.' %}
+{% set seo_image = absolute_url(asset('img/og_image/contact.png')) %}
+{# End Déclaraton des variables #}
+
+{# SEO #}
+{% block meta_description %}{{meta_description}}{% endblock %}
+{% block meta_keywords %}Contact, {{parent()}}{% endblock %}
+{% block og_title %}{{seo_title}}{% endblock %}
+{% block og_description %}{{meta_description}}{% endblock %}
+{% block og_image %}{{seo_image}}{% endblock %}
+{% block twitter_title %}{{seo_title}}{% endblock %}
+{% block twitter_description %}{{meta_description}}{% endblock %}
+{% block twitter_image %}{{seo_image}}{% endblock %}
+{# End SEO #}
+{% block title %}{{seo_title}}{% endblock %}
 
 {% block body %}
-
 <section class="py-0 mt-[70px] relative h-[80px] drop-shadow-[0_4px_8px_rgba(0,0,0,0.05)] flex items-center">
     <div class="h-[1px] w-full bg-slate-200">
     </div>
     <img src="{{asset('/img/rostand-id.jpg')}}" alt=""
         class="absolute rounded-full h-[80px] top-0 right-1/2 left-1/2 -translate-x-1/2">
 </section>
-
 
 <section id="contact" class="py-5 relative border-b border-slate-200">
     <div
@@ -84,5 +101,4 @@
         </div>
     </div>
 </section>
-
 {% endblock %}

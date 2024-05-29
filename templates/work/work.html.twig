@@ -3,7 +3,7 @@
 'www.': ''}) : work.title %}
 {% set seo_meta_description = work.metaDescription ? work.metaDescription : 'Découvrez ' ~ work_title_in_metaDescription
 ~ ' : ' ~ work.summary ~ '. Réalisé par Rostand MIGAN, Développeur Web Full Stack.' %}
-{% set seo_title = work.title ~ ' | Rostand MIGAN' %}
+{% set seo_title = work.title ~ ' - Rostand MIGAN' %}
 {% set seo_image = absolute_url(asset('uploads/work/thumbnail/' ~ work.thumbnail)) %}
 
 {# SEO #}

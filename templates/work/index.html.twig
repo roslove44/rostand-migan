@@ -4,18 +4,27 @@
 <meta name="turbo-cache-control" content="no-preview">
 {% endblock %}
 
+{# Déclaraton des variables #}
+{% set seo_title = "Portfolio - Rostand MIGAN" %}
+{% set project_count = works|length %}
+{% set meta_description = 'Découvrez plus de ' ~ project_count ~ ' projets innovants réalisés par Rostand MIGAN,
+Développeur Web Full Stack. Explorez des solutions en développement web, fintech, des scripts d\'automatisation et bien
+plus encore. Contactez-moi pour transformer vos idées en réalité.' %}
+{% set seo_image = absolute_url(asset('img/og_image/portfolio.png')) %}
+{# End Déclaraton des variables #}
+
 {# SEO #}
-{% block meta_description %}{% endblock %}
-{% block meta_keywords %}{% endblock %}
-{% block og_title %}{% endblock %}
-{% block og_description %}{% endblock %}
-{% block og_image %}{% endblock %}
-{% block twitter_title %}{% endblock %}
-{% block twitter_description %}{% endblock %}
-{% block twitter_image %}{% endblock %}
+{% block meta_description %}{{meta_description}}{% endblock %}
+{% block meta_keywords %}{{parent()}}{% endblock %}
+{% block og_title %}{{seo_title}}{% endblock %}
+{% block og_description %}{{meta_description}}{% endblock %}
+{% block og_image %}{{seo_image}}{% endblock %}
+{% block twitter_title %}{{seo_title}}{% endblock %}
+{% block twitter_description %}{{meta_description}}{% endblock %}
+{% block twitter_image %}{{seo_image}}{% endblock %}
 {# End SEO #}
 
-{% block title %}Portfolio | Rostand MIGAN{% endblock %}
+{% block title %}{{seo_title}}{% endblock %}
 
 {% block body %}
 <section id="portfolio" class="min-h-[calc(100dvh-70px)]">
