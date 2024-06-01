@@ -14,12 +14,14 @@ export default class extends Controller {
       if (menuList.contains(event.relatedTarget)) {
         return;
       }
-      menuList.classList.remove("is-visible");
-      menuList.classList.add("animate-close-menu");
-      setTimeout(() => {
-        hamburgerBtn.classList.remove("toggle-btn");
-        menuList.classList.remove("animate-close-menu");
-      }, 300);
+      if (hamburgerBtn.classList.contains("toggle-btn")) {
+        menuList.classList.remove("is-visible");
+        menuList.classList.add("animate-close-menu");
+        setTimeout(() => {
+          hamburgerBtn.classList.remove("toggle-btn");
+          menuList.classList.remove("animate-close-menu");
+        }, 300);
+      }
     });
   }
 
