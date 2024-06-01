@@ -128,4 +128,30 @@ class ProjectController extends AbstractController
         $work = $project;
         return $this->render('admin/dashboard/editProject.html.twig', compact('projectForm', 'work'));
     }
+
+    #[Route('/dashboard/projet/delete/{slug}', name: 'admin_project_delete')]
+    public function delete(Project $project = null, PictureService $pictureService, EntityManagerInterface $em): Response
+    {
+        if ($project === null) {
+            $this->addFlash('danger', "Aucun projet ne correspond à l'url auquel vous essayez d'accéder");
+            return $this->redirectToRoute('admin_main', [], Response::HTTP_MOVED_PERMANENTLY);
+        }
+        $thumbnail = $project->getThumbnail();
+        $mobilePicture = $project->getMobilePicture();
+        $desktopPicture = $project->getDesktopPicture();
+        try {
+            $pictureService->removeFile($thumbnail);
+            $pictureService->removeFile($mobilePicture);
+            $pictureService->removeFile($desktopPicture);
+
+            $em->remove($project);
+            $em->flush();
+
+            $this->addFlash('success', 'Le filtre a bien été supprimé.');
+        } catch (\Throwable $th) {
+            $this->addFlash('danger', "Une erreur s'est produite : " . $th->getMessage());
+        } finally {
+            return $this->redirectToRoute('admin_main');
+        }
+    }
 }
