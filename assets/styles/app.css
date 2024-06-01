@@ -163,8 +163,7 @@ svg.is-loaded,
   padding: 75px 0;
   background-color: #121833;
   color: #fff;
-  background-image: url(../img_css/header-grad.png),
-    url(../img_css/header-grid.png),
+  background-image: url(../img/header-grad.webp), url(../img/header-grid.webp),
     radial-gradient(35vw 25vw at center 100%, #00e4bc77 0, transparent 100%);
   background-size: cover, 1480px, 2280px;
   background-repeat: no-repeat, repeat, no-repeat;
@@ -326,7 +325,7 @@ svg.is-loaded,
 }
 
 #rostand-migan-img {
-  mask-image: url(../img_css/mask/mask-2.png);
+  mask-image: url(../img/mask/mask-2.webp);
   mask-repeat: no-repeat;
   mask-size: cover;
 }
