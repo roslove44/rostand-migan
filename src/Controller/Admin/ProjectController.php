@@ -48,8 +48,9 @@ class ProjectController extends AbstractController
             $slug = $slugger->slug($project->getTitle())->lower();
             $project->setSlug($slug);
 
-            //Created At
+            //Created At && Set Update
             $project->setCreatedAt(new \DateTimeImmutable());
+            $project->setUpdatedAt(new \DateTimeImmutable());
 
             try {
                 $em->persist($project);

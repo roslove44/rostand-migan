@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Project;
 use App\Repository\ProjectRepository;
 use App\Service\SitemapService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -41,10 +42,25 @@ class SeoController extends AbstractController
             $sm->sitemapUrl('app_resume', $firstDayOfCurrentWeek, 0.8),
         );
 
+        /**
+         * @var Project[]|[] $projects
+         */
         $projects = $projectRepository->findBy([], ['updated_at' => 'DESC']);
-        foreach ($projects as $project) {
+        if ($projects) {
+            $mostRecentUpdatedAt = $projectRepository->findMostRecentUpdatedAt();
+            array_push($urls, $sm->sitemapUrl('app_work', $sm->formatSitemapDate($mostRecentUpdatedAt), changefreq: 'weekly', priority: 0.9));
+            foreach ($projects as $project) {
+                array_push(
+                    $urls,
+                    $sm->sitemapUrl(
+                        'app_work_detail',
+                        $sm->formatSitemapDate($project->getUpdatedAt()),
+                        changefreq: 'monthly',
+                        parameters: ['slug' => $project->getSlug()]
+                    )
+                );
+            }
         }
-
 
         $response = new Response($this->renderView('seo/sitemap.html.twig', ['urls' => $urls]), 200);
         $response->headers->set('Content-Type', 'text/xml');
