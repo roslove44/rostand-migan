@@ -24,6 +24,10 @@ endif%}{% if work.stacks|length > 0 %}{% for techno in work.stacks %}, {{techno.
 {% block twitter_image %}{{seo_image}}{% endblock %}
 {# End SEO #}
 
+{# Canonical link to Work index #}
+{% block canonical %}{{ absolute_url(path('app_work')) }}{% endblock %}
+{# End Canonical link to Work index #}
+
 {% block body %}
 <section id="portfolio-detail" class="min-h-[calc(100dvh-70px)] pb-0">
     <div class="p-2 md:px-4 w-full max-w-7xl mx-auto mt-5 sm:mt-10">

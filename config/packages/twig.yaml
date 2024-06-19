@@ -1,6 +1,12 @@
 twig:
-    file_name_pattern: '*.twig'
+  file_name_pattern: "*.twig"
+  globals:
+    my_email: "%RECIPIENT_MAIL%"
+    my_twitter: "%env(TWITTER)%"
+    my_github: "%env(GITHUB)%"
+    my_linkedin: "%env(LINKEDIN)%"
+    my_telegram: "%env(TELEGRAM)%"
 
 when@test:
-    twig:
-        strict_variables: true
+  twig:
+    strict_variables: true

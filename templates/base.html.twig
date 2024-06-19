@@ -96,14 +96,14 @@
                                         </li>
 
                                         <li class="w-full flex">
-                                            <a href="{{path('app_blog')}}" class="group menu-item">Mon Blog
+                                            <a href="{{path('app_resume')}}" class="group menu-item">Mon CV
                                                 <span
                                                     class="sub-border group-hover:opacity-95 group-hover:scale-100"></span>
                                             </a>
                                         </li>
 
                                         <li class="w-full flex">
-                                            <a href="{{path('app_resume')}}" class="group menu-item">Mon CV
+                                            <a href="{{path('app_blog')}}" class="group menu-item">Mon Blog
                                                 <span
                                                     class="sub-border group-hover:opacity-95 group-hover:scale-100"></span>
                                             </a>
@@ -123,16 +123,15 @@
 
                                         <ul class="flex flex-col items-center justify-start gap-2 text-sm" id="">
                                             <li class="w-full flex">
-                                                <a href="mailto:hello@rostand-migan.com" class="group menu-item">
-                                                    <span>hello@rostand-migan.com</span>
+                                                <a href="mailto:{{my_email}}" class="group menu-item">
+                                                    <span>{{my_email}}</span>
                                                     <span
                                                         class="sub-border group-hover:opacity-95 group-hover:scale-100"></span>
                                                 </a>
                                             </li>
 
                                             <li class="w-full flex">
-                                                <a href="https://twitter.com/migan_rostand"
-                                                    class="group menu-item">twitter.com/migan_rostand
+                                                <a href="https://{{my_twitter}}" class="group menu-item">{{my_twitter}}
                                                     <span
                                                         class="sub-border group-hover:opacity-95 group-hover:scale-100">
                                                     </span>
@@ -142,36 +141,7 @@
                                     </div>
 
                                     <div class="flex justify-center gap-5 social-links mt-10 sm:mt-4">
-                                        <a href="" class="group relative inline-flex svg">
-                                            <svg>
-                                                <use href="#mail" />
-                                            </svg>
-                                            <span class="social-bubble">&nbsp;Mail&nbsp;</span>
-                                        </a>
-                                        <a href="" class="group relative inline-flex svg">
-                                            <svg>
-                                                <use href="#github" />
-                                            </svg>
-                                            <span class="social-bubble">Github</span>
-                                        </a>
-                                        <a href="" class="group relative inline-flex svg">
-                                            <svg>
-                                                <use href="#linkedin" />
-                                            </svg>
-                                            <span class="social-bubble">Linkedin</span>
-                                        </a>
-                                        <a href="" class="group relative inline-flex svg">
-                                            <svg>
-                                                <use href="#twitter" />
-                                            </svg>
-                                            <span class="social-bubble">&nbsp;&nbsp;X&nbsp;&nbsp;</span>
-                                        </a>
-                                        <a href="" class="group relative inline-flex svg">
-                                            <svg>
-                                                <use href="#telegram" />
-                                            </svg>
-                                            <span class="social-bubble">Telegram</span>
-                                        </a>
+                                        {% include "_partials/_inline-contact.html.twig" %}
                                     </div>
                                 </nav>
                             </div>
@@ -201,15 +171,14 @@
 
                     <ul class="pl-3 flex flex-col items-center justify-start gap-2 text-base text-white">
                         <li class="w-full flex">
-                            <a href="mailto:hello@rostand-migan.com" class="group menu-item">
-                                <span>hello@rostand-migan.com</span>
+                            <a href="mailto:{{my_email}}" class="group menu-item">
+                                <span>{{my_email}}</span>
                                 <span class="sub-border group-hover:opacity-95 group-hover:scale-100"></span>
                             </a>
                         </li>
 
                         <li class="w-full flex">
-                            <a href="https://twitter.com/migan_rostand"
-                                class="group menu-item">twitter.com/migan_rostand
+                            <a href="{{my_twitter}}" class="group menu-item">{{my_twitter}}
                                 <span class="sub-border group-hover:opacity-95 group-hover:scale-100">
                                 </span>
                             </a>
@@ -235,16 +204,16 @@
                                 </span>
                             </a>
                         </li>
-                        <li class="{% if app.current_route=='app_blog' %}hidden{% endif%}">
-                            <a href="{{path('app_blog')}}" class="group menu-item">
-                                <span>Mon Blog</span>
+                        <li class="{% if app.current_route=='app_resume' %}hidden{% endif%}">
+                            <a href="{{path('app_resume')}}" class="group menu-item">
+                                <span>Mon CV</span>
                                 <span class="sub-border group-hover:opacity-95 group-hover:scale-100">
                                 </span>
                             </a>
                         </li>
-                        <li class="{% if app.current_route=='app_resume' %}hidden{% endif%}">
-                            <a href="{{path('app_resume')}}" class="group menu-item">
-                                <span>Mon CV</span>
+                        <li class="{% if app.current_route=='app_blog' %}hidden{% endif%}">
+                            <a href="{{path('app_blog')}}" class="group menu-item">
+                                <span>Mon Blog</span>
                                 <span class="sub-border group-hover:opacity-95 group-hover:scale-100">
                                 </span>
                             </a>
@@ -260,36 +229,7 @@
                     Tailwind CSS & Symfony par <a href="{{path('app_main')}}">Rostand</a>.
                 </p>
                 <div class="flex justify-center gap-5 social-links text-white">
-                    <a href="" class="group relative inline-flex svg">
-                        <svg>
-                            <use href="#mail" />
-                        </svg>
-                        <span class="social-bubble">&nbsp;Mail&nbsp;</span>
-                    </a>
-                    <a href="" class="group relative inline-flex svg">
-                        <svg>
-                            <use href="#github" />
-                        </svg>
-                        <span class="social-bubble">Github</span>
-                    </a>
-                    <a href="" class="group relative inline-flex svg">
-                        <svg>
-                            <use href="#linkedin" />
-                        </svg>
-                        <span class="social-bubble">Linkedin</span>
-                    </a>
-                    <a href="" class="group relative inline-flex svg">
-                        <svg>
-                            <use href="#twitter" />
-                        </svg>
-                        <span class="social-bubble">&nbsp;&nbsp;X&nbsp;&nbsp;</span>
-                    </a>
-                    <a href="" class="group relative inline-flex svg">
-                        <svg>
-                            <use href="#telegram" />
-                        </svg>
-                        <span class="social-bubble">Telegram</span>
-                    </a>
+                    {% include "_partials/_inline-contact.html.twig" %}
                 </div>
             </div>
         </div>

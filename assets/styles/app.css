@@ -198,7 +198,7 @@ svg.is-loaded,
   @apply relative;
 }
 .service-item .service-description {
-  @apply w-[280px] md:w-[300px] mb-5;
+  @apply w-[280px] md:w-[300px] lg:w-[280px] xl:w-[300px] mb-5;
 }
 .service-item .service-description p {
   @apply opacity-80 mb-0;
@@ -280,14 +280,14 @@ svg.is-loaded,
   transition-timing-function: cubic-bezier(0, 0, 0.25, 1);
 }
 .service-item .illustration.is-visible {
-  @apply absolute -top-[60px] -right-[80px] opacity-100 -mt-[40px] -mr-[35px] md:-mr-[10px] md:-mt-[15px];
+  @apply absolute -top-[18px] mr-0 mt-0 sm:-top-[60px] sm:-right-[80px] opacity-100 sm:-mt-[40px] sm:-mr-[35px] md:-mr-[10px] md:-mt-[15px];
   transform: translate(0) translateY(0);
 }
-.service-item.item-5 .illustration.is-visible {
+/* .service-item.item-5 .illustration.is-visible {
   @apply -top-[30px];
-}
+} */
 .service-item .illustration img {
-  @apply scale-[50%] lg:scale-[70%] xl:scale-100 opacity-0;
+  @apply scale-[80%] lg:scale-[65%] xl:scale-90 opacity-0;
   transition: opacity ease-in 0.3s;
 }
 .service-item .illustration img.is-loaded {
@@ -336,7 +336,7 @@ svg.is-loaded,
   @apply flex justify-center items-center;
 }
 .call-to-action .action-container {
-  @apply flex justify-center px-5 md:px-12 xl:px-28 w-full 2xl:min-h-[40em];
+  @apply flex justify-center container 2xl:min-h-[40em];
 }
 .call-to-action .action-container .actions {
   @apply flex flex-col text-center sm:flex-row sm:text-left w-full bg-white;
