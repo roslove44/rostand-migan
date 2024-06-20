@@ -38,7 +38,9 @@
 {% endblock %}">
     <meta name="twitter:image"
         content="{% block twitter_image %}{{absolute_url(asset('img/og_image/home.png'))}}{% endblock %}">
-    <meta name="twitter:creator" content="Rostand MIGAN">
+    <meta name="twitter:creator" content="@migan_rostand">
+    <meta name="twitter:site" content="@migan_rostand">
+    <meta property="twitter:domain" content="rostand-migan.com">
     <meta property="twitter:url"
         content="{% block twitter_canonical %}{{ url(app.request.get('_route'), app.request.get('_route_params')) }}{% endblock %}">
 

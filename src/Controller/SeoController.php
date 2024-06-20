@@ -62,6 +62,9 @@ class SeoController extends AbstractController
             }
         }
 
+        // Blog
+        array_push($urls, $sm->sitemapUrl('app_blog', $firstDayOfCurrentWeek, changefreq: 'weekly', priority: 0.9));
+
         $response = new Response($this->renderView('seo/sitemap.html.twig', ['urls' => $urls]), 200);
         $response->headers->set('Content-Type', 'text/xml');
 

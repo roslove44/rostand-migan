@@ -1,0 +1,45 @@
+<template>
+    <article class="grid border-b border-b-slate-200">
+        <div class="w-full text-sm font-mono mb-3 gap-3 cursor-pointer">Epinglé</div>
+        <div>
+            <h3 class="font-bold text-lg/loose tracking-wide cursor-pointer hover:text-rostBlue">
+                <a href="{{path('app_blog_post')}}" class="articleLink">Comment devenir développeur web
+                    ?</a>
+            </h3>
+            <div class="flex">
+                <div>
+                    <p class="line-clamp-2 md:line-clamp-3 cursor-pointer">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, nisi. Lorem
+                        ipsum,
+                        dolor sit amet consectetur adipisicing elit. Blanditiis nulla sed iure omnis
+                        quidem
+                        dolores praesentium temporibus aliquid quisquam quia?
+                    </p>
+                    <div class="tags flex justify-between py-5">
+                        <div class="flex gap-2">
+                            <button
+                                class=" rounded-full shadow-md py-1 px-2 flex items-center gap-2 duration-300  hover:bg-slate-100 bg-slate-50 text-slate-700 transition-all">
+                                <div class="text-xs font-medium leading-none">Php</div>
+                            </button>
+                            <button
+                                class=" rounded-full shadow-md py-1 px-2 flex items-center gap-2 duration-300  hover:bg-slate-100 bg-slate-50 text-slate-700 transition-all">
+                                <div class="text-xs font-medium leading-none">JavaScript</div>
+                            </button>
+                        </div>
+                        <div class="flex justify-end">
+                            <button class="svg text-rostBlue" title="Visionnages">
+                                <svg>
+                                    <use href="#view"></use>
+                                </svg>
+                                <i class="text-xs font-medium leading-none">77</i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ml-5 max-h-[80px] max-w-[80px] lg:max-h-[112px] lg:max-w-[112px] cursor-pointer ">
+                    <img src="{{asset('img/contact-bg.jpg')}}" alt="">
+                </div>
+            </div>
+        </div>
+    </article>
+</template>
