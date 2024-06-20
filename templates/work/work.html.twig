@@ -55,11 +55,12 @@ endif%}{% if work.stacks|length > 0 %}{% for techno in work.stacks %}, {{techno.
         </div>
         <div class="flex justify-center">
             <div class="relative flex items-center justify-center w-full md:h-[450px] md:w-fit mt-14 sm:mt-8">
-                <img class="object-contain md:h-full w-full"
+                <img class="object-contain md:h-full w-full" alt="presentation projet {{work.title}}"
                     src="{{ asset('uploads/work/desktopPicture/' ~ work.desktopPicture) }}">
                 {% if work.mobilePicture %}
                 <img class="h-0 sm:h-[250px] md:h-[300px] absolute right-0 bottom-5 object-cover"
-                    src="{{ asset('uploads/work/mobilePicture/' ~ work.mobilePicture) }}">
+                    src="{{ asset('uploads/work/mobilePicture/' ~ work.mobilePicture) }}"
+                    alt="presentation mobile projet {{work.title}}">
                 {% endif %}
             </div>
         </div>

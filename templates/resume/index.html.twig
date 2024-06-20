@@ -48,16 +48,17 @@ compétences, mon expérience professionnelle et mes réalisations en développe
         <main id="cv"
             class="min-h-dvh w-dvw xl:w-10/12 mx-auto my-10 lg:my-20 p-5 lg:p-10 bg-bgColor text-bodyColor/80">
             <header class="flex items-center justify-end gap-2">
-                <a href="" class="downloadCV flex items-center justify-center gap-1 text-sm">
+                <span onclick="print()"
+                    class="downloadCV cursor-pointer flex items-center justify-center gap-1 text-sm">
                     <span class="svg">
                         <svg>
                             <use href="#download" />
                         </svg>
                     </span>
                     <span>Download</span>
-                </a>
+                </span>
                 <div class="social-links flex justify-center items-center">
-                    <a href="" class="group relative inline-flex items-center svg text-sm">
+                    <a href="{{my_github}}" target="_blank" class="group relative inline-flex items-center svg text-sm">
                         <svg>
                             <use href="#github" />
                         </svg>

@@ -54,7 +54,7 @@ plus encore. Contactez-moi pour transformer vos idées en réalité.' %}
                 class="project group {% if work.filters %}{% for filter in work.filters %}{{filter.slug}} {% endfor %}{% endif %}">
                 <div
                     class="absolute inset-0 rounded-2xl bg-slate-500 w-full h-[208px] overflow-hidden group-hover:h-full transition-all duration-500">
-                    <img class="w-full h-full object-cover"
+                    <img class="w-full h-full object-cover" alt="projet {{work.title}}"
                         src="{{ asset('uploads/work/thumbnail/' ~ work.thumbnail) }}">
                 </div>
                 <div class="p-6 flex flex-col gap-2 text-slate-700">
