@@ -38,9 +38,11 @@ plus encore. Contactez-moi pour transformer vos idées en réalité.' %}
             </button>
             {% if filters|length > 0 %}
             {% for filter in filters %}
+            {% if filter.projects|length > 0 %}
             <button class="selector" data-filter="{{filter.slug}}" data-action="click->portfolio#filter">
                 <div class="text-sm font-medium leading-none">{{filter.name}}</div>
             </button>
+            {% endif %}
             {% endfor %}
             {% endif %}
         </div>

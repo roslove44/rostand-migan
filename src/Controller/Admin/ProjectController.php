@@ -148,8 +148,10 @@ class ProjectController extends AbstractController
         $desktopPicture = $project->getDesktopPicture();
         try {
             $pictureService->removeFile($thumbnail);
-            $pictureService->removeFile($mobilePicture);
             $pictureService->removeFile($desktopPicture);
+            if ($mobilePicture) {
+                $pictureService->removeFile($mobilePicture);
+            }
 
             $em->remove($project);
             $em->flush();

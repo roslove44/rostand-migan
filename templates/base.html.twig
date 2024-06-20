@@ -54,6 +54,8 @@
     {% block javascripts %}
     {% block importmap %}{{ importmap('app') }}{% endblock %}
     {% endblock %}
+
+    <script defer data-domain="rostand-migan.com" src="https://plausible.io/js/script.js"></script>
 </head>
 
 <body>
@@ -133,7 +135,8 @@
                                             </li>
 
                                             <li class="w-full flex">
-                                                <a href="https://{{my_twitter}}" class="group menu-item">{{my_twitter}}
+                                                <a href="https://{{my_twitter}}" target="_blank"
+                                                    class="group menu-item">{{my_twitter}}
                                                     <span
                                                         class="sub-border group-hover:opacity-95 group-hover:scale-100">
                                                     </span>
@@ -180,7 +183,7 @@
                         </li>
 
                         <li class="w-full flex">
-                            <a href="{{my_twitter}}" class="group menu-item">{{my_twitter}}
+                            <a href="https://{{my_twitter}}" target="_blank" class="group menu-item">{{my_twitter}}
                                 <span class="sub-border group-hover:opacity-95 group-hover:scale-100">
                                 </span>
                             </a>
