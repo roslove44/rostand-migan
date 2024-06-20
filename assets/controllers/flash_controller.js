@@ -3,7 +3,6 @@ import { Controller } from "@hotwired/stimulus";
 export default class extends Controller {
   static targets = ["close"];
   connect() {
-    console.log(this.element);
     if (this.element) {
       setTimeout(() => {
         this.element.classList.add("opacity-0");

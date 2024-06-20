@@ -150,7 +150,6 @@ export default class extends Controller {
             return;
           }
           this.#infoToDelete(event).remove();
-          console.log("Réponse reçue :", data);
           this.addFlash("success", data.message);
         })
         .catch((error) => {
@@ -180,7 +179,6 @@ export default class extends Controller {
           return;
         }
         this.removeAddForm();
-        console.log("Réponse reçue :", data);
         const info = data.content;
         this.addInfoView(info.clef, info.value);
         this.addFlash("success", data.message);
@@ -246,7 +244,6 @@ export default class extends Controller {
           return;
         }
         this.removeAddForm();
-        console.log("Réponse reçue :", data);
         document
           .querySelector(`tr[data-ref="${oldData.clef}-${oldData.value}"]`)
           .remove();

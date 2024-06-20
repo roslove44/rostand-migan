@@ -1,5 +1,30 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+{{parent()}}
+<link rel="preload" href="{{asset('img/header-grid.webp')}}" as="image">
+<link rel="preload" href="{{asset('img/header-grad.webp')}}" as="image">
+<style>
+    #hero {
+        padding: 75px 0;
+        background-color: #121833;
+        color: #fff;
+        background-image: url("{{asset('img/header-grad.webp')}}"),
+        url("{{asset('img/header-grid.webp')}}"),
+        radial-gradient(35vw 25vw at center 100%, #00e4bc77 0, transparent 100%);
+        background-size: cover,
+            1480px,
+            2280px;
+        background-repeat: no-repeat,
+            repeat,
+            no-repeat;
+        background-position: top left,
+            center 0,
+            bottom center;
+    }
+</style>
+{% endblock %}
+
 {% block title %}Rostand MIGAN - Développeur Web{% endblock %}
 
 {% block body %}
@@ -14,15 +39,10 @@
             </div>
 
             <div>
-                <h2 class="text-lg/snug sm:text-xl/snug md:text-xl/snug lg:text-2xl/snug xl:text-3xl/snug 2xl:text-4xl/snug text-wrap font-bold text-orange-400"
-                    data-controller="fixeTyped">
-                    Développeur Web <span class="text-[0px]">Full Stack</span> <br>
-                    <span {{ stimulus_controller('symfony/ux-typed', { strings: ['Full Stack','Symfony', 'React'
-                        , 'Python' , 'Node.js' ], smartBackspace: true, startDelay: 0, backSpeed: 80, backDelay: 300,
-                        loop: true, showCursor: true, cursorChar: '|' }) }} class="transition-all duration-300">
-                    </span>
+                <h2
+                    class="text-lg/snug sm:text-xl/snug md:text-xl/snug lg:text-2xl/snug xl:text-3xl/snug 2xl:text-4xl/snug text-wrap font-bold text-orange-400">
+                    Développeur Web Full Stack
                 </h2>
-                <h3 class="text-[0px]">Développeur Web Freelance</h3>
             </div>
 
             <p class="text-base/relaxed text-wrap md:w-2/3">
@@ -138,7 +158,7 @@
             </div>
         </div>
         <div class="services-column">
-            <div class="service-item item-2">
+            <div class="service-item without-illustration item-2">
                 <div class="spider">
                     <div class="line horizontal"></div>
                     <div class="line horizontal"></div>
@@ -148,10 +168,6 @@
                     <div class="line vertical"></div>
                     <div class="line vertical"></div>
                     <div class="shadow"></div>
-                </div>
-                <div class="illustration">
-                    <img src="{{asset('img/services/cms.webp')}}" alt="service Solutions, clé en main" height="350"
-                        width="350">
                 </div>
                 <div class="service-title">
                     <h3 class="">
@@ -167,7 +183,7 @@
                     </p>
                 </div>
             </div>
-            <div class="service-item item-4">
+            <div class="service-item without-illustration item-4">
                 <div class="spider">
                     <div class="line horizontal"></div>
                     <div class="line horizontal"></div>
@@ -177,10 +193,6 @@
                     <div class="line vertical"></div>
                     <div class="line vertical"></div>
                     <div class="shadow"></div>
-                </div>
-                <div class="illustration">
-                    <img src="{{asset('img/services/automatisation.webp')}}" alt="service Automatisation des Tâches"
-                        height="409" width="359">
                 </div>
                 <div class="service-title">
                     <h3 class="">
@@ -196,7 +208,7 @@
                     </p>
                 </div>
             </div>
-            <div class="service-item item-5">
+            <div class="service-item without-illustration item-5">
                 <div class="spider">
                     <div class="line horizontal"></div>
                     <div class="line horizontal"></div>
@@ -206,10 +218,6 @@
                     <div class="line vertical"></div>
                     <div class="line vertical"></div>
                     <div class="shadow"></div>
-                </div>
-                <div class="illustration">
-                    <img src="{{asset('img/services/webapps.webp')}}"
-                        alt="service Création de Sites et Applications Web Sur Mesure" height="409" width="359">
                 </div>
                 <div class="service-title">
                     <h3 class="">
@@ -237,7 +245,7 @@
 
         <div class="rostand w-full self-center md:w-2/3 lg:self-start lg:w-1/2 xl:self-start">
             <span class="gradient"></span>
-            <img src="{{asset('img/rostand-migan.webp')}}" alt="développeur web rostand migan"
+            <img src="{{asset('img/rostand-migan.webp')}}" alt="développeur web rostand migan" height="500" width="500"
                 class="mx-auto object-cover" id="rostand-migan-img">
         </div>
 
