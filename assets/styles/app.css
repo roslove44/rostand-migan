@@ -182,7 +182,7 @@ svg.is-loaded,
   @apply relative;
 }
 .service-item .service-description {
-  @apply w-auto sm:w-[280px] md:w-[300px] lg:w-[280px] xl:w-[300px] mb-5;
+  @apply w-auto md:w-[300px] lg:w-[280px] xl:w-[300px] mb-5 z-50;
 }
 .service-item .service-description p {
   @apply opacity-80 mb-0;
@@ -275,7 +275,7 @@ svg.is-loaded,
 }
 
 .service-item .illustration img {
-  @apply hidden sm:block sm:scale-[80%] lg:scale-[65%] xl:scale-90 opacity-0;
+  @apply hidden aspect-auto md:scale-75 xl:scale-100 md:block opacity-0;
   transition: opacity ease-in 0.3s;
 }
 .service-item .illustration img.is-loaded {
@@ -339,7 +339,7 @@ svg.is-loaded,
   @apply text-2xl lg:text-3xl 2xl:text-4xl 2xl:mt-8 font-black text-rostBlue lg:w-[95%];
 }
 .call-to-action .action-container .actions .action article p {
-  @apply my-5 lg:text-xl xl:text-2xl 2xl:my-8 lg:my-8 opacity-70;
+  @apply my-5 lg:text-xl xl:text-2xl 2xl:my-8 lg:my-8;
 }
 /* Call to Action  */
 
