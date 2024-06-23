@@ -6,21 +6,29 @@
 <link rel="preload" href="{{asset('img/header-grad.webp')}}" as="image">
 <style>
     #hero {
-        padding: 75px 0;
         background-color: #121833;
-        color: #fff;
-        background-image: url("{{asset('img/header-grad.webp')}}"),
-        url("{{asset('img/header-grid.webp')}}"),
-        radial-gradient(35vw 25vw at center 100%, #00e4bc77 0, transparent 100%);
-        background-size: cover,
-            1480px,
-            2280px;
-        background-repeat: no-repeat,
-            repeat,
-            no-repeat;
-        background-position: top left,
-            center 0,
-            bottom center;
+        background-image: radial-gradient(35vw 25vw at center 100%, #00e4bc77 0, transparent 100%);
+        background-size: cover, 1480px, 2280px;
+        background-repeat: no-repeat, repeat, no-repeat;
+        background-position: top left, center 0, bottom center;
+    }
+
+    @media screen and (min-width: 1024px) {
+        #hero {
+            background-color: #121833;
+            background-image: url("{{asset('img/header-grad.webp')}}"),
+            url("{{asset('img/header-grid.webp')}}"),
+            radial-gradient(35vw 25vw at center 100%, #00e4bc77 0, transparent 100%);
+            background-size: cover,
+                1480px,
+                2280px;
+            background-repeat: no-repeat,
+                repeat,
+                no-repeat;
+            background-position: top left,
+                center 0,
+                bottom center;
+        }
     }
 </style>
 {% endblock %}
@@ -28,7 +36,7 @@
 {% block title %}Rostand MIGAN - Développeur Web{% endblock %}
 
 {% block body %}
-<section id="hero" class="my-10 lg:min-h-[calc(70dvh-20px)] flex flex-col items-center justify-center px-10 py-20">
+<section id="hero" class="text-white my-10 py-20 lg:min-h-[calc(70dvh-20px)] flex flex-col items-center justify-center">
     <div class="flex items-center justify-center w-10/12 h-full max-w-7xl mx-auto">
         <div class="flex flex-col items-center justify-center text-center gap-4">
             <div>
@@ -46,7 +54,7 @@
             </div>
 
             <p class="text-base/relaxed text-wrap md:w-2/3">
-                Développeur - Fintech Enthousiaste, je me dédie à la création d'applications web
+                Développeur et Fintech Enthousiaste, je me dédie à la création d'applications web
                 dynamiques et performantes, propulsant ainsi la transformation digitale et l'innovation financière.
             </p>
 
